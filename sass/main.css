@@ -1,3 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  font-family: "Roboto";
+  width: 100%;
+  margin: 0;
+}
 
+header {
+  margin-top: 3rem;
+}
+
+.top_logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 11rem;
+}
+
+.card_header {
+  border: solid 1px;
+  width: auto;
+}
+
+.position {
+  border: solid 1px;
+  width: 1rem;
+}
+
+.container {
+  width: auto;
+}
+
+header {
+  margin-top: 3rem;
+}
+
+.top_logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 11rem;
+}
+
+.card_header {
+  border: solid 1px;
+  width: auto;
+}
+
+.position {
+  border: solid 1px;
+  width: 1rem;
+}
+
+/*-------------header----------------*/
+@media (max-width: 599px) {
+  header {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .top_logo {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 11rem;
+  }
+
+  .search {
+    border-top: solid 2px;
+    border-color: #d6d6d6;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 3rem;
+    background-color: #e4e3e3;
+  }
+  .search .position {
+    border: none;
+    padding: 0.6rem 0 0 0;
+    margin-left: 7rem;
+  }
+  .search input {
+    border: none;
+    margin: 0.5rem 0 0 0.8rem;
+    width: 90%;
+    font-size: 1.1rem;
+    font-weight: 1.2rem;
+    font-weight: 700;
+    background-color: #e4e3e3;
+    color: black;
+  }
+
+  .card_header {
+    display: flex;
+    flex-flow: column;
+    max-width: 100%;
+    height: 19rem;
+    background-color: #eaecec;
+  }
+  .card_header .accueil_text_content {
+    text-align: center;
+    font-family: "Roboto";
+    margin-top: 1rem;
+  }
+  .card_header .accueil_text_content h1 {
+    font-size: 2rem;
+    font-weight: 1200;
+  }
+  .card_header .accueil_text_content h4 {
+    color: #6b6b6b;
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+  .card_header .explorer_btn {
+    display: flex;
+    width: 14rem;
+    border-radius: 4rem;
+    background: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 6.5rem;
+    height: 3.2rem;
+  }
+  .card_header .explorer_btn .explorer_text_btn {
+    color: white;
+    letter-spacing: 0.05rem;
+    font-weight: 100;
+  }
+  .card_header .explorer_btn a {
+    text-decoration: none;
+  }
+}
+/*-----MAIN CONTENT--------*/
 
 /*# sourceMappingURL=main.css.map */

@@ -2,9 +2,9 @@
 <html lang="fr">
     <head>
         <meta charset=UTF-8>
-        <meta name="viewport" content="width=device-width, initial-sacle=1.0">
-        <link rel="stylesheet" href="css/all.css">
-        <link rel="stylesheet" href="scss/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+        <link rel="stylesheet" href="sass/main.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <title>Ohmyfood</title>
@@ -15,50 +15,53 @@
 
             <header>
                 <div class="logo">
-                    <a href="index.html"><img class="top_logo"src="images/logo/ohmyfood.png" alt="ohmyfood"></a>
+                    <a href="index.html"><img class="top_logo" src="images/logo/ohmyfood.png" alt="ohmyfood"></a>
                 </div>
+                    <div class="search">
+                        <div class="position">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <input type="text" name="rechercher" placeholder="Paris, Belleville">
+                        </div>
+                    </div>    
                 <div class="card_header">
-                    <div class="position">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                        <input type="text" name="rechercher" placeholder="Paris, Belleville">
-                    </div>
-                    <div class="accueil_text__content">
+                    <div class="accueil_text_content">
                         <h1> Réservez le menu qui  <br>vous convient</h1>
                         <h4 class="sous_titre">Découvrez des restaurants d'exception, <br>sélectionnée par nos soins.</h4>
                     </div>
                     <div class="explorer_btn">
                             <a href="#"><h4 class="explorer_text_btn">Explorer nos restaurants</h4></a>
                     </div>
-                    </div> 
-                 </div>     
+                </div> 
             </header>
 
             <!--------------------------------MAIN CONTENT-------------------------->
 
             <main class="container">
-                <h2 class="titre_main">Fonctionnement</h2>
-                <button>
-                    <div class="menu_choisir">
-                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>"
-                        <h5 class="menu_text_content">Choisir un restaurant</h5>
-                    </div>
-                </button>
+                <h2 class="titre_decouvrir">Fonctionnement</h2>
+                <div class="decouvrir">
+                    <button>
+                        <div class="menu_choisir">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>"
+                            <h5 class="menu_text_content">Choisir un restaurant</h5>
+                        </div>
+                    </button>
 
-                <button>
-                    <div class="menu_composez">
-                        <i class="fas fa-list"></i>
-                        <h5 class="menu_text_content">Composez votre menu</h5>
-                    </div>
-                </button>
+                    <button>
+                        <div class="menu_composez">
+                            <i class="fas fa-list"></i>
+                            <h5 class="menu_text_content">Composez votre menu</h5>
+                        </div>
+                    </button>
 
-                <button>
-                    <div class="menu_degustez">
-                        <i class="fas fa-store"></i>
-                        <h5 class="menu_text_content">Dégustez au restaurant</h5>
-                    </div>
-                </button>
+                    <button>
+                        <div class="menu_degustez">
+                            <i class="fas fa-store"></i>
+                            <h5 class="menu_text_content">Dégustez au restaurant</h5>
+                        </div>
+                    </button>
+                </div>
 
                 <!-----------------------CARD SHOWING RESTAURANT---------------------->
 
@@ -69,11 +72,11 @@
                         <div class="card_image">
                             <a href="restaurant_palette.html">
                             <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût"></a>
+                        </div>
                         <div class="card_text_content">
                             <i class="far fa-heart"></i>
                             <p>La palette du goût</p>
                             <em>Ménilmontant</em>
-                        </div>
                         </div>
 
                     </div>

@@ -1,0 +1,111 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./Composants/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/form";
+@import "./layout/footer";
+@import "./layout/containers";
+@import "./layout/header";
+@import "./pages/works";
+@import "./pages/about";
+@import "./pages/project";
+
+
+$color-primary:#9356dc;
+$color-secondary:#fa79da;
+$color-tertiaire: #99e2d0;
+ 
+
+
+
+
+/*-------------header----------------*/
+
+@media (max-width:599px){
+header{
+    display:flex;
+    flex-flow: column wrap;
+    margin-top: 1rem;
+    max-width:100%;
+}
+.top_logo{
+    display:block;
+    margin: 0 auto 1rem auto;
+    width:11rem;
+    
+}
+.search{
+    border-top:solid 2px;
+    border-color:rgb(214, 214, 214);
+    display:flex; 
+    justify-content: center;
+    max-width:100%;  
+    height:3rem; 
+    background-color: rgb(228, 227, 227);
+
+    .position{
+        border:none;
+        padding: .6rem 0 0 0;
+        margin-left:7rem;
+         }  
+ 
+input{
+    border:none;
+    margin:.5rem 0 0 .8rem;
+    width:90%;
+    font-size:1.1rem;
+    font-weight:1.2rem;
+    font-weight:700;
+    background-color: rgb(228, 227, 227);
+    color: black;
+    }
+}
+.card_header{
+    display:flex;
+    flex-flow: column ;
+    max-width: 100%;
+    height:19rem;
+    background-color: rgb(234,236,236);
+        .accueil_text_content{
+            text-align: center;
+            font-family: 'Roboto';
+            margin-top:1rem;
+            h1{
+                font-size:2rem;
+                font-weight:1200;
+            }
+            h4{
+                color: rgb(107, 107 ,107);
+                font-size:1.2rem;
+                font-weight:200;
+            }
+        }
+.explorer_btn{
+    display:flex;
+    width:14rem;
+    border-radius:4rem;
+    background: linear-gradient(to bottom, $color-secondary 0%, $color-primary 100%);
+    align-items: center !important;
+    justify-content:center !important;
+    margin-left: 6.5rem;
+    height:3.2rem;
+    
+   
+    .explorer_text_btn{
+            color:white;
+            letter-spacing: .05rem;
+            font-weight:100;
+            } 
+        }
+ .explorer_btn a{  
+     text-decoration: none;     
+    }
+}     
+}
+
+/*-----MAIN CONTENT--------*/
