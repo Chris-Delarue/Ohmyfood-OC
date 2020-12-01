@@ -14,7 +14,7 @@
 @import "./pages/works";
 @import "./pages/about";
 @import "./pages/project";
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 $color-primary:#9356dc;
 $color-secondary:#fa79da;
@@ -27,17 +27,22 @@ $color-tertiaire: #99e2d0;
 /*-------------header----------------*/
 
 @media (max-width:599px){
+
+body{
+    max-width:100%;
+    margin:0;
+    }
 header{
     display:flex;
     flex-flow: column wrap;
     margin-top: 1rem;
     max-width:100%;
 }
+
 .top_logo{
     display:block;
-    margin: 0 auto 1rem auto;
-    width:11rem;
-    
+    width:11rem; 
+    margin:auto;
 }
 .search{
     border-top:solid 2px;
@@ -47,61 +52,61 @@ header{
     max-width:100%;  
     height:3rem; 
     background-color: rgb(228, 227, 227);
+    padding-left:4rem;
+    margin-top:1rem;
+   
 
     .position{
         border:none;
         padding: .6rem 0 0 0;
-        margin-left:7rem;
-         }  
+    }  
  
 input{
     border:none;
-    margin:.5rem 0 0 .8rem;
     width:90%;
     font-size:1.1rem;
     font-weight:1.2rem;
     font-weight:700;
     background-color: rgb(228, 227, 227);
     color: black;
+    margin-top:.5rem;
     }
 }
 .card_header{
     display:flex;
     flex-flow: column ;
+    
     max-width: 100%;
     height:19rem;
     background-color: rgb(234,236,236);
         .accueil_text_content{
-            text-align: center;
-            font-family: 'Roboto';
-            margin-top:1rem;
+            display:flex;
+            flex-flow:column wrap;
+            text-align:center;
+            font-family: $typo-text;
+            margin:1.7rem 0 0 0;
             h1{
-                font-size:2rem;
+                font-size:1.8rem;
                 font-weight:1200;
+                margin:0;
             }
             h4{
                 color: rgb(107, 107 ,107);
                 font-size:1.2rem;
                 font-weight:200;
+                margin-top:1rem;
             }
         }
 .explorer_btn{
-    display:flex;
-    width:14rem;
-    border-radius:4rem;
-    background: linear-gradient(to bottom, $color-secondary 0%, $color-primary 100%);
-    align-items: center !important;
-    justify-content:center !important;
-    margin-left: 6.5rem;
-    height:3.2rem;
-    
+   
+    @include gradient-pink;
    
     .explorer_text_btn{
-            color:white;
-            letter-spacing: .05rem;
-            font-weight:100;
-            } 
+        
+    @include text-gradient ;
+            
         }
+    }
  .explorer_btn a{  
      text-decoration: none;     
     }
@@ -109,3 +114,123 @@ input{
 }
 
 /*-----MAIN CONTENT--------*/
+
+.container{
+    max-width:100%;
+   
+}
+.titre_decouvrir{
+    font-family:$typo-text;
+    margin:3rem 0 2rem 1rem;
+}
+
+.decouvrir{
+    max-width:100%;
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: space-between 10rem;
+    height:20rem; 
+}
+button{
+    border:none;
+    background-color: transparent;
+}
+
+.menu_choisir {
+    @include menu-accueil;
+    
+        &:hover{
+            border-radius:25px;
+               background:#f9eafa ;
+                }
+        }
+i{
+    @include icone;
+        &:hover{
+            border-radius:25px;
+            color:$color-primary;
+        } 
+}   
+.number{
+    @include number;
+}       
+        
+
+
+.menu_composez{
+    @include menu-accueil;
+        &:hover{
+            border-radius:25px;
+            background:#f9eafa;
+            }
+}
+i{
+    @include icone;
+        &:hover{
+            border-radius:25px;
+            color:$color-primary;
+        } 
+}
+
+.number{
+    @include number;
+   }
+.menu_degustez{
+    @include menu-accueil;
+        &:hover{
+            border-radius:25px;
+            background:#f9eafa;
+            }
+}
+i{
+    @include icone;
+    &:hover{
+        border-radius:25px;
+        color:$color-primary;
+        }
+}
+
+.number{
+    @include number;
+}
+
+/*------CARD SHOWING MENU-----*/
+
+.card_restaurant{
+    @include main;
+}
+.card{
+   @include card-restaurant;
+}
+.card_image{
+    @include card-restaurant-image;
+       
+}
+.card_image img{
+    @include restaurant-image;
+}
+.titre_resto{
+    font-family: $typo-text;
+    margin: 3rem 0 1.5rem 1rem;
+}
+.card_text_content, em{
+    @include card-text-content;
+
+    i{
+        float:right;
+        margin-top:1rem;
+    }
+}
+    /*----FOOTER----*/
+
+footer{
+    @include footer;
+}
+    .bottom_logo{
+        @include footer-logo; 
+}
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
+    @include proposer-partenaire-mentions-contact;
+}
+
+

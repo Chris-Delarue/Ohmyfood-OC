@@ -1,0 +1,126 @@
+
+/*----HEADER----*/
+
+
+
+
+@mixin gradient-pink {
+    background: linear-gradient(to bottom, $color-secondary 0%, $color-primary 100%);
+    display:flex;
+    width:14rem;
+    border-radius:4rem;
+    align-items: center !important;
+    justify-content:center !important;
+    margin:.5rem auto;
+    height:3.2rem;
+}
+
+@mixin text-gradient {
+    color:white;
+    letter-spacing: .05rem;
+    font-weight:500;
+    font-size:.1.2rem;
+    font-family:'Roboto';
+}
+
+  /*-----MAIN CONTENT----*/
+
+
+@mixin menu-accueil {
+    max-width:85%;
+    border-radius:25px;
+    display:flex;
+    justify-content:start;
+    font-family: $typo-text;
+    cursor: pointer;
+    font-size:1.3rem;
+    height:4.5rem;
+    background:#F0F0F0;
+    transition-property: background,border-radius ;
+    transition-timing-function: linear;
+    align-items: center !important;
+    margin: 0 0 1rem 2rem;
+    box-shadow:0 .7rem .7rem 0 	#E8E8E8;
+}
+@mixin icone {
+    padding:0 1rem 0 1rem;
+    color:grey;
+    transition-property: color,border-radius ;
+    transition-timing-function: linear;
+}
+@mixin number {
+    border-radius:50px;
+    height:1.5rem;
+    width:1.5rem;
+    background-color: $color-primary;
+    color:white;
+    font-size:1rem;
+    margin-left:-.4rem;
+    
+}
+
+/*----CARD SHOWING RESTAURANT----*/
+
+@mixin main {
+    display:flex;
+    flex-flow:column;
+    max-width: 100%;
+    background-color: rgb(234,236,236);
+    padding-bottom:2rem;
+}
+@mixin card-restaurant{
+    display: flex;
+    flex-flow: column;
+    max-width:85%;
+    border-radius:15px;
+    cursor: pointer;
+    height:auto;
+    margin:2rem 0 1rem 2rem;
+    background-color: white;
+    padding-bottom:1rem;
+    
+}
+@mixin card-restaurant-image {
+    max-width: 100%;
+    border-radius:15px 15px 0 0 ;
+    height:190px;
+}
+@mixin restaurant-image {
+    width: 100%;
+    border-radius:15px 15px 0 0;
+    height:190px;
+    object-fit: cover;
+}
+@mixin card-text-content {
+        font-family: $typo-text; font-style:normal; margin-left:1rem; line-height: .8rem;
+        p{
+            font-size:20px; font-weight:800;
+        }
+        em{
+            margin-left:.1rem;  font-size:20px;
+        }
+        }
+
+/*-----FOOTER----*/
+
+@mixin footer {
+    display:flex; flex-flow: column; max-width:100%; background-color: pink; color:white; padding:2rem 0 0 2rem;
+    font-family: $typo-text;
+        i{
+            color:white;
+    }
+    }
+
+@mixin footer-logo{
+    display:block;
+    width:8rem;
+    margin-bottom:1rem;
+}
+@mixin proposer-partenaire-mentions-contact{
+    display:flex;flex-flow: wrap; line-height: .2rem;
+    i{margin-top:1rem;padding:0; line-height:.2rem;padding-right:.6rem;
+    } a{ text-decoration: none; color:white}
+}
+
+
+    

@@ -1,58 +1,20 @@
+/*----HEADER----*/
+/*-----MAIN CONTENT----*/
+/*----CARD SHOWING RESTAURANT----*/
+/*-----FOOTER----*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-body {
-  font-family: "Roboto";
-  width: 100%;
-  margin: 0;
-}
-
-header {
-  margin-top: 3rem;
-}
-
-.top_logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 11rem;
-}
-
-.card_header {
-  border: solid 1px;
-  width: auto;
-}
-
-.position {
-  border: solid 1px;
-  width: 1rem;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 .container {
   width: auto;
 }
 
-header {
-  margin-top: 3rem;
-}
-
-.top_logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 11rem;
-}
-
-.card_header {
-  border: solid 1px;
-  width: auto;
-}
-
-.position {
-  border: solid 1px;
-  width: 1rem;
-}
-
 /*-------------header----------------*/
 @media (max-width: 599px) {
+  body {
+    max-width: 100%;
+    margin: 0;
+  }
+
   header {
     display: flex;
     flex-flow: column wrap;
@@ -62,8 +24,8 @@ header {
 
   .top_logo {
     display: block;
-    margin: 0 auto 1rem auto;
     width: 11rem;
+    margin: auto;
   }
 
   .search {
@@ -74,21 +36,22 @@ header {
     max-width: 100%;
     height: 3rem;
     background-color: #e4e3e3;
+    padding-left: 4rem;
+    margin-top: 1rem;
   }
   .search .position {
     border: none;
     padding: 0.6rem 0 0 0;
-    margin-left: 7rem;
   }
   .search input {
     border: none;
-    margin: 0.5rem 0 0 0.8rem;
     width: 90%;
     font-size: 1.1rem;
     font-weight: 1.2rem;
     font-weight: 700;
     background-color: #e4e3e3;
     color: black;
+    margin-top: 0.5rem;
   }
 
   .card_header {
@@ -99,38 +62,285 @@ header {
     background-color: #eaecec;
   }
   .card_header .accueil_text_content {
+    display: flex;
+    flex-flow: column wrap;
     text-align: center;
     font-family: "Roboto";
-    margin-top: 1rem;
+    margin: 1.7rem 0 0 0;
   }
   .card_header .accueil_text_content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 1200;
+    margin: 0;
   }
   .card_header .accueil_text_content h4 {
     color: #6b6b6b;
     font-size: 1.2rem;
     font-weight: 200;
+    margin-top: 1rem;
   }
   .card_header .explorer_btn {
+    background: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
-    background: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
     align-items: center !important;
     justify-content: center !important;
-    margin-left: 6.5rem;
+    margin: 0.5rem auto;
     height: 3.2rem;
   }
   .card_header .explorer_btn .explorer_text_btn {
     color: white;
     letter-spacing: 0.05rem;
-    font-weight: 100;
+    font-weight: 500;
+    font-size: 0.1 0.2rem;
+    font-family: "Roboto";
   }
   .card_header .explorer_btn a {
     text-decoration: none;
   }
 }
 /*-----MAIN CONTENT--------*/
+.container {
+  max-width: 100%;
+}
+
+.titre_decouvrir {
+  font-family: "Roboto";
+  margin: 3rem 0 2rem 1rem;
+}
+
+.decouvrir {
+  max-width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between 10rem;
+  height: 20rem;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.menu_choisir {
+  max-width: 85%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: start;
+  font-family: "Roboto";
+  cursor: pointer;
+  font-size: 1.3rem;
+  height: 4.5rem;
+  background: #F0F0F0;
+  transition-property: background, border-radius;
+  transition-timing-function: linear;
+  align-items: center !important;
+  margin: 0 0 1rem 2rem;
+  box-shadow: 0 0.7rem 0.7rem 0 #E8E8E8;
+}
+.menu_choisir:hover {
+  border-radius: 25px;
+  background: #f9eafa;
+}
+
+i {
+  padding: 0 1rem 0 1rem;
+  color: grey;
+  transition-property: color, border-radius;
+  transition-timing-function: linear;
+}
+i:hover {
+  border-radius: 25px;
+  color: #9356dc;
+}
+
+.number {
+  border-radius: 50px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #9356dc;
+  color: white;
+  font-size: 1rem;
+  margin-left: -0.4rem;
+}
+
+.menu_composez {
+  max-width: 85%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: start;
+  font-family: "Roboto";
+  cursor: pointer;
+  font-size: 1.3rem;
+  height: 4.5rem;
+  background: #F0F0F0;
+  transition-property: background, border-radius;
+  transition-timing-function: linear;
+  align-items: center !important;
+  margin: 0 0 1rem 2rem;
+  box-shadow: 0 0.7rem 0.7rem 0 #E8E8E8;
+}
+.menu_composez:hover {
+  border-radius: 25px;
+  background: #f9eafa;
+}
+
+i {
+  padding: 0 1rem 0 1rem;
+  color: grey;
+  transition-property: color, border-radius;
+  transition-timing-function: linear;
+}
+i:hover {
+  border-radius: 25px;
+  color: #9356dc;
+}
+
+.number {
+  border-radius: 50px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #9356dc;
+  color: white;
+  font-size: 1rem;
+  margin-left: -0.4rem;
+}
+
+.menu_degustez {
+  max-width: 85%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: start;
+  font-family: "Roboto";
+  cursor: pointer;
+  font-size: 1.3rem;
+  height: 4.5rem;
+  background: #F0F0F0;
+  transition-property: background, border-radius;
+  transition-timing-function: linear;
+  align-items: center !important;
+  margin: 0 0 1rem 2rem;
+  box-shadow: 0 0.7rem 0.7rem 0 #E8E8E8;
+}
+.menu_degustez:hover {
+  border-radius: 25px;
+  background: #f9eafa;
+}
+
+i {
+  padding: 0 1rem 0 1rem;
+  color: grey;
+  transition-property: color, border-radius;
+  transition-timing-function: linear;
+}
+i:hover {
+  border-radius: 25px;
+  color: #9356dc;
+}
+
+.number {
+  border-radius: 50px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #9356dc;
+  color: white;
+  font-size: 1rem;
+  margin-left: -0.4rem;
+}
+
+/*------CARD SHOWING MENU-----*/
+.card_restaurant {
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+  background-color: #eaecec;
+  padding-bottom: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  max-width: 85%;
+  border-radius: 15px;
+  cursor: pointer;
+  height: auto;
+  margin: 2rem 0 1rem 2rem;
+  background-color: white;
+  padding-bottom: 1rem;
+}
+
+.card_image {
+  max-width: 100%;
+  border-radius: 15px 15px 0 0;
+  height: 190px;
+}
+
+.card_image img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  height: 190px;
+  object-fit: cover;
+}
+
+.titre_resto {
+  font-family: "Roboto";
+  margin: 3rem 0 1.5rem 1rem;
+}
+
+.card_text_content, em {
+  font-family: "Roboto";
+  font-style: normal;
+  margin-left: 1rem;
+  line-height: 0.8rem;
+}
+.card_text_content p, em p {
+  font-size: 20px;
+  font-weight: 800;
+}
+.card_text_content em, em em {
+  margin-left: 0.1rem;
+  font-size: 20px;
+}
+.card_text_content i, em i {
+  float: right;
+  margin-top: 1rem;
+}
+
+/*----FOOTER----*/
+footer {
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+  background-color: pink;
+  color: white;
+  padding: 2rem 0 0 2rem;
+  font-family: "Roboto";
+}
+footer i {
+  color: white;
+}
+
+.bottom_logo {
+  display: block;
+  width: 8rem;
+  margin-bottom: 1rem;
+}
+
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact {
+  display: flex;
+  flex-flow: wrap;
+  line-height: 0.2rem;
+}
+.footer_proposer i, .footer_partenaire i, .footer_mentions i, .footer_contact i {
+  margin-top: 1rem;
+  padding: 0;
+  line-height: 0.2rem;
+  padding-right: 0.6rem;
+}
+.footer_proposer a, .footer_partenaire a, .footer_mentions a, .footer_contact a {
+  text-decoration: none;
+  color: white;
+}
 
 /*# sourceMappingURL=main.css.map */
