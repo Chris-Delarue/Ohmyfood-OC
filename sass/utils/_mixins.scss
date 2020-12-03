@@ -24,7 +24,7 @@
   /*-----MAIN CONTENT----*/
 
 
-@mixin menu-acceuil {
+@mixin menu-accueil {
     max-width:87%;
     border-radius:25px;
     display:flex;
@@ -39,11 +39,10 @@
     box-shadow:0 .7rem .7rem 0 	#dddddd;
     color:black; 
 }
-@mixin hover-acceuil {
+@mixin hover-accueil {
     border-radius:25px;
     background-color:#f9eafa;
     box-shadow: 0 .7rem .7rem 0 #c7c7c7;
-   
 }
 @mixin icone {
     width:1.3rem;
@@ -99,16 +98,7 @@
 }
 @mixin card-text-content {
         font-family: $typo-text; font-style:normal; margin-left:1rem; line-height: .8rem;
-        p{
-            font-size:20px; font-weight:800;
-        }
-        em{
-            margin-left:.1rem;  font-size:18px;
-        }                  
-        i{
-            font-size:2em;  
-            float:right;
-            margin:1rem 1rem 0 0;
+        p{font-size:20px; font-weight:800;}em{margin-left:.1rem;  font-size:18px;}i{font-size:2em;  float:right; margin:1rem 1rem 0 0;
         } 
 }
 @mixin nouveau {

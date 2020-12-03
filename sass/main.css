@@ -5,8 +5,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-/*-------------header----------------*/
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @media (max-width: 599px) {
+  /*---loader---*/
+  .chargement {
+    border-top: 10px solid #fa79da;
+    border-bottom: 10px solid #99e2d0;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    animation: spin 3s reverse;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .chargement p {
+    font-family: "Shrikhand";
+    font-size: 1.7rem;
+    margin: 10rem 0 0 4.5rem;
+    animation: spin2 3s reverse;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spin2 {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  /*-------------header----------------*/
   body {
     max-width: 100%;
     margin: 0;
@@ -115,7 +155,7 @@
     height: 20rem;
   }
 
-  button {
+  .btn {
     border: none;
     background-color: transparent;
     margin-bottom: 0.4rem;
@@ -143,7 +183,7 @@
     box-shadow: 0 0.7rem 0.7rem 0 #c7c7c7;
   }
 
-  button i {
+  .btn i {
     width: 1.3rem;
     margin-left: 0.9rem;
     font-size: 1, 5rem;
@@ -315,6 +355,44 @@
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .chargement {
+    border-top: 10px solid #fa79da;
+    border-bottom: 10px solid #99e2d0;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    animation: spin 3s reverse;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .chargement p {
+    font-family: "Shrikhand";
+    font-size: 1.7rem;
+    margin: 10rem 0 0 4.5rem;
+    animation: spin2 3s reverse;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spin2 {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
   body {
     margin: auto;
     max-width: 100%;
@@ -425,7 +503,7 @@
     margin-left: 6rem;
   }
 
-  button {
+  .btn {
     border: none;
     background-color: transparent;
     margin-bottom: 0.4rem;
@@ -454,7 +532,7 @@
     box-shadow: 0 0.7rem 0.7rem 0 #c7c7c7;
   }
 
-  button i {
+  .btn i {
     width: 1.3rem;
     margin-left: 0.9rem;
     font-size: 1, 5rem;
@@ -637,6 +715,45 @@
 }
 /*-----DESKTOP----*/
 @media screen and (min-width: 1024px) {
+  .chargement {
+    border-top: 10px solid #fa79da;
+    border-bottom: 10px solid #99e2d0;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    animation: spin 3s linear;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .chargement p {
+    font-family: "Shrikhand";
+    font-size: 1.7rem;
+    margin: 10rem 0 0 4.5rem;
+    animation: spin2 3s reverse;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spin2 {
+    100% {
+      transform: rotate(0deg);
+    }
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+  /*-----HEADER-----*/
   body {
     margin: auto;
     max-width: 100%;
@@ -745,7 +862,7 @@
     margin-left: 10rem;
   }
 
-  button {
+  .btn {
     border: none;
     background-color: transparent;
     margin-bottom: 0.4rem;
@@ -774,7 +891,7 @@
     box-shadow: 0 0.7rem 0.7rem 0 #c7c7c7;
   }
 
-  button i {
+  .btn i {
     width: 1.3rem;
     margin-left: 0.9rem;
     font-size: 1, 5rem;
@@ -880,7 +997,7 @@
 
   @keyframes heart {
     from {
-      color: grey;
+      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
     }
     30% {
       color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
@@ -889,9 +1006,6 @@
       color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
     }
     70% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    100% {
       color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
     }
     to {
@@ -906,7 +1020,7 @@
   }
 
   .fa-heart:hover::before {
-    color: #9356dc;
+    color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
     cursor: pointer;
     font-weight: bold;
     transition: color 4s ease-out;
