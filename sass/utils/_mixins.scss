@@ -2,10 +2,8 @@
 /*----HEADER----*/
 
 
-
-
 @mixin gradient-pink {
-    background: linear-gradient(to bottom, $color-secondary 0%, $color-primary 100%);
+    background: $color-pink;
     display:flex;
     width:14rem;
     border-radius:4rem;
@@ -20,14 +18,14 @@
     letter-spacing: .05rem;
     font-weight:500;
     font-size:.1.2rem;
-    font-family:'Roboto';
+    font-family:$typo-text;
 }
 
   /*-----MAIN CONTENT----*/
 
 
-@mixin menu-accueil {
-    max-width:85%;
+@mixin menu-acceuil {
+    max-width:87%;
     border-radius:25px;
     display:flex;
     justify-content:start;
@@ -35,19 +33,28 @@
     cursor: pointer;
     font-size:1.3rem;
     height:4.5rem;
-    background:#F0F0F0;
-    transition-property: background,border-radius ;
-    transition-timing-function: linear;
+    background-color:#F0F0F0;
     align-items: center !important;
-    margin: 0 0 1rem 2rem;
-    box-shadow:0 .7rem .7rem 0 	#E8E8E8;
+    margin: 0 0 1rem 1.7rem;
+    box-shadow:0 .7rem .7rem 0 	#dddddd;
+    color:black; 
+}
+@mixin hover-acceuil {
+    border-radius:25px;
+    background-color:#f9eafa;
+    box-shadow: 0 .7rem .7rem 0 #c7c7c7;
+   
 }
 @mixin icone {
-    padding:0 1rem 0 1rem;
+    width:1.3rem;
+    margin-left:.9rem;
+    font-size:1,5rem;
     color:grey;
-    transition-property: color,border-radius ;
-    transition-timing-function: linear;
+    }
+@mixin text-content {
+    padding-left:1rem;
 }
+    
 @mixin number {
     border-radius:50px;
     height:1.5rem;
@@ -56,7 +63,6 @@
     color:white;
     font-size:1rem;
     margin-left:-.4rem;
-    
 }
 
 /*----CARD SHOWING RESTAURANT----*/
@@ -78,12 +84,12 @@
     margin:2rem 0 1rem 2rem;
     background-color: white;
     padding-bottom:1rem;
-    
 }
 @mixin card-restaurant-image {
     max-width: 100%;
     border-radius:15px 15px 0 0 ;
     height:190px;
+    position:relative;
 }
 @mixin restaurant-image {
     width: 100%;
@@ -97,14 +103,31 @@
             font-size:20px; font-weight:800;
         }
         em{
-            margin-left:.1rem;  font-size:20px;
-        }
-        }
+            margin-left:.1rem;  font-size:18px;
+        }                  
+        i{
+            font-size:2em;  
+            float:right;
+            margin:1rem 1rem 0 0;
+        } 
+}
+@mixin nouveau {
+    width:4rem;
+    color:green;
+    background-color:$color-tertiaire;
+    border-radius:5px;
+    position:absolute;
+    top:9px;
+    right:16px;
+    font-family: $typo-text;
+    padding:.3rem .7rem .3rem .7rem;
+}
+
 
 /*-----FOOTER----*/
 
 @mixin footer {
-    display:flex; flex-flow: column; max-width:100%; background-color: pink; color:white; padding:2rem 0 0 2rem;
+    display:flex; flex-flow: column; max-width:100%; background-color: rgb(63, 62, 62); color:white; padding:2rem 0 0 2rem;
     font-family: $typo-text;
         i{
             color:white;
@@ -115,10 +138,11 @@
     display:block;
     width:8rem;
     margin-bottom:1rem;
+    filter:invert(100%);
 }
 @mixin proposer-partenaire-mentions-contact{
-    display:flex;flex-flow: wrap; line-height: .2rem;
-    i{margin-top:1rem;padding:0; line-height:.2rem;padding-right:.6rem;
+    display:flex;flex-flow: wrap; line-height: .05rem;
+    i{margin:1rem 0 0 0;padding-right:.5rem; line-height: .05rem;color:white;
     } a{ text-decoration: none; color:white}
 }
 
