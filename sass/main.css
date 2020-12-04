@@ -15,6 +15,7 @@
     width: 300px;
     height: 300px;
     animation: spin 3s reverse;
+    -webkit-animation: spin 3s reverse;
     margin: auto;
     position: absolute;
     top: 0;
@@ -23,11 +24,12 @@
     left: 0;
   }
 
-  .chargement p {
+  .text {
     font-family: "Shrikhand";
     font-size: 1.7rem;
     margin: 10rem 0 0 4.5rem;
     animation: spin2 3s reverse;
+    -webkit-animation: spin2 3s reverse;
   }
 
   @keyframes spin {
@@ -63,6 +65,7 @@
     display: block;
     width: 11rem;
     margin: auto;
+    image-rendering: auto;
   }
 
   .search {
@@ -117,7 +120,7 @@
     margin-top: 1rem;
   }
   .card_header .explorer_btn {
-    background: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
+    background: linear-gradient(#fa79da 0%, #9356dc 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
@@ -182,178 +185,163 @@
     background-color: #f9eafa;
     box-shadow: 0 0.7rem 0.7rem 0 #c7c7c7;
   }
+  .menu_choisissez:hover > i, .menu_composez:hover > i, .menu_degustez:hover > i {
+    color: #9356dc;
+  }
 
   .btn i {
     width: 1.3rem;
-    margin-left: 0.9rem;
-    font-size: 1, 5rem;
-    color: grey;
-  }
-
-  .number {
-    border-radius: 50px;
-    height: 1.5rem;
-    width: 1.5rem;
-    background-color: #9356dc;
-    color: white;
-    font-size: 1rem;
-    margin-left: -0.4rem;
-  }
-
-  .menu_text_content {
-    padding-left: 1rem;
-  }
-
-  /*------CARD SHOWING MENU-----*/
-  .card_restaurant {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    background-color: #eaecec;
-    padding-bottom: 2rem;
-  }
-
-  .card {
-    display: flex;
-    flex-flow: column;
-    max-width: 85%;
-    border-radius: 15px;
-    cursor: pointer;
-    height: auto;
-    margin: 2rem 0 1rem 2rem;
-    background-color: white;
-    padding-bottom: 1rem;
-  }
-
-  .nouveau {
-    width: 4rem;
-    color: green;
-    background-color: #99e2d0;
-    border-radius: 5px;
-    position: absolute;
-    top: 9px;
-    right: 16px;
-    font-family: "Roboto";
-    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
-  }
-
-  .card_image {
-    max-width: 100%;
-    border-radius: 15px 15px 0 0;
-    height: 190px;
-    position: relative;
-  }
-
-  .card_image img {
-    width: 100%;
-    border-radius: 15px 15px 0 0;
-    height: 190px;
-    object-fit: cover;
-  }
-
-  .titre_resto {
-    font-family: "Roboto";
-    margin: 3rem 0 1.5rem 1rem;
-  }
-
-  .card_text_content, em {
-    font-family: "Roboto";
-    font-style: normal;
     margin-left: 1rem;
-    line-height: 0.8rem;
-  }
-  .card_text_content p, em p {
-    font-size: 20px;
-    font-weight: 800;
-  }
-  .card_text_content em, em em {
-    margin-left: 0.1rem;
-    font-size: 18px;
-  }
-  .card_text_content i, em i {
-    font-size: 2em;
-    float: right;
-    margin: 1rem 1rem 0 0;
-  }
-
-  @keyframes heart {
-    from {
-      color: grey;
-    }
-    30% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    40% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    70% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    100% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    to {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-  }
-  .fa-heart {
-    color: grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 0.2em;
-  }
-
-  .fa-heart:hover::before {
-    color: #9356dc;
-    cursor: pointer;
-    font-weight: bold;
-    transition: color 4s ease-out;
-  }
-
-  /*----FOOTER----*/
-  footer {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    background-color: #3f3e3e;
-    color: white;
-    padding: 2rem 0 0 2rem;
-    font-family: "Roboto";
-  }
-  footer i {
-    color: white;
-  }
-
-  .bottom_logo {
-    display: block;
-    width: 8rem;
-    margin-bottom: 1rem;
-    filter: invert(100%);
-  }
-
-  .footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact {
-    display: flex;
-    flex-flow: wrap;
-    line-height: 0.05rem;
-  }
-  .footer_proposer i, .footer_partenaire i, .footer_mentions i, .footer_contact i {
-    margin: 1rem 0 0 0;
-    padding-right: 0.5rem;
-    line-height: 0.05rem;
-    color: white;
-  }
-  .footer_proposer a, .footer_partenaire a, .footer_mentions a, .footer_contact a {
-    text-decoration: none;
-    color: white;
-  }
-
-  footer i {
-    width: 1.3rem;
-    margin-left: 0.9rem;
     font-size: 1, 5rem;
     color: grey;
   }
 }
+.number {
+  border-radius: 50px;
+  width: 1.8rem;
+  height: 1.3rem;
+  background-color: #9356dc;
+  color: white;
+  font-size: 0.9rem;
+  margin-left: -0.4rem;
+  padding: 0.6rem 0 0 0;
+}
+
+.menu_text_content {
+  padding-left: 1rem;
+  color: black;
+}
+
+/*------CARD SHOWING MENU-----*/
+.card_restaurant {
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+  background-color: #eaecec;
+  padding-bottom: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  max-width: 85%;
+  border-radius: 15px;
+  cursor: pointer;
+  height: auto;
+  margin: 2rem 0 1rem 2rem;
+  background-color: white;
+  padding-bottom: 1rem;
+}
+
+.nouveau {
+  width: 4rem;
+  color: green;
+  background-color: #99e2d0;
+  border-radius: 5px;
+  position: absolute;
+  top: 9px;
+  right: 16px;
+  font-family: "Roboto";
+  padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+}
+
+.card_image {
+  max-width: 100%;
+  border-radius: 15px 15px 0 0;
+  height: 190px;
+  position: relative;
+}
+
+.card_image img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  height: 190px;
+  object-fit: cover;
+}
+
+.titre_resto {
+  font-family: "Roboto";
+  margin: 3rem 0 1.5rem 1rem;
+}
+
+.card_text_content, em {
+  font-family: "Roboto";
+  font-style: normal;
+  margin-left: 1rem;
+  line-height: 0.8rem;
+}
+.card_text_content p, em p {
+  font-size: 20px;
+  font-weight: 800;
+}
+.card_text_content em, em em {
+  margin-left: 0.1rem;
+  font-size: 18px;
+}
+.card_text_content i, em i {
+  font-size: 2em;
+  float: right;
+  margin: 1rem 1rem 0 0;
+}
+
+.fa-heart {
+  color: grey;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.2em;
+}
+
+.fa-heart:hover::before {
+  color: #9356dc;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 4s ease-out;
+}
+
+/*----FOOTER----*/
+footer {
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+  background-color: #3f3e3e;
+  color: white;
+  padding: 2rem 0 0 2rem;
+  font-family: "Roboto";
+}
+footer i {
+  color: white;
+}
+
+.bottom_logo {
+  display: block;
+  width: 8rem;
+  margin-bottom: 1rem;
+  filter: invert(100%);
+}
+
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact {
+  display: flex;
+  flex-flow: wrap;
+  line-height: 0.05rem;
+}
+.footer_proposer i, .footer_partenaire i, .footer_mentions i, .footer_contact i {
+  margin: 1rem 0 0 0;
+  padding-right: 0.5rem;
+  line-height: 0.05rem;
+  color: white;
+}
+.footer_proposer a, .footer_partenaire a, .footer_mentions a, .footer_contact a {
+  text-decoration: none;
+  color: white;
+}
+
+footer i {
+  width: 1.3rem;
+  margin-left: 1rem;
+  font-size: 1, 5rem;
+  color: grey;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .chargement {
     border-top: 10px solid #fa79da;
@@ -361,7 +349,8 @@
     border-radius: 50%;
     width: 300px;
     height: 300px;
-    animation: spin 3s reverse;
+    animation: spin 3s linear;
+    -webkit-animation: spin 3s linear;
     margin: auto;
     position: absolute;
     top: 0;
@@ -374,7 +363,6 @@
     font-family: "Shrikhand";
     font-size: 1.7rem;
     margin: 10rem 0 0 4.5rem;
-    animation: spin2 3s reverse;
   }
 
   @keyframes spin {
@@ -383,6 +371,7 @@
     }
     100% {
       transform: rotate(360deg);
+      opacity: 1;
     }
   }
   @keyframes spin2 {
@@ -391,6 +380,7 @@
     }
     100% {
       transform: rotate(0deg);
+      opacity: 1;
     }
   }
   body {
@@ -465,7 +455,7 @@
     margin-top: 1rem;
   }
   .card_header .explorer_btn {
-    background: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
+    background: linear-gradient(#fa79da 0%, #9356dc 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
@@ -534,23 +524,28 @@
 
   .btn i {
     width: 1.3rem;
-    margin-left: 0.9rem;
+    margin-left: 1rem;
     font-size: 1, 5rem;
     color: grey;
+  }
+  .btn i:hover {
+    color: #9356dc;
   }
 
   .number {
     border-radius: 50px;
-    height: 1.5rem;
-    width: 1.5rem;
+    width: 1.8rem;
+    height: 1.3rem;
     background-color: #9356dc;
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-left: -0.4rem;
+    padding: 0.6rem 0 0 0;
   }
 
   .menu_text_content {
     padding-left: 1rem;
+    color: black;
   }
 
   /*------CARD SHOWING MENU-----*/
@@ -632,26 +627,6 @@
     margin: 1rem 1rem 0 0;
   }
 
-  @keyframes heart {
-    from {
-      color: grey;
-    }
-    30% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    40% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    70% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    100% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    to {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-  }
   .fa-heart {
     color: grey;
     background-color: #fff;
@@ -708,7 +683,7 @@
 
   footer i {
     width: 1.3rem;
-    margin-left: 0.9rem;
+    margin-left: 1rem;
     font-size: 1, 5rem;
     color: grey;
   }
@@ -722,6 +697,7 @@
     width: 300px;
     height: 300px;
     animation: spin 3s linear;
+    -webkit-animation: spin 3s linear;
     margin: auto;
     position: absolute;
     top: 0;
@@ -735,6 +711,7 @@
     font-size: 1.7rem;
     margin: 10rem 0 0 4.5rem;
     animation: spin2 3s reverse;
+    -webkit-animation: spin2 3s reverse;
   }
 
   @keyframes spin {
@@ -751,6 +728,14 @@
     }
     0% {
       transform: rotate(360deg);
+    }
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
   /*-----HEADER-----*/
@@ -824,7 +809,7 @@
     margin-top: 1rem;
   }
   .card_header .explorer_btn {
-    background: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
+    background: linear-gradient(#fa79da 0%, #9356dc 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
@@ -893,23 +878,25 @@
 
   .btn i {
     width: 1.3rem;
-    margin-left: 0.9rem;
+    margin-left: 1rem;
     font-size: 1, 5rem;
     color: grey;
   }
 
   .number {
     border-radius: 50px;
-    height: 1.5rem;
-    width: 1.5rem;
+    width: 1.8rem;
+    height: 1.3rem;
     background-color: #9356dc;
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-left: -0.4rem;
+    padding: 0.6rem 0 0 0;
   }
 
   .menu_text_content {
     padding-left: 1rem;
+    color: black;
   }
 
   /*------CARD SHOWING MENU-----*/
@@ -995,23 +982,6 @@
     margin: 1rem 1rem 0 0;
   }
 
-  @keyframes heart {
-    from {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    30% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    40% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    70% {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-    to {
-      color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
-    }
-  }
   .fa-heart {
     color: grey;
     background-color: #fff;
@@ -1020,7 +990,7 @@
   }
 
   .fa-heart:hover::before {
-    color: linear-gradient(to bottom, #fa79da 0%, #9356dc 100%);
+    color: #9356dc;
     cursor: pointer;
     font-weight: bold;
     transition: color 4s ease-out;
@@ -1068,7 +1038,7 @@
 
   footer i {
     width: 1.3rem;
-    margin-left: 0.9rem;
+    margin-left: 1rem;
     font-size: 1, 5rem;
     color: grey;
   }

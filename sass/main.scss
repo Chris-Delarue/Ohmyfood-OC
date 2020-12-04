@@ -22,7 +22,7 @@ $color-secondary:#fa79da;
 $color-tertiaire: #99e2d0;
 $typo-titres:'Shrikhand';
 $typo-text:'Roboto';
-$color-pink:linear-gradient(to bottom, $color-secondary 0%, $color-primary 100%);
+$color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
 
 
 
@@ -37,15 +37,18 @@ $color-pink:linear-gradient(to bottom, $color-secondary 0%, $color-primary 100%)
     width: 300px;
     height:300px;
     animation: spin 3s  reverse ;
+    -webkit-animation: spin 3s reverse;
     margin:auto;
     position:absolute;
     top:0;right:0;bottom:0;left:0;
+   
 } 
-.chargement p{
+.text{
     font-family:$typo-titres;
     font-size: 1.7rem;
     margin:10rem 0 0 4.5rem;
     animation: spin2 3s reverse ;
+    -webkit-animation:  spin2 3s reverse;
     }
 @keyframes spin{
     0%{
@@ -53,15 +56,19 @@ $color-pink:linear-gradient(to bottom, $color-secondary 0%, $color-primary 100%)
     }
     100%{
         transform: rotate(360deg);
+        
     }
 }
 @keyframes spin2 {
     0%{
         transform:rotate(360deg);
-    }
+        
+        }
+
     100%{
         transform:rotate(0deg);
-    }
+      
+        }
 }          
 
 /*-------------header----------------*/
@@ -81,6 +88,7 @@ body{
     display:block;
     width:11rem; 
     margin:auto;
+    image-rendering:auto;
 }
 .search{
     border-top:solid 2px;
@@ -174,26 +182,28 @@ body{
     max-width:100%;
 }
 
-.menu_choisissez, .menu_composez, .menu_degustez {
+.menu_choisissez, .menu_composez, .menu_degustez{
     @include menu-accueil;
-        &:hover{
-            @include hover-accueil;
+            &:hover {
+                @include hover-accueil;
+                    & > i{
+                    color:$color-primary;
+                }   
             }
-}     
- .btn i{
-    @include icone;    
 }
 
+.btn i{
+    @include icone;  
+       
+             
+    } 
+} 
 .number{
     @include number;
 }
-
 .menu_text_content{
     @include text-content;
 }
-
-
-
 
 /*------CARD SHOWING MENU-----*/
 
@@ -221,27 +231,6 @@ body{
 .card_text_content, em{
     @include card-text-content;        
 }
-@keyframes heart{
-    from{
-        color: grey;
-    }
-    30%{
-        color:$color-pink;  
-    }
-    40%{
-        color:$color-pink;
-    }
-    70%{
-        color:$color-pink; 
-    }
-    100%{
-        color:$color-pink; 
-    }
-
-    to{
-        color: $color-pink;
-    }
-}
 .fa-heart {
     color:grey;
     background-color: #fff;
@@ -249,12 +238,11 @@ body{
     padding:.2em;
 }
 .fa-heart:hover::before{
-    color: $color-primary;
+    color:$color-primary ;
     cursor: pointer;
     font-weight: bold;
     transition: color 4s ease-out;
 }
-
     /*----FOOTER----*/
 
 footer{
@@ -269,7 +257,7 @@ footer{
 footer i{
     @include icone;
 }
-}
+
 
 
 @media screen and(min-width:768px)
@@ -280,7 +268,8 @@ footer i{
     border-radius:50%;
     width: 300px;
     height:300px;
-    animation: spin 3s  reverse ;
+    animation: spin 3s  linear ;
+    -webkit-animation: spin 3s linear;
     margin:auto;
     position:absolute;
     top:0;right:0;bottom:0;left:0;
@@ -289,23 +278,30 @@ footer i{
     font-family:$typo-titres;
     font-size: 1.7rem;
     margin:10rem 0 0 4.5rem;
-    animation: spin2 3s reverse ;
+   
 }
 @keyframes spin{
     0%{
         transform: rotate(0deg);
+        
     }
     100%{
         transform: rotate(360deg);
+        
+        opacity:1;
     }
 }
  @keyframes spin2 {
     0%{
         transform:rotate(360deg);
+        
         }
     100%{
         transform:rotate(0deg);
+        opacity:1;
+        
         }
+        
 }    
 
  body{
@@ -418,12 +414,15 @@ footer i{
 .menu_choisissez, .menu_composez, .menu_degustez {
     @include menu-accueil;
     width:20rem;
-         &:hover{
-            @include hover-accueil;
-            }
-}     
+        &:hover{
+            @include hover-accueil
+        }           
+} 
 .btn i{
-    @include icone;  
+    @include icone; 
+        &:hover{
+            color:$color-primary
+        }    
 }
     
 .number{
@@ -468,27 +467,7 @@ footer i{
 .card_text_content, em{
     @include card-text-content;        
 }
-@keyframes heart{
-    from{
-        color: grey;
-    }
-    30%{
-        color:$color-pink;  
-    }
-    40%{
-        color:$color-pink;
-    }
-    70%{
-        color:$color-pink; 
-    }
-    100%{
-        color:$color-pink; 
-    }
-    
-    to{
-        color: $color-pink;
-    }
-}
+
 .fa-heart {
     color:grey;
     background-color: #fff;
@@ -524,7 +503,7 @@ footer i{
 /*-----DESKTOP----*/
     
 
-@media screen and(min-width:1024px){
+@media screen and (min-width:1024px){
 
 
 .chargement {
@@ -533,7 +512,8 @@ footer i{
     border-radius:50%;
     width: 300px;
     height:300px;
-    animation: spin 3s  linear ;
+    animation: spin 3s  linear  ;
+    -webkit-animation: spin 3s linear ;
     margin:auto;
     position:absolute;
     top:0;right:0;bottom:0;left:0;
@@ -543,6 +523,7 @@ footer i{
     font-size: 1.7rem;
     margin:10rem 0 0 4.5rem;
     animation: spin2 3s reverse ;
+    -webkit-animation: spin2 3s reverse ;
     }
 @keyframes spin{
     0%{
@@ -559,7 +540,11 @@ footer i{
     0%{
         transform:rotate(360deg);
     }
-}   
+}
+@keyframes fadein {
+    from{ opacity:0;}
+    to {opacity:1;}
+} 
 
 /*-----HEADER-----*/
 body{
@@ -670,19 +655,17 @@ body{
 
 .menu_choisissez, .menu_composez, .menu_degustez {
     @include menu-accueil;
-    width:20rem;
-        &:hover{
-            @include hover-accueil;
-            }
-}     
- .btn i{
-    @include icone;  
+        width:20rem;
+            &:hover{
+                @include hover-accueil;
+        }
 }
-
+.btn i{
+    @include icone;
+}
 .number{
     @include number;
 }
-
 .menu_text_content{
     @include text-content;
 }
@@ -725,23 +708,7 @@ body{
 .card_text_content, em{
     @include card-text-content;        
 }
-@keyframes heart{
-    from{
-        color: $color-pink;
-    }
-    30%{
-        color:$color-pink;  
-    }
-    40%{
-        color:$color-pink;
-    }
-    70%{
-        color:$color-pink; 
-    }
-    to{
-        color: $color-pink;
-    }
-}
+
 .fa-heart {
     color:grey;
     background-color: #fff;
@@ -749,7 +716,7 @@ body{
     padding:.2em;
 }
 .fa-heart:hover::before{
-    color: $color-pink;
+    color:$color-primary;
     cursor: pointer;
     font-weight: bold;
     transition: color 4s ease-out;

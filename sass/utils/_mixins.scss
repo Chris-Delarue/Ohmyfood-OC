@@ -46,22 +46,24 @@
 }
 @mixin icone {
     width:1.3rem;
-    margin-left:.9rem;
+    margin-left:1rem;
     font-size:1,5rem;
     color:grey;
     }
 @mixin text-content {
     padding-left:1rem;
+    color:black;
 }
     
 @mixin number {
     border-radius:50px;
-    height:1.5rem;
-    width:1.5rem;
+    width:1.8rem;
+    height:1.3rem;
     background-color: $color-primary;
     color:white;
-    font-size:1rem;
-    margin-left:-.4rem;
+    font-size:.9rem;
+    margin-left: -.4rem;
+    padding: .6rem 0 0 0 ;
 }
 
 /*----CARD SHOWING RESTAURANT----*/
