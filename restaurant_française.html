@@ -3,9 +3,12 @@
     <head>
         <meta charset=UTF-8>
         <meta name="viewport" content="width=device-width, initial-sacle=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
         <title>Ohmyfood</title>
     </head>
@@ -15,7 +18,7 @@
 
         <header>
             <div class="logo">
-                <a href="index.html"><i class="fas fa-arrow-left"></i><img class="top_logo"src="images/logo/ohmyfood.png" alt="ohmyfood">
+                <a href="index.html"><i class="fas fa-arrow-left" aria-hidden="'true'"></i><img class="top_logo"src="images/logo/ohmyfood.png" alt="ohmyfood">
                 </i></a>
             </div>
          </header>  
@@ -25,8 +28,8 @@
         <div class="container"> 
             <div class="restaurant_name">
                 <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Ala française">
-                <h2>A la française</h2>
-                <i class="far fa-heart"></i>
+                <h2>À la française</h2>
+                <i class="far fa-heart" aria-hidden="true"></i>
             </div>
 
             <!--------ENTREES-------->
@@ -100,8 +103,11 @@
                 <em>Myrtilles et pâte d'amande</em>
                 <b>23€</b>
             </div>
-
         </div>
+        <div class="commander_btn">
+            <a href="#"><h4 class="commander_text_btn">Commander</h4></a>
+    </div>
+       
        <!-------------------------------------FOOTER---------------------->
 
        <footer>
@@ -110,14 +116,14 @@
             </div>
             <div class="footer_proposer">
                 <i class="fas fa-utensils"></i>
-                <p class="proposer_text_content">Proposer un restaurant</p>
+                <p class="footer_text_content">Proposer un restaurant</p>
             </div>   
             <div class="footer_partenaire">
                 <i class="fas fa-hands-helping"></i>
-                <p class="partenaire_text_content">Devenir partenaire</p>
+                <p class="footer_text_content">Devenir partenaire</p>
             </div>
             <div class="footer_mentions">
-                <p class="mentions_text_content">Mentions légales</p>
+                <p class="footer_text_content">Mentions légales</p>
             </div >
             <div class="footer_contact">
                 <p class="contact_text_content"><a href=mailto:fakemail@free.contact>Contact</a></p>

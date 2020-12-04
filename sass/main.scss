@@ -1,0 +1,742 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./Composants/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/form";
+@import "./layout/footer";
+@import "./layout/containers";
+@import "./layout/header";
+@import "./pages/works";
+@import "./pages/about";
+@import "./pages/project";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+$color-primary:#9356dc;
+$color-secondary:#fa79da;
+$color-tertiaire: #99e2d0;
+$typo-titres:'Shrikhand';
+$typo-text:'Roboto';
+$color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
+
+
+
+@media (max-width:599px){
+
+    /*---loader---*/
+
+.chargement {
+    border-top:10px solid $color-secondary;
+    border-bottom:10px solid $color-tertiaire;
+    border-radius:50%;
+    width: 300px;
+    height:300px;
+    animation: spin 3s  reverse ;
+    -webkit-animation: spin 3s reverse;
+    margin:auto;
+    position:absolute;
+    top:0;right:0;bottom:0;left:0;
+   
+} 
+.text{
+    font-family:$typo-titres;
+    font-size: 1.7rem;
+    margin:10rem 0 0 4.5rem;
+    animation: spin2 3s reverse ;
+    -webkit-animation:  spin2 3s reverse;
+    }
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+        
+    }
+}
+@keyframes spin2 {
+    0%{
+        transform:rotate(360deg);
+        
+        }
+
+    100%{
+        transform:rotate(0deg);
+      
+        }
+}          
+
+/*-------------header----------------*/
+
+body{
+    max-width:100%;
+    margin:0;
+    }
+.header{
+    display:flex;
+    flex-flow: column wrap;
+    margin-top: 1rem;
+    max-width:100%;
+}
+
+.top_logo{
+    display:block;
+    width:11rem; 
+    margin:auto;
+    image-rendering:auto;
+}
+.search{
+    border-top:solid 2px;
+    border-color:rgb(214, 214, 214);
+    display:flex; 
+    justify-content: center;
+    max-width:100%;  
+    height:3rem; 
+    background-color: rgb(228, 227, 227);
+    padding-left:4rem;
+    margin-top:1rem;
+   
+        .position{
+            border:none;
+            padding: .6rem 0 0 1.5rem;
+        }  
+ 
+            input{
+                border:none;
+                width:85%;
+                font-size:1.1rem;
+                font-weight:1.2rem;
+                font-weight:700;
+                background-color: rgb(228, 227, 227);
+                color: black;
+                margin:.5rem 0 0 1.5rem;
+            }
+}
+.card_header{
+    display:flex;
+    flex-flow: column ;
+    max-width: 100%;
+    height:18rem;
+    background-color: rgb(234,236,236);
+        .acceuil_text_content{
+            display:flex;
+            flex-flow:column wrap;
+            text-align:center;
+            font-family: $typo-text;
+            margin:1.7rem 0 0 0;
+            h1{
+                font-size:1.8rem;
+                font-weight:1200;
+                margin:0;
+            }
+            h4{
+                color: rgb(107, 107 ,107);
+                font-size:1.2rem;
+                font-weight:200;
+                margin-top:1rem;
+            }
+        }
+    .explorer_btn{
+   
+         @include gradient-pink;
+   
+    .explorer_text_btn{
+        
+        @include text-gradient ;
+            
+        }
+    }
+    .explorer_btn a{  
+        text-decoration: none;     
+    }
+}    
+
+
+/*-----MAIN CONTENT--------*/
+
+.container{
+    max-width:100%;
+}
+.titre_decouvrir{
+    font-family:$typo-text;
+    margin:3rem 0 2rem 1rem;
+}
+
+.decouvrir{
+    max-width:100%;
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: space-between 10rem;
+    height:20rem; 
+}
+
+.btn{
+    border:none;
+    background-color: transparent;
+    margin-bottom:.4rem;
+    max-width:100%;
+}
+
+.menu_choisissez, .menu_composez, .menu_degustez{
+    @include menu-accueil;
+            &:hover {
+                @include hover-accueil;
+                    & > i{
+                    color:$color-primary;
+                }   
+            }
+}
+
+.btn i{
+    @include icone;  
+       
+             
+    } 
+} 
+.number{
+    @include number;
+}
+.menu_text_content{
+    @include text-content;
+}
+
+/*------CARD SHOWING MENU-----*/
+
+.card_restaurant{
+    @include main;
+}
+.card{
+   @include card-restaurant;
+}
+.nouveau{
+    @include nouveau;
+}
+.card_image{
+    @include card-restaurant-image; 
+
+}
+.card_image img{
+    @include restaurant-image;
+}
+
+.titre_resto{
+    font-family: $typo-text;
+    margin: 3rem 0 1.5rem 1rem;
+}
+.card_text_content, em{
+    @include card-text-content;        
+}
+.fa-heart {
+    color:grey;
+    background-color: #fff;
+    border-radius: 50%;
+    padding:.2em;
+}
+.fa-heart:hover::before{
+    color:$color-primary ;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 4s ease-out;
+}
+    /*----FOOTER----*/
+
+footer{
+    @include footer;
+}
+.bottom_logo{
+    @include footer-logo; 
+}
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
+    @include proposer-partenaire-mentions-contact;
+}
+footer i{
+    @include icone;
+}
+
+
+
+@media screen and(min-width:768px)
+            and (max-width:1023px){
+.chargement {
+    border-top:10px solid $color-secondary;
+    border-bottom:10px solid $color-tertiaire;
+    border-radius:50%;
+    width: 300px;
+    height:300px;
+    animation: spin 3s  linear ;
+    -webkit-animation: spin 3s linear;
+    margin:auto;
+    position:absolute;
+    top:0;right:0;bottom:0;left:0;
+} 
+.chargement p{
+    font-family:$typo-titres;
+    font-size: 1.7rem;
+    margin:10rem 0 0 4.5rem;
+   
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    100%{
+        transform: rotate(360deg);
+        
+        opacity:1;
+    }
+}
+ @keyframes spin2 {
+    0%{
+        transform:rotate(360deg);
+        
+        }
+    100%{
+        transform:rotate(0deg);
+        opacity:1;
+        
+        }
+        
+}    
+
+ body{
+    margin:auto;
+    max-width:100%;
+}
+.header{
+    display:flex;
+    flex-flow: column wrap;
+    margin: 1rem 2rem 0 3rem ;
+    max-width:100%;
+}
+.top_logo{
+    display:block;
+    width:30rem;
+    margin:auto;  
+}
+.search{
+    border-top:solid 2px;
+    border-color:rgb(214, 214, 214);
+    display:flex; 
+    justify-content: center;
+    max-width:100%;  
+    height:5rem; 
+    background-color: rgb(228, 227, 227);
+    padding-left:4rem;
+    margin-top:1rem;
+       
+        .position{
+            border:none;
+            padding: 2rem 0 0 1.5rem;
+            font-size:20px;
+        }  
+     
+            input{
+                border:none;
+                width:90%;
+                height:30px;
+                font-size:1.1rem;
+                font-weight:1.2rem;
+                font-weight:500;
+                background-color: rgb(228, 227, 227);
+                color: black;
+                margin:2rem 0 0 1.5rem;
+            }
+    }
+.card_header{
+    display:flex;
+    flex-flow: column ;
+    max-width: 100%;
+    height:18rem;
+    background-color: rgb(234,236,236);
+        .acceuil_text_content{
+            display:flex;
+            flex-flow:column wrap;
+            text-align:center;
+            font-family: $typo-text;
+            margin:1.7rem 0 0 0;
+            h1{
+                font-size:1.8rem;
+                font-weight:1200;
+                margin:0;
+            }
+            h4{
+                color: rgb(107, 107 ,107);
+                font-size:1.2rem;
+                font-weight:200;
+                margin-top:1rem;
+            }
+        }
+        .explorer_btn{
+       
+            @include gradient-pink;
+          
+        .explorer_text_btn{
+               
+            @include text-gradient ;
+                   
+            }
+        }
+        .explorer_btn a{  
+            text-decoration: none;     
+        }
+    }     
+    /*-----MAIN CONTENT--------*/
+    
+.container{
+     max-width:100%;
+}
+.titre_decouvrir{
+    font-family:$typo-text;
+    margin:3rem 0 2rem 3rem;
+}
+    
+.decouvrir{
+    max-width:80%;
+    display:flex;
+    flex-flow:wrap;
+    justify-content: space-evenly ;
+    margin-left:6rem; 
+}
+    
+.btn{
+    border:none;
+    background-color: transparent;
+    margin-bottom:.4rem;
+    max-width:100%;
+}
+    
+.menu_choisissez, .menu_composez, .menu_degustez {
+    @include menu-accueil;
+    width:20rem;
+        &:hover{
+            @include hover-accueil
+        }           
+} 
+.btn i{
+    @include icone; 
+        &:hover{
+            color:$color-primary
+        }    
+}
+    
+.number{
+    @include number;
+}
+    
+.menu_text_content{
+    @include text-content;
+}
+    
+
+    
+    /*------CARD SHOWING MENU-----*/
+    
+.card_restaurant{
+    @include main;
+    display:flex;
+    flex-flow: column wrap;
+    margin: 0 2rem 0 3rem;
+}
+.card{
+    @include card-restaurant;
+    display:flex;
+    justify-content: space-evenly;
+    width:30rem;
+    margin:3rem 0 0 6rem;
+    }
+.nouveau{
+     @include nouveau;
+}
+.card_image{
+    @include card-restaurant-image; 
+}
+.card_image img{
+    @include restaurant-image;
+}
+    
+.titre_resto{
+    font-family: $typo-text;
+    margin: 3rem 0 0rem 1rem;
+}
+.card_text_content, em{
+    @include card-text-content;        
+}
+
+.fa-heart {
+    color:grey;
+    background-color: #fff;
+    border-radius: 50%;
+    padding:.2em;
+}
+.fa-heart:hover::before{
+    color: $color-primary;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 4s ease-out;
+}
+    
+        /*----FOOTER----*/
+    
+footer{
+    @include footer;
+     margin:0 2rem 0 3rem;
+}
+.bottom_logo{
+     @include footer-logo; 
+    margin:auto;
+}
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
+    @include proposer-partenaire-mentions-contact;
+    margin:auto;
+}
+footer i{
+    @include icone;
+}    
+}
+
+/*-----DESKTOP----*/
+    
+
+@media screen and (min-width:1024px){
+
+
+.chargement {
+    border-top:10px solid $color-secondary;
+    border-bottom:10px solid $color-tertiaire;
+    border-radius:50%;
+    width: 300px;
+    height:300px;
+    animation: spin 3s  linear  ;
+    -webkit-animation: spin 3s linear ;
+    margin:auto;
+    position:absolute;
+    top:0;right:0;bottom:0;left:0;
+} 
+.chargement p{
+    font-family:$typo-titres;
+    font-size: 1.7rem;
+    margin:10rem 0 0 4.5rem;
+    animation: spin2 3s reverse ;
+    -webkit-animation: spin2 3s reverse ;
+    }
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin2 {
+    100%{
+        transform:rotate(0deg);
+    }
+    0%{
+        transform:rotate(360deg);
+    }
+}
+@keyframes fadein {
+    from{ opacity:0;}
+    to {opacity:1;}
+} 
+
+/*-----HEADER-----*/
+body{
+    margin:auto;
+    max-width:100%;
+}
+.header{
+    display:flex;
+    flex-flow: column wrap;
+    margin: 1rem 2rem 0 3rem ;
+    max-width:100%;
+}
+.top_logo{
+    display:block;
+    width:50rem;
+    margin:auto; 
+    
+}
+.search{
+    border-top:solid 2px;
+    border-color:rgb(214, 214, 214);
+    display:flex; 
+    justify-content: center;
+    max-width:100%;  
+    height:5rem; 
+    background-color: rgb(228, 227, 227);
+    padding-left:4rem;
+    margin-top:1rem;
+   
+        .position{
+            border:none;
+            padding: 2rem 0 0 1.5rem;
+        }  
+ 
+            input{
+                border:none;
+                width:85%;
+                font-size:1.1rem;
+                font-weight:1.2rem;
+                font-weight:500;
+                background-color: rgb(228, 227, 227);
+                color: black;
+                margin:2rem 0 0 1.5rem;
+            }
+}
+.card_header{
+    display:flex;
+    flex-flow: column ;
+    max-width: 100%;
+    height:18rem;
+    background-color: rgb(234,236,236);
+        .acceuil_text_content{
+            display:flex;
+            flex-flow:column wrap;
+            text-align:center;
+            font-family: $typo-text;
+            margin:1.7rem 0 0 0;
+            h1{
+                font-size:1.8rem;
+                font-weight:1200;
+                margin:0;
+            }
+            h4{
+                color: rgb(107, 107 ,107);
+                font-size:1.2rem;
+                font-weight:200;
+                margin-top:1rem;
+            }
+        }
+        .explorer_btn{
+   
+            @include gradient-pink;
+      
+       .explorer_text_btn{
+           
+           @include text-gradient ;
+               
+           }
+       }
+       .explorer_btn a{  
+           text-decoration: none;     
+       }
+}     
+/*-----MAIN CONTENT--------*/
+
+.container{
+    max-width:100%;
+}
+.titre_decouvrir{
+    font-family:$typo-text;
+    margin:3rem 0 2rem 4rem;
+}
+
+.decouvrir{
+    max-width:80%;
+    display:flex;
+    flex-flow:wrap;
+    justify-content: space-evenly ;
+    margin-left:10rem; 
+}
+
+.btn{
+    border:none;
+    background-color: transparent;
+    margin-bottom:.4rem;
+    max-width:100%;
+}
+
+.menu_choisissez, .menu_composez, .menu_degustez {
+    @include menu-accueil;
+        width:20rem;
+            &:hover{
+                @include hover-accueil;
+        }
+}
+.btn i{
+    @include icone;
+}
+.number{
+    @include number;
+}
+.menu_text_content{
+    @include text-content;
+}
+
+
+/*------CARD SHOWING MENU-----*/
+
+.card_restaurant{
+    @include main;
+    display:flex;
+    flex-flow: column wrap;
+    margin: 0 2rem 0 3rem;
+}
+.card_container{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+.card{
+   @include card-restaurant;
+    width:17rem;
+   
+}
+.nouveau{
+    @include nouveau;
+}
+.card_image{
+    @include card-restaurant-image; 
+
+}
+.card_image img{
+    @include restaurant-image;
+}
+
+.titre_resto{
+    font-family: $typo-text;
+    margin: 3rem 0 0rem 1rem;
+    width:30rem;
+}
+.card_text_content, em{
+    @include card-text-content;        
+}
+
+.fa-heart {
+    color:grey;
+    background-color: #fff;
+    border-radius: 50%;
+    padding:.2em;
+}
+.fa-heart:hover::before{
+    color:$color-primary;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 4s ease-out;
+}
+
+    /*----FOOTER----*/
+
+footer{
+    @include footer;
+    margin:0 2rem 0 3rem;
+}
+.bottom_logo{
+    @include footer-logo; 
+    margin:auto;
+}
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
+    @include proposer-partenaire-mentions-contact;
+    margin:auto;
+}
+footer i{
+    @include icone;
+}    
+}

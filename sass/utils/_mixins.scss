@@ -1,0 +1,142 @@
+
+/*----HEADER----*/
+
+
+@mixin gradient-pink {
+    background: $color-pink;
+    display:flex;
+    width:14rem;
+    border-radius:4rem;
+    align-items: center !important;
+    justify-content:center !important;
+    margin:.5rem auto;
+    height:3.2rem;
+}
+
+@mixin text-gradient {
+    color:white;
+    letter-spacing: .05rem;
+    font-weight:500;
+    font-size:.1.2rem;
+    font-family:$typo-text;
+}
+
+  /*-----MAIN CONTENT----*/
+
+
+@mixin menu-accueil {
+    max-width:87%;
+    border-radius:25px;
+    display:flex;
+    justify-content:start;
+    font-family: $typo-text;
+    cursor: pointer;
+    font-size:1.3rem;
+    height:4.5rem;
+    background-color:#F0F0F0;
+    align-items: center !important;
+    margin: 0 0 1rem 1.7rem;
+    box-shadow:0 .7rem .7rem 0 	#dddddd;
+    color:black; 
+}
+@mixin hover-accueil {
+    border-radius:25px;
+    background-color:#f9eafa;
+    box-shadow: 0 .7rem .7rem 0 #c7c7c7;
+}
+@mixin icone {
+    width:1.3rem;
+    margin-left:1rem;
+    font-size:1,5rem;
+    color:grey;
+    }
+@mixin text-content {
+    padding-left:1rem;
+    color:black;
+}
+    
+@mixin number {
+    border-radius:50px;
+    width:1.8rem;
+    height:1.3rem;
+    background-color: $color-primary;
+    color:white;
+    font-size:.9rem;
+    margin-left: -.4rem;
+    padding: .6rem 0 0 0 ;
+}
+
+/*----CARD SHOWING RESTAURANT----*/
+
+@mixin main {
+    display:flex;
+    flex-flow:column;
+    max-width: 100%;
+    background-color: rgb(234,236,236);
+    padding-bottom:2rem;
+}
+@mixin card-restaurant{
+    display: flex;
+    flex-flow: column;
+    max-width:85%;
+    border-radius:15px;
+    cursor: pointer;
+    height:auto;
+    margin:2rem 0 1rem 2rem;
+    background-color: white;
+    padding-bottom:1rem;
+}
+@mixin card-restaurant-image {
+    max-width: 100%;
+    border-radius:15px 15px 0 0 ;
+    height:190px;
+    position:relative;
+}
+@mixin restaurant-image {
+    width: 100%;
+    border-radius:15px 15px 0 0;
+    height:190px;
+    object-fit: cover;
+}
+@mixin card-text-content {
+        font-family: $typo-text; font-style:normal; margin-left:1rem; line-height: .8rem;
+        p{font-size:20px; font-weight:800;}em{margin-left:.1rem;  font-size:18px;}i{font-size:2em;  float:right; margin:1rem 1rem 0 0;
+        } 
+}
+@mixin nouveau {
+    width:4rem;
+    color:green;
+    background-color:$color-tertiaire;
+    border-radius:5px;
+    position:absolute;
+    top:9px;
+    right:16px;
+    font-family: $typo-text;
+    padding:.3rem .7rem .3rem .7rem;
+}
+
+
+/*-----FOOTER----*/
+
+@mixin footer {
+    display:flex; flex-flow: column; max-width:100%; background-color: rgb(63, 62, 62); color:white; padding:2rem 0 0 2rem;
+    font-family: $typo-text;
+        i{
+            color:white;
+    }
+    }
+
+@mixin footer-logo{
+    display:block;
+    width:8rem;
+    margin-bottom:1rem;
+    filter:invert(100%);
+}
+@mixin proposer-partenaire-mentions-contact{
+    display:flex;flex-flow: wrap; line-height: .05rem;
+    i{margin:1rem 0 0 0;padding-right:.5rem; line-height: .05rem;color:white;
+    } a{ text-decoration: none; color:white}
+}
+
+
+    
