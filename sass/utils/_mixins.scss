@@ -1,4 +1,4 @@
-
+/*---PAGE ACCUEIL---*/
 /*----HEADER----*/
 
 
@@ -47,12 +47,15 @@
 @mixin icone {
     width:1.3rem;
     margin-left:1rem;
-    font-size:1,5rem;
+    font-size:1,1rem;
     color:grey;
     }
 @mixin text-content {
-    padding-left:1rem;
     color:black;
+    width:75%;
+    margin-left:.9rem;
+    text-align: left;
+    font-size:73%;
 }
     
 @mixin number {
@@ -137,6 +140,8 @@
     i{margin:1rem 0 0 0;padding-right:.5rem; line-height: .05rem;color:white;
     } a{ text-decoration: none; color:white}
 }
+
+/***MENU RESTAURANT---*/
 
 
     

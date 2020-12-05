@@ -1,0 +1,52 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./Composants/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/form";
+@import "./layout/footer";
+@import "./layout/containers";
+@import "./layout/header";
+@import "./pages/works";
+@import "./pages/about";
+@import "./pages/project";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+$color-primary:#9356dc;
+$color-secondary:#fa79da;
+$color-tertiaire: #99e2d0;
+$typo-titres:'Shrikhand';
+$typo-text:'Roboto';
+$color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
+
+
+@media (max-width: 599px){
+
+    /*--- HEADER---*/
+
+
+body{
+    border: solid 1px;
+    max-width:100%;
+    margin:0;
+}
+.header_menu{
+    border: solid 1px;
+    display:flex;
+    flex-flow: wrap;
+    border:solid 1px;
+    max-width:100%;
+    margin:auto;
+}
+.logo{
+    display:flex;
+    flex-flow: wrap;
+    max-width: 100%;
+}
+
+}

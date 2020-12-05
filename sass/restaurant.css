@@ -1,0 +1,35 @@
+/*---PAGE ACCUEIL---*/
+/*----HEADER----*/
+/*-----MAIN CONTENT----*/
+/*----CARD SHOWING RESTAURANT----*/
+/*-----FOOTER----*/
+/***MENU RESTAURANT---*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@media (max-width: 599px) {
+  /*--- HEADER---*/
+  body {
+    border: solid 1px;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .header_menu {
+    border: solid 1px;
+    display: flex;
+    flex-flow: wrap;
+    border: solid 1px;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .logo {
+    display: flex;
+    flex-flow: wrap;
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=restaurant.css.map */
