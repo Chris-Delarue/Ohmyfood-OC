@@ -2,8 +2,8 @@
 /*----HEADER----*/
 /*-----MAIN CONTENT----*/
 /*----CARD SHOWING RESTAURANT----*/
+/*---CARD MENU---*/
 /*-----FOOTER----*/
-/***MENU RESTAURANT---*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -40,6 +40,7 @@
     }
     100% {
       transform: rotate(360deg);
+      visibility: hidden;
     }
   }
   @keyframes spin2 {
@@ -48,6 +49,7 @@
     }
     100% {
       transform: rotate(0deg);
+      visibility: hidden;
     }
   }
   /*-------------header----------------*/
@@ -312,7 +314,7 @@
     padding: 2rem 0 0 2rem;
     font-family: "Roboto";
   }
-  footer i {
+  footer > i {
     color: white;
   }
 
@@ -328,7 +330,7 @@
     flex-flow: wrap;
     line-height: 0.05rem;
   }
-  .footer_proposer i, .footer_partenaire i, .footer_mentions i, .footer_contact i {
+  .footer_proposer > i, .footer_partenaire > i, .footer_mentions > i, .footer_contact > i {
     margin: 1rem 0 0 0;
     padding-right: 0.5rem;
     line-height: 0.05rem;
@@ -657,7 +659,7 @@
     font-family: "Roboto";
     margin: 0 2rem 0 3rem;
   }
-  footer i {
+  footer > i {
     color: white;
   }
 
@@ -675,7 +677,7 @@
     line-height: 0.05rem;
     margin: auto;
   }
-  .footer_proposer i, .footer_partenaire i, .footer_mentions i, .footer_contact i {
+  .footer_proposer > i, .footer_partenaire > i, .footer_mentions > i, .footer_contact > i {
     margin: 1rem 0 0 0;
     padding-right: 0.5rem;
     line-height: 0.05rem;
@@ -1010,7 +1012,7 @@
     font-family: "Roboto";
     margin: 0 2rem 0 3rem;
   }
-  footer i {
+  footer > i {
     color: white;
   }
 
@@ -1028,7 +1030,7 @@
     line-height: 0.05rem;
     margin: auto;
   }
-  .footer_proposer i, .footer_partenaire i, .footer_mentions i, .footer_contact i {
+  .footer_proposer > i, .footer_partenaire > i, .footer_mentions > i, .footer_contact > i {
     margin: 1rem 0 0 0;
     padding-right: 0.5rem;
     line-height: 0.05rem;

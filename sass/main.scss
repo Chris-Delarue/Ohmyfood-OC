@@ -56,7 +56,7 @@ $color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
     }
     100%{
         transform: rotate(360deg);
-        
+        visibility: hidden;
     }
 }
 @keyframes spin2 {
@@ -67,7 +67,7 @@ $color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
 
     100%{
         transform:rotate(0deg);
-      
+        visibility: hidden;
         }
 }          
 
