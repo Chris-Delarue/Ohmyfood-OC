@@ -1,0 +1,288 @@
+/*---PAGE ACCUEIL---*/
+/*----HEADER----*/
+/*-----MAIN CONTENT----*/
+/*----CARD SHOWING RESTAURANT----*/
+/*---CARD MENU---*/
+/*-----FOOTER----*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@media (max-width: 599px) {
+  /*--- HEADER---*/
+  body {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .logo {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0 0.5rem 0;
+    max-width: 90%;
+  }
+
+  .top_logo_menu {
+    width: 11rem;
+    margin: auto;
+  }
+
+  .fa-arrow-left {
+    margin: 1rem 0 1rem 1rem;
+    font-size: 1.5rem;
+    color: black;
+  }
+
+  /*----MAIN CONTENT----*/
+  .restaurant_image {
+    display: flex;
+    flex-flow: wrap;
+    max-width: 100%;
+  }
+
+  .restaurant_image img {
+    max-width: 100%;
+    z-index: -1;
+  }
+
+  .container {
+    background: #eaecec;
+    border-radius: 30px 30px 0 0;
+    padding-bottom: 2rem;
+    margin-top: -3rem;
+  }
+
+  .restaurant_name {
+    display: flex;
+    width: auto;
+    height: 5rem;
+  }
+  .restaurant_name h2 {
+    font-family: "Shrikhand";
+    font-weight: 200;
+    font-size: 170%;
+    margin-left: 1rem;
+    width: 90%;
+  }
+
+  .restaurant_name i {
+    float: right;
+    margin-top: 0.5rem;
+  }
+
+  .fa-heart {
+    color: grey;
+    background-color: #eaecec;
+    font-size: 1.5rem;
+  }
+
+  .fa-heart:hover::before {
+    color: #9356dc;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 4s ease-out;
+  }
+
+  @keyframes card-menu {
+    0% {
+      -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+      transform: rotateY(0deg) translateY(0) skewY(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes card-menu {
+    0% {
+      -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+      transform: rotateY(0deg) translateY(0) skewY(0deg);
+      opacity: 1;
+    }
+  }
+  .card_entrees {
+    display: block;
+    background-color: white;
+    max-width: 95%;
+    border-radius: 15px;
+    margin: 0 0 1rem 0.5rem;
+    padding: 0.5rem 0 1rem 0;
+    -webkit-animation: card-menu 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: card-menu 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .card_entrees p {
+    font-family: "Roboto";
+    font-size: 18px;
+    width: 80%;
+    font-weight: bold;
+    padding: 0rem 0 0 0.5rem;
+    line-height: 1.3rem;
+    margin: 0 0 0.3rem 0;
+  }
+
+  .card_entrees em {
+    font-family: "Roboto";
+    font-style: normal;
+    padding-left: 0.5rem;
+    line-height: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .card_entrees b {
+    float: right;
+    margin-right: 1rem;
+    font-family: "Roboto";
+  }
+
+  .card_plats {
+    display: block;
+    background-color: white;
+    max-width: 95%;
+    border-radius: 15px;
+    margin: 0 0 1rem 0.5rem;
+    padding: 0.5rem 0 1rem 0;
+    -webkit-animation: card-menu 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: card-menu 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .card_plats p {
+    font-family: "Roboto";
+    font-size: 18px;
+    width: 80%;
+    font-weight: bold;
+    padding: 0rem 0 0 0.5rem;
+    line-height: 1.3rem;
+    margin: 0 0 0.3rem 0;
+  }
+
+  .card_plats em {
+    font-family: "Roboto";
+    font-style: normal;
+    padding-left: 0.5rem;
+    line-height: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .card_plats b {
+    float: right;
+    margin-right: 1rem;
+    font-family: "Roboto";
+  }
+
+  .card_desserts {
+    display: block;
+    background-color: white;
+    max-width: 95%;
+    border-radius: 15px;
+    margin: 0 0 1rem 0.5rem;
+    padding: 0.5rem 0 1rem 0;
+    -webkit-animation: card-menu 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: card-menu 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .card_desserts p {
+    font-family: "Roboto";
+    font-size: 18px;
+    width: 80%;
+    font-weight: bold;
+    padding: 0rem 0 0 0.5rem;
+    line-height: 1.3rem;
+    margin: 0 0 0.3rem 0;
+  }
+
+  .card_desserts em {
+    font-family: "Roboto";
+    font-style: normal;
+    padding-left: 0.5rem;
+    line-height: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .card_desserts b {
+    float: right;
+    margin: 0.1rem 1rem 0 0;
+    font-family: "Roboto";
+  }
+
+  .titre_card {
+    width: 2.5rem;
+    font-family: "Roboto";
+    font-weight: 100;
+    margin: 2rem 0 0.9rem 1rem;
+    border-bottom: solid 4px #99e2d0;
+    border-bottom-style: inset 2px;
+    padding-bottom: 0.5rem;
+  }
+
+  .commander_btn {
+    background: linear-gradient(#fa79da 0%, #9356dc 100%);
+    display: flex;
+    width: 14rem;
+    border-radius: 4rem;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0.5rem auto;
+    height: 3.2rem;
+    margin: 3rem auto 3rem auto;
+  }
+
+  .commander_btn a {
+    color: white;
+    letter-spacing: 0.05rem;
+    font-weight: 500;
+    font-size: 0.1 0.2rem;
+    font-family: "Roboto";
+    text-decoration: none;
+  }
+
+  /*---FOOTER---*/
+  footer {
+    display: flex;
+    flex-flow: column;
+    max-width: 100%;
+    background-color: #3f3e3e;
+    color: white;
+    padding: 2rem 0 0 2rem;
+    font-family: "Roboto";
+  }
+  footer > i {
+    color: white;
+  }
+
+  .bottom_logo {
+    display: block;
+    width: 8rem;
+    margin-bottom: 1rem;
+    filter: invert(100%);
+  }
+
+  .footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact {
+    display: flex;
+    flex-flow: wrap;
+    line-height: 0.05rem;
+  }
+  .footer_proposer > i, .footer_partenaire > i, .footer_mentions > i, .footer_contact > i {
+    margin: 1rem 0 0 0;
+    padding-right: 0.5rem;
+    line-height: 0.05rem;
+    color: white;
+  }
+  .footer_proposer a, .footer_partenaire a, .footer_mentions a, .footer_contact a {
+    text-decoration: none;
+    color: white;
+  }
+
+  footer i {
+    width: 1.3rem;
+    margin-left: 1rem;
+    font-size: 1, 1rem;
+    color: grey;
+  }
+}
+
+/*# sourceMappingURL=restaurant.css.map */

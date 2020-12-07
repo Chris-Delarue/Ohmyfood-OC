@@ -56,7 +56,7 @@ $color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
     }
     100%{
         transform: rotate(360deg);
-        
+        visibility: hidden;
     }
 }
 @keyframes spin2 {
@@ -67,7 +67,7 @@ $color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
 
     100%{
         transform:rotate(0deg);
-      
+        visibility: hidden;
         }
 }          
 
@@ -88,7 +88,6 @@ body{
     display:block;
     width:11rem; 
     margin:auto;
-    image-rendering:auto;
 }
 .search{
     border-top:solid 2px;
@@ -194,10 +193,9 @@ body{
 
 .btn i{
     @include icone;  
-       
-             
+               
     } 
-} 
+
 .number{
     @include number;
 }
@@ -257,9 +255,7 @@ footer{
 footer i{
     @include icone;
 }
-
-
-
+}
 @media screen and(min-width:768px)
             and (max-width:1023px){
 .chargement {
@@ -278,7 +274,6 @@ footer i{
     font-family:$typo-titres;
     font-size: 1.7rem;
     margin:10rem 0 0 4.5rem;
-   
 }
 @keyframes spin{
     0%{
@@ -288,7 +283,6 @@ footer i{
     100%{
         transform: rotate(360deg);
         
-        opacity:1;
     }
 }
  @keyframes spin2 {
@@ -298,7 +292,6 @@ footer i{
         }
     100%{
         transform:rotate(0deg);
-        opacity:1;
         
         }
         
@@ -415,14 +408,15 @@ footer i{
     @include menu-accueil;
     width:20rem;
         &:hover{
-            @include hover-accueil
+            @include hover-accueil;
+            & > i{
+                color:$color-primary;
+            }  
         }           
 } 
 .btn i{
     @include icone; 
-        &:hover{
-            color:$color-primary
-        }    
+          
 }
     
 .number{
@@ -541,10 +535,7 @@ footer i{
         transform:rotate(360deg);
     }
 }
-@keyframes fadein {
-    from{ opacity:0;}
-    to {opacity:1;}
-} 
+
 
 /*-----HEADER-----*/
 body{
@@ -658,6 +649,9 @@ body{
         width:20rem;
             &:hover{
                 @include hover-accueil;
+                & > i{
+                    color:$color-primary;
+                }  
         }
 }
 .btn i{

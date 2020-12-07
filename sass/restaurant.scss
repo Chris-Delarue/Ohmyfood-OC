@@ -1,0 +1,204 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./Composants/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/form";
+@import "./layout/footer";
+@import "./layout/containers";
+@import "./layout/header";
+@import "./pages/works";
+@import "./pages/about";
+@import "./pages/project";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+$color-primary:#9356dc;
+$color-secondary:#fa79da;
+$color-tertiaire: #99e2d0;
+$typo-titres:'Shrikhand';
+$typo-text:'Roboto';
+$color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
+
+
+@media (max-width: 599px){
+
+    /*--- HEADER---*/
+
+body{
+    max-width:100%;
+    margin:0;
+}
+.logo{
+    display:flex;
+    flex-wrap: wrap;
+    margin:1rem 0 .5rem 0;
+    max-width:90%;
+}
+.top_logo_menu {
+    width:11rem;
+    margin:auto;
+}
+.fa-arrow-left{
+    margin:1rem 0 1rem 1rem;
+    font-size:1.5rem;
+    color: black
+}
+
+        /*----MAIN CONTENT----*/
+
+.restaurant_image{
+    display:flex;
+    flex-flow: wrap;
+    max-width: 100%;
+}
+.restaurant_image img{
+    max-width: 100%;
+    z-index:-1;
+}
+.container{
+    background: rgb(234,236,236);
+    border-radius: 30px 30px 0 0;
+    padding-bottom:2rem;
+    margin-top:-3rem;
+} 
+.restaurant_name{
+    display:flex;
+     width:auto;
+    height:5rem;
+    h2{
+
+        font-family: $typo-titres;
+        font-weight:200;
+        font-size:170%;
+        margin-left:1rem;
+        width:90%;
+    }
+}
+.restaurant_name i{
+        float:right;
+        margin-top:.5rem;
+}
+  
+.fa-heart {
+    color:grey;
+    background-color:rgb(234,236,236);
+    font-size:1.5rem;
+}
+.fa-heart:hover::before{
+    color:$color-primary ;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 4s ease-out;
+}
+@keyframes card-menu {
+    0% {
+        -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        opacity: 1;
+    }
+  }
+  @keyframes card-menu {
+    0% {
+        -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        opacity: 1;
+    }
+  }
+.card_entrees{
+    @include inside-card;
+        -webkit-animation: card-menu 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: card-menu 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            &  p{
+                @include menu_p;
+     }
+}
+.card_entrees em{
+    @include menu_em;
+}
+.card_entrees b{
+    float: right;
+    margin-right:1rem;
+    font-family: $typo-text;  
+}
+.card_plats{
+    @include inside_card;
+        -webkit-animation: card-menu .9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: card-menu .9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        & p{
+            @include menu_p;
+        }
+}
+.card_plats em{
+    @include menu_em;
+}
+.card_plats b{
+    float: right;
+    margin-right:1rem;
+    font-family: $typo-text; 
+}
+.card_desserts{
+    @include inside_card;
+        -webkit-animation: card-menu 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: card-menu 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        & p{
+            @include menu_p;
+        }
+}
+.card_desserts em{
+    @include menu_em;
+}
+.card_desserts b{
+    float: right;
+    margin:.1rem 1rem 0 0;
+    font-family: $typo-text; 
+}
+
+.titre_card{
+    width:2.5rem;
+    font-family:$typo-text;
+    font-weight:100;
+    margin: 2rem 0 .9rem 1rem;
+    border-bottom: solid 4px  $color-tertiaire;
+    border-bottom-style: inset 2px;
+    padding-bottom: .5rem;
+}
+.commander_btn{
+    @include gradient-pink;
+    margin:3rem auto 3rem auto;
+}
+.commander_btn a{   
+    @include text-gradient;
+    text-decoration: none;
+
+}
+
+
+            /*---FOOTER---*/
+footer{
+    @include footer
+}
+.bottom_logo{
+     @include footer-logo; 
+}
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
+    @include proposer-partenaire-mentions-contact;
+}
+footer i{
+     @include icone;
+    }  
+}
