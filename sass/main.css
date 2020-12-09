@@ -8,51 +8,111 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@keyframes bkg {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(150deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+/*---loader---*/
+.chargement {
+  border-top: 10px solid #fa79da;
+  border-bottom: 10px solid #99e2d0;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 3s reverse;
+  -webkit-animation: spin 3s reverse;
+  position: fixed;
+  left: 43%;
+  top: 30%;
+  z-index: 3;
+  opacity: 0;
+}
+.chargement::before {
+  border-top: 10px solid #fa79da;
+  border-bottom: 10px solid #99e2d0;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 3s reverse;
+  -webkit-animation: spin 3s reverse;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+}
+.chargement::after {
+  border-top: 10px solid #fa79da;
+  border-bottom: 10px solid #99e2d0;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 3s reverse;
+  -webkit-animation: spin 3s reverse;
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 3;
+  opacity: 0;
+}
+
+.charg__bg {
+  background: #f7e7e7;
+  background-size: cover;
+  width: 100%;
+  height: 350%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  transform-origin: top;
+  transform: scale(0);
+  animation: bkg 3s;
+}
+
 @media (max-width: 599px) {
-  /*---loader---*/
-  .chargement {
-    border-top: 10px solid #fa79da;
-    border-bottom: 10px solid #99e2d0;
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    animation: spin 3s reverse;
-    -webkit-animation: spin 3s reverse;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  .text {
-    font-family: "Shrikhand";
-    font-size: 1.7rem;
-    margin: 10rem 0 0 4.5rem;
-    animation: spin2 3s reverse;
-    -webkit-animation: spin2 3s reverse;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-      visibility: hidden;
-    }
-  }
-  @keyframes spin2 {
-    0% {
-      transform: rotate(360deg);
-    }
-    100% {
-      transform: rotate(0deg);
-      visibility: hidden;
-    }
-  }
   /*-------------header----------------*/
+  .chargement {
+    position: fixed;
+    top: 30%;
+    left: 10%;
+  }
+
   body {
     max-width: 100%;
     margin: 0;
@@ -314,9 +374,6 @@
     padding: 2rem 0 0 2rem;
     font-family: "Roboto";
   }
-  footer > i {
-    color: white;
-  }
 
   .bottom_logo {
     display: block;
@@ -349,44 +406,6 @@
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .chargement {
-    border-top: 10px solid #fa79da;
-    border-bottom: 10px solid #99e2d0;
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    animation: spin 3s linear;
-    -webkit-animation: spin 3s linear;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  .chargement p {
-    font-family: "Shrikhand";
-    font-size: 1.7rem;
-    margin: 10rem 0 0 4.5rem;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes spin2 {
-    0% {
-      transform: rotate(360deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
   body {
     margin: auto;
     max-width: 100%;
@@ -659,9 +678,6 @@
     font-family: "Roboto";
     margin: 0 2rem 0 3rem;
   }
-  footer > i {
-    color: white;
-  }
 
   .bottom_logo {
     display: block;
@@ -697,46 +713,6 @@
 }
 /*-----DESKTOP----*/
 @media screen and (min-width: 1024px) {
-  .chargement {
-    border-top: 10px solid #fa79da;
-    border-bottom: 10px solid #99e2d0;
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    animation: spin 3s linear;
-    -webkit-animation: spin 3s linear;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  .chargement p {
-    font-family: "Shrikhand";
-    font-size: 1.7rem;
-    margin: 10rem 0 0 4.5rem;
-    animation: spin2 3s reverse;
-    -webkit-animation: spin2 3s reverse;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes spin2 {
-    100% {
-      transform: rotate(0deg);
-    }
-    0% {
-      transform: rotate(360deg);
-    }
-  }
   /*-----HEADER-----*/
   body {
     margin: auto;
@@ -1011,9 +987,6 @@
     padding: 2rem 0 0 2rem;
     font-family: "Roboto";
     margin: 0 2rem 0 3rem;
-  }
-  footer > i {
-    color: white;
   }
 
   .bottom_logo {

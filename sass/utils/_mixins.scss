@@ -120,49 +120,27 @@
 
             /*---CARD MENU---*/
 
-
-@mixin inside_card{
-    display:block;
-    background-color: white;
-    max-width:95%;
-    border-radius:15px;
-    margin: 0 0 1rem .5rem;
-    padding: .5rem 0 1rem 0;
+@mixin boxshadow($color: $color-bkg) 
+{
+box-shadow: 2px 4px 8px 3px darken($color, 10%);
 }
 
-@mixin menu_p{
-    font-family: $typo-text;
-    font-size:18px;
-    width:95%;
-    font-weight: bold;
-    padding: 0rem 0 0 .5rem;
-    line-height: 1.3rem;
-    margin: 0 0 .3rem 0;
-    
-}
-@mixin menu_em{
-    font-family: $typo-text;
-    font-style:normal;
-    padding-left: .5rem;
-    line-height: 1.2rem;
-    font-size:.90rem;
-}
 
 
     
-
 
 
 /*-----FOOTER----*/
 
 @mixin footer {
-    display:flex; flex-flow: column; max-width:100%; background-color: rgb(63, 62, 62); color:white; padding:2rem 0 0 2rem;
+    display:flex; 
+    flex-flow: column; 
+    max-width:100%; 
+    background-color: rgb(63, 62, 62); 
+    color:white; 
+    padding:2rem 0 0 2rem;
     font-family: $typo-text;
-        & > i{
-            color:white;
     }
-    }
-
 @mixin footer-logo{
     display:block;
     width:8rem;
