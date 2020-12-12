@@ -247,9 +247,9 @@ body {
   display: flex;
   width: 14rem;
   border-radius: 4rem;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0.5rem auto;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
   height: 3.2rem;
   margin: 3rem auto 3rem auto;
 }
@@ -258,7 +258,7 @@ body {
   color: white;
   letter-spacing: 0.05rem;
   font-weight: 500;
-  font-size: 0.1 0.2rem;
+  font-size: 1rem;
   font-family: "Roboto";
   text-decoration: none;
 }
@@ -302,7 +302,7 @@ footer > i {
 footer i {
   width: 1.3rem;
   margin-left: 1rem;
-  font-size: 1, 1rem;
+  font-size: 1.1rem;
   color: grey;
 }
 
@@ -353,9 +353,9 @@ footer i {
     display: flex;
     width: 14rem;
     border-radius: 4rem;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0.5rem auto;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
     height: 3.2rem;
     margin: 3rem auto 3rem auto;
   }
@@ -364,7 +364,7 @@ footer i {
     color: white;
     letter-spacing: 0.05rem;
     font-weight: 500;
-    font-size: 0.1 0.2rem;
+    font-size: 1rem;
     font-family: "Roboto";
     text-decoration: none;
   }
@@ -442,7 +442,7 @@ footer i {
   footer i {
     width: 1.3rem;
     margin-left: 1rem;
-    font-size: 1, 1rem;
+    font-size: 1.1rem;
     color: grey;
   }
 }
@@ -522,7 +522,7 @@ footer i {
   footer i {
     width: 1.3rem;
     margin-left: 1rem;
-    font-size: 1, 1rem;
+    font-size: 1.1rem;
     color: grey;
   }
 }

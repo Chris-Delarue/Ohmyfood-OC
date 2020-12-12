@@ -13,28 +13,25 @@
         <title>Ohmyfood</title>
     </head>
     <body>
-        <div class="chargement">
-        </div>
-        <div class="charg__bg">
-        </div>
-
+              
+            <div class="loader__spinner">    
+            </div>
+                  
         
-                <!---------------------HEADER--------------------------->
+        <!--HEADER-->
 
-            <header class="header">
+            <header class="about">
                 <div class="logo">
                     <a href="index.html"><img class="top_logo" src="images/logo/ohmyfood.png" alt="ohmyfood"></a>
                 </div>
                     <div class="search">
                         <div class="position">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                        </div>
-                        <div>
-                            <input type="text" name="rechercher" placeholder="Paris, Belleville">
+                            <a class="map" href="https://maps.google.fr" target="_blank" rel="noreferrer noopener">Paris, Belleville</a>
                         </div>
                     </div>    
-                <div class="card_header">
-                    <div class="acceuil_text_content">
+                <div class="card_about">
+                    <div class="about_text_content">
                         <h1> Réservez le menu qui  <br>vous convient</h1>
                         <h4 class="sous_titre">Découvrez des restaurants d'exception, <br>sélectionnée par nos soins.</h4>
                     </div>
@@ -44,42 +41,42 @@
                 </div> 
             </header>
 
-            <!--------------------------------MAIN CONTENT-------------------------->
+            <!--MAIN CONTENT-->
 
             <main class="container">
                 <h2 class="titre_decouvrir">Fonctionnement</h2>
                 <div class="decouvrir">
-                    <button class=btn>
+                    <div class=btn>
                         <div class="menu_choisissez">
                             <p class="number">1</p>
                             <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                             <h5 class="menu_text_content">Choisissez un restaurant</h5>
                         </div>
-                    </button>
+                    </div>
 
-                    <button class="btn">
+                    <div class="btn">
                         <div class="menu_composez">
                             <p class="number">2</p>
                             <i class="fas fa-list" aria-hidden="true"></i>
                             <h5 class="menu_text_content">Composez votre menu</h5>
                         </div>
-                    </button>
+                    </div>
 
-                    <button class="btn">
+                    <div class="btn">
                         <div class="menu_degustez">
                             <p class="number">3</p>
                             <i class="fas fa-store" aria-hidden="true"></i>
                             <h5 class="menu_text_content">Dégustez au restaurant</h5>
                         </div>
-                    </button>
+                    </div>
                 </div>
 
-                <!-----------------------CARD SHOWING RESTAURANT---------------------->
+                <!--CARD SHOWING RESTAURANT-->
 
 
-                <div class="card_restaurant">
+                <div class="card_container">
                     <h2 class="titre_resto">Restaurants</h2>
-                    <div class="card_container">
+                    <div class="card_restaurant">
                         <div class="card">
                             <div class="card_image">
                                 <a href="restaurant_palette.html">
@@ -87,9 +84,7 @@
                                 <div class="nouveau">Nouveau</div>
                             </div>
                             <div class="card_text_content">
-                                <div class="icon">
                                 <i class="far fa-heart" aria-hidden="true"></i>
-                                </div>
                                 <p>La palette du goût</p>
                                 <em>Ménilmontant</em>
                             </div>
@@ -135,7 +130,7 @@
                 </div>
             </main>
 
-            <!-------------------------------------FOOTER---------------------->
+            <!--FOOTER-->
 
             <footer>
                 <div class="footer_logo">
@@ -156,7 +151,6 @@
                     <p class="contact_text_content"><a href="mailto:fakemail@free.contact">Contact</a></p>
                 </div>  
             </footer>    
-        
     </body>                
 </html>                
             
