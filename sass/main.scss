@@ -22,177 +22,94 @@ $color-secondary:#fa79da;
 $color-tertiaire: #99e2d0;
 $typo-titres:'Shrikhand';
 $typo-text:'Roboto';
-$color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
+$color-pink:linear-gradient(to top, #9356dc 10%, #fa79da  100%);
 $bg-color:#f7e7e7;
 
 
-@keyframes bkg {
-    0% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    60% {
-        opacity: 0.9;
-        transform: scale(1);
-    }
-    70% {
-        opacity: 0.8;
-        transform: scale(1);
-    }
-    90% {
-        opacity: 0.7;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-} 
+ 
 
 @keyframes spin{
     0%{
         transform: rotate(0deg); 
         opacity: 1; 
     }
-    50% {
-        transform: rotate(150deg);
-        opacity:1;
-
+    25%{transform:rotate(120deg) ;
+        opacity: 1;
     }
-
+    50% {
+        transform: rotate(160deg);
+        opacity:1;
+    }
+    75%{
+        transform: rotate(200deg);
+        opacity: 1;
+    }
     100% {
         transform: rotate(360deg);
         opacity: 0;
-       
+        visibility: hidden;
     } 
 }
 
-/*---loader---*/
+        /*--loader--*/
 
-.chargement {
+
+.loader__spinner {
     border-top:10px solid $color-secondary;
     border-bottom:10px solid $color-tertiaire;
     border-radius:50%;
     width: 300px;
     height:300px;
-    animation: spin 3s  reverse ;
-    -webkit-animation: spin 3s reverse;
-    position: fixed;
-    left:43%;
-    top:30%;
+    animation: spin 3s  cubic-bezier(.56,.57,.62,.64)  reverse ;
+    -webkit-animation: spin 3s  cubic-bezier(.56,.57,.62,.64)  reverse ;
+    -moz-animation: spin 3s  cubic-bezier(.56,.57,.62,.64)  reverse ;
+    left: calc(50% - 140px);
+    top: calc(50% - 140px);
     z-index:3;
-    opacity:0;
-    
-    &::before{
-        border-top:10px solid $color-secondary;
-        border-bottom:10px solid $color-tertiaire;
-        border-radius:50%;
-        width: 300px;
-        height:300px;
-        animation: spin 3s  reverse ;
-        -webkit-animation: spin 3s reverse;
-        content:"";
-        position: absolute;
-        top:0;
-        left:0;
-        z-index:3;
-        opacity:0;
-    }
-    &::after{
-        border-top:10px solid $color-secondary;
-        border-bottom:10px solid $color-tertiaire;
-        border-radius:50%;
-        width: 300px;
-        height:300px;
-        animation: spin 3s  reverse ;
-        -webkit-animation: spin 3s reverse;
-        content:"";
-        position: absolute;
-        top:25px;
-        left:25px;
-        z-index:3;
-        opacity:0;
-    }
- 
-}
-
-.charg__bg{
-    background: $bg-color;
-    background-size: cover;
-    width:100%;
-    height:350%;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: 2;
-    opacity: 0;
-    transform-origin: top;
-    transform: scale(0);
-    animation: bkg 3s;
+    opacity:0;  
+    position:absolute;
 }
 
 
-@media (max-width:599px){
+@media (max-width:767px){
   
-
 /*-------------header----------------*/
 
-.chargement{
-    position:fixed;
-    top:30%;
-    left:10%;
-}
+
 body{
     max-width:100%;
     margin:0;
+    padding:0;
     }
-
-.header{
-    display:flex;
-    flex-flow: column wrap;
-    margin-top: 1rem;
-    max-width:100%;
-}
-
-.top_logo{
-    display:block;
-    width:11rem; 
-    margin:auto;
+.about{
+    @include about;
+        & .top_logo{
+            display:block;
+            width:11rem; 
+            margin:1rem auto;
+        }
 }
 .search{
-    border-top:solid 2px;
-    border-color:rgb(214, 214, 214);
-    display:flex; 
-    justify-content: center;
-    max-width:100%;  
-    height:3rem; 
-    background-color: rgb(228, 227, 227);
-    padding-left:4rem;
-    margin-top:1rem;
-   
-        .position{
-            border:none;
-            padding: .6rem 0 0 1.5rem;
+    @include search;
+        & .position{
+            padding-top:.8rem;
+            margin:auto;
         }  
- 
-            input{
-                border:none;
+            & .map {
+                text-decoration: none;
+                font-family: $typo-text;
                 width:85%;
                 font-size:1.1rem;
-                font-weight:1.2rem;
                 font-weight:700;
                 background-color: rgb(228, 227, 227);
                 color: black;
                 margin:.5rem 0 0 1.5rem;
             }
-}
-.card_header{
-    display:flex;
-    flex-flow: column ;
-    max-width: 100%;
-    height:18rem;
-    background-color: rgb(234,236,236);
-        .acceuil_text_content{
+}       
+.card_about{
+    @include card-about;
+    padding-bottom:3rem;
+        .about_text_content{
             display:flex;
             flex-flow:column wrap;
             text-align:center;
@@ -200,7 +117,7 @@ body{
             margin:1.7rem 0 0 0;
             h1{
                 font-size:1.8rem;
-                font-weight:1200;
+                font-weight:900;
                 margin:0;
             }
             h4{
@@ -210,21 +127,18 @@ body{
                 margin-top:1rem;
             }
         }
-    .explorer_btn{
-   
-         @include gradient-pink;
-   
-    .explorer_text_btn{
-        
-        @include text-gradient ;
-            
-        }
-    }
-    .explorer_btn a{  
+    }        
+.explorer_btn{
+     @include gradient-pink;
+}     
+.explorer_text_btn{
+    @include text-gradient ; 
+} 
+              
+.explorer_btn a{  
         text-decoration: none;     
-    }
-}    
-
+}
+         
 
 /*-----MAIN CONTENT--------*/
 
@@ -240,10 +154,8 @@ body{
     max-width:100%;
     display:flex;
     flex-flow: column wrap;
-    justify-content: space-between 10rem;
-    height:20rem; 
+    margin-bottom:4rem;
 }
-
 .btn{
     border:none;
     background-color: transparent;
@@ -262,8 +174,7 @@ body{
 }
 
 .btn i{
-    @include icone;  
-               
+    @include icone;           
     } 
 
 .number{
@@ -274,9 +185,11 @@ body{
 }
 
 /*------CARD SHOWING MENU-----*/
-
+.card_container{
+    @include card-container;
+}
 .card_restaurant{
-    @include main;
+    @include card-container;
 }
 .card{
    @include card-restaurant;
@@ -294,23 +207,26 @@ body{
 
 .titre_resto{
     font-family: $typo-text;
-    margin: 3rem 0 1.5rem 1rem;
+    margin:2rem 0 0 1rem;
+  
 }
 .card_text_content, em{
     @include card-text-content;        
 }
-.fa-heart {
+.fa-heart{
     color:grey;
     background-color: #fff;
     border-radius: 50%;
     padding:.2em;
 }
-.fa-heart:hover::before{
-    color:$color-primary ;
+.fa-heart:hover{
+    color:$color-tertiaire;
     cursor: pointer;
     font-weight: bold;
     transition: color 4s ease-out;
 }
+
+
     /*----FOOTER----*/
 
 footer{
@@ -328,69 +244,52 @@ footer i{
 }
 
 
-@media screen and(min-width:768px)
-            and (max-width:1023px){
+@media screen and (min-width:768px){
+   
 
-
- body{
-    margin:auto;
+body{
     max-width:100%;
+    margin:0;
+    padding:0;
 }
-.header{
-    display:flex;
-    flex-flow: column wrap;
-    margin: 1rem 2rem 0 3rem ;
-    max-width:100%;
-}
-.top_logo{
-    display:block;
-    width:30rem;
-    margin:auto;  
+.about{
+     @include about;
+         & .top_logo{
+            display:block;
+            width:20rem; 
+            margin:1rem auto;
+        }
 }
 .search{
-    border-top:solid 2px;
-    border-color:rgb(214, 214, 214);
-    display:flex; 
-    justify-content: center;
-    max-width:100%;  
-    height:5rem; 
-    background-color: rgb(228, 227, 227);
-    padding-left:4rem;
-    margin-top:1rem;
-       
-        .position{
-            border:none;
-            padding: 2rem 0 0 1.5rem;
-            font-size:20px;
+    @include search;
+        & .position{
+            font-size:1.5rem;
+            padding-top:.5rem;
+            margin:auto ;
         }  
-     
-            input{
+            & .map{
+                font-family: $typo-text;
                 border:none;
-                width:90%;
-                height:30px;
-                font-size:1.1rem;
-                font-weight:1.2rem;
-                font-weight:500;
+                text-decoration: none;
+                width:85%;
+                font-size:1.3rem;
+                font-weight:700;
                 background-color: rgb(228, 227, 227);
                 color: black;
-                margin:2rem 0 0 1.5rem;
+                padding-left:3rem;
             }
-    }
-.card_header{
-    display:flex;
-    flex-flow: column ;
-    max-width: 100%;
-    height:18rem;
-    background-color: rgb(234,236,236);
-        .acceuil_text_content{
+}       
+.card_about{
+    @include card-about;
+        .about_text_content{
             display:flex;
             flex-flow:column wrap;
             text-align:center;
             font-family: $typo-text;
             margin:1.7rem 0 0 0;
-            h1{
+             h1{
                 font-size:1.8rem;
-                font-weight:1200;
+                font-weight:900;
                 margin:0;
             }
             h4{
@@ -400,309 +299,90 @@ footer i{
                 margin-top:1rem;
             }
         }
-        .explorer_btn{
-       
-            @include gradient-pink;
-          
+}        
+.explorer_btn{
+        @include gradient-pink;
         .explorer_text_btn{
-               
-            @include text-gradient ;
-                   
-            }
-        }
-        .explorer_btn a{  
-            text-decoration: none;     
-        }
-    }     
+                @include text-gradient ; 
+            } 
+}              
+.explorer_btn a{  
+        text-decoration: none;
+}
+          
+    
     /*-----MAIN CONTENT--------*/
     
 .container{
-     max-width:100%;
+    display:flex;
+    flex-flow: column;
+    max-width:100%;
 }
 .titre_decouvrir{
     font-family:$typo-text;
-    margin:3rem 0 2rem 3rem;
+    margin:1rem auto 1rem auto;
 }
-    
 .decouvrir{
-    max-width:80%;
+    max-width:100%;
     display:flex;
-    flex-flow:wrap;
-    justify-content: space-evenly ;
-    margin-left:6rem; 
+    flex-flow: column wrap;
+    margin-bottom:4rem;
 }
-    
 .btn{
     border:none;
     background-color: transparent;
     margin-bottom:.4rem;
     max-width:100%;
 }
-    
-.menu_choisissez, .menu_composez, .menu_degustez {
+ 
+.menu_choisissez, .menu_composez, .menu_degustez{
     @include menu-accueil;
-    width:20rem;
-        &:hover{
-            @include hover-accueil;
-            & > i{
-                color:$color-primary;
-            }  
-        }           
-} 
-.btn i{
-    @include icone; 
-          
+    margin:auto;
+            &:hover {
+                @include hover-accueil;
+                    & > i{
+                    color:$color-primary;
+                }   
+            }
 }
+    
+.btn i{
+    @include icone;           
+    } 
     
 .number{
     @include number;
 }
-    
 .menu_text_content{
     @include text-content;
 }
     
-
-    
     /*------CARD SHOWING MENU-----*/
-    
+.card_container{
+    @include card-container;
+}
 .card_restaurant{
-    @include main;
-    display:flex;
-    flex-flow: column wrap;
-    margin: 0 2rem 0 3rem;
+    @include card-container;
 }
 .card{
     @include card-restaurant;
-    display:flex;
-    justify-content: space-evenly;
-    width:30rem;
-    margin:3rem 0 0 6rem;
-    }
-.nouveau{
-     @include nouveau;
-}
-.card_image{
-    @include card-restaurant-image; 
-}
-.card_image img{
-    @include restaurant-image;
-}
-    
-.titre_resto{
-    font-family: $typo-text;
-    margin: 3rem 0 0rem 1rem;
-}
-.card_text_content, em{
-    @include card-text-content;        
-}
-
-.fa-heart {
-    color:grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding:.2em;
-}
-.fa-heart:hover::before{
-    color: $color-primary;
-    cursor: pointer;
-    font-weight: bold;
-    transition: color 4s ease-out;
-}
-    
-        /*----FOOTER----*/
-    
-footer{
-    @include footer;
-     margin:0 2rem 0 3rem;
-}
-.bottom_logo{
-     @include footer-logo; 
-    margin:auto;
-}
-.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
-    @include proposer-partenaire-mentions-contact;
-    margin:auto;
-}
-footer i{
-    @include icone;
-}    
-}
-
-/*-----DESKTOP----*/
-    
-
-@media screen and (min-width:1024px){
-
-
-/*-----HEADER-----*/
-
-
-body{
-    margin:auto;
-    max-width:100%;
-}
-.header{
-    display:flex;
-    flex-flow: column wrap;
-    margin: 1rem 2rem 0 3rem ;
-    max-width:100%;
-}
-.top_logo{
-    display:block;
-    width:50rem;
-    margin:auto; 
-    
-}
-.search{
-    border-top:solid 2px;
-    border-color:rgb(214, 214, 214);
-    display:flex; 
-    justify-content: center;
-    max-width:100%;  
-    height:5rem; 
-    background-color: rgb(228, 227, 227);
-    padding-left:4rem;
-    margin-top:1rem;
-   
-        .position{
-            border:none;
-            padding: 2rem 0 0 1.5rem;
-        }  
- 
-            input{
-                border:none;
-                width:85%;
-                font-size:1.1rem;
-                font-weight:1.2rem;
-                font-weight:500;
-                background-color: rgb(228, 227, 227);
-                color: black;
-                margin:2rem 0 0 1.5rem;
-            }
-}
-.card_header{
-    display:flex;
-    flex-flow: column ;
-    max-width: 100%;
-    height:18rem;
-    background-color: rgb(234,236,236);
-        .acceuil_text_content{
-            display:flex;
-            flex-flow:column wrap;
-            text-align:center;
-            font-family: $typo-text;
-            margin:1.7rem 0 0 0;
-            h1{
-                font-size:1.8rem;
-                font-weight:1200;
-                margin:0;
-            }
-            h4{
-                color: rgb(107, 107 ,107);
-                font-size:1.2rem;
-                font-weight:200;
-                margin-top:1rem;
-            }
-        }
-        .explorer_btn{
-   
-            @include gradient-pink;
-      
-       .explorer_text_btn{
-           
-           @include text-gradient ;
-               
-           }
-       }
-       .explorer_btn a{  
-           text-decoration: none;     
-       }
-}     
-/*-----MAIN CONTENT--------*/
-
-.container{
-    max-width:100%;
-}
-.titre_decouvrir{
-    font-family:$typo-text;
-    margin:3rem 0 2rem 4rem;
-}
-
-.decouvrir{
-    max-width:80%;
-    display:flex;
-    flex-flow:wrap;
-    justify-content: space-evenly ;
-    margin-left:10rem; 
-}
-
-.btn{
-    border:none;
-    background-color: transparent;
-    margin-bottom:.4rem;
-    max-width:100%;
-}
-
-.menu_choisissez, .menu_composez, .menu_degustez {
-    @include menu-accueil;
-        width:20rem;
-            &:hover{
-                @include hover-accueil;
-                & > i{
-                    color:$color-primary;
-                }  
-        }
-}
-.btn i{
-    @include icone;
-}
-.number{
-    @include number;
-}
-.menu_text_content{
-    @include text-content;
-}
-
-
-/*------CARD SHOWING MENU-----*/
-
-.card_restaurant{
-    @include main;
-    display:flex;
-    flex-flow: column wrap;
-    margin: 0 2rem 0 3rem;
-}
-.card_container{
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-}
-.card{
-   @include card-restaurant;
-    width:17rem;
-   
 }
 .nouveau{
     @include nouveau;
 }
 .card_image{
-    @include card-restaurant-image; 
-
+    @include card-restaurant-image;  
 }
 .card_image img{
     @include restaurant-image;
-}
-
+}  
 .titre_resto{
     font-family: $typo-text;
-    margin: 3rem 0 0rem 1rem;
-    width:30rem;
+    margin:1rem auto; 
 }
 .card_text_content, em{
     @include card-text-content;        
 }
-
 .fa-heart {
     color:grey;
     background-color: #fff;
@@ -715,22 +395,23 @@ body{
     font-weight: bold;
     transition: color 4s ease-out;
 }
-
-    /*----FOOTER----*/
-
+        /*----FOOTER----*/
+    
 footer{
     @include footer;
-    margin:0 2rem 0 3rem;
 }
 .bottom_logo{
-    @include footer-logo; 
-    margin:auto;
+     @include footer-logo; 
+     margin:auto;
 }
 .footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
     @include proposer-partenaire-mentions-contact;
     margin:auto;
 }
 footer i{
-    @include icone;
-}    
+     @include icone;
+    }
 }
+
+
+

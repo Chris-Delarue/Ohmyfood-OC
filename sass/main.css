@@ -8,198 +8,137 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@keyframes bkg {
-  0% {
-    opacity: 0;
-    transform: scale(1);
-  }
-  60% {
-    opacity: 0.9;
-    transform: scale(1);
-  }
-  70% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  90% {
-    opacity: 0.7;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1);
-  }
-}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
     opacity: 1;
   }
+  25% {
+    transform: rotate(120deg);
+    opacity: 1;
+  }
   50% {
-    transform: rotate(150deg);
+    transform: rotate(160deg);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(200deg);
     opacity: 1;
   }
   100% {
     transform: rotate(360deg);
     opacity: 0;
+    visibility: hidden;
   }
 }
-/*---loader---*/
-.chargement {
+/*--loader--*/
+.loader__spinner {
   border-top: 10px solid #fa79da;
   border-bottom: 10px solid #99e2d0;
   border-radius: 50%;
   width: 300px;
   height: 300px;
-  animation: spin 3s reverse;
-  -webkit-animation: spin 3s reverse;
-  position: fixed;
-  left: 43%;
-  top: 30%;
+  animation: spin 3s cubic-bezier(0.56, 0.57, 0.62, 0.64) reverse;
+  -webkit-animation: spin 3s cubic-bezier(0.56, 0.57, 0.62, 0.64) reverse;
+  -moz-animation: spin 3s cubic-bezier(0.56, 0.57, 0.62, 0.64) reverse;
+  left: calc(50% - 140px);
+  top: calc(50% - 140px);
   z-index: 3;
   opacity: 0;
-}
-.chargement::before {
-  border-top: 10px solid #fa79da;
-  border-bottom: 10px solid #99e2d0;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  animation: spin 3s reverse;
-  -webkit-animation: spin 3s reverse;
-  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  opacity: 0;
-}
-.chargement::after {
-  border-top: 10px solid #fa79da;
-  border-bottom: 10px solid #99e2d0;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  animation: spin 3s reverse;
-  -webkit-animation: spin 3s reverse;
-  content: "";
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  z-index: 3;
-  opacity: 0;
 }
 
-.charg__bg {
-  background: #f7e7e7;
-  background-size: cover;
-  width: 100%;
-  height: 350%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 0;
-  transform-origin: top;
-  transform: scale(0);
-  animation: bkg 3s;
-}
-
-@media (max-width: 599px) {
+@media (max-width: 767px) {
   /*-------------header----------------*/
-  .chargement {
-    position: fixed;
-    top: 30%;
-    left: 10%;
-  }
-
   body {
     max-width: 100%;
     margin: 0;
+    padding: 0;
   }
 
-  .header {
+  .about {
     display: flex;
     flex-flow: column wrap;
-    margin-top: 1rem;
     max-width: 100%;
   }
-
-  .top_logo {
+  .about .top_logo {
     display: block;
     width: 11rem;
-    margin: auto;
+    margin: 1rem auto;
   }
 
   .search {
     border-top: solid 2px;
     border-color: #d6d6d6;
     display: flex;
-    justify-content: center;
+    flex-flow: wrap;
     max-width: 100%;
     height: 3rem;
     background-color: #e4e3e3;
-    padding-left: 4rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   .search .position {
-    border: none;
-    padding: 0.6rem 0 0 1.5rem;
+    padding-top: 0.8rem;
+    margin: auto;
   }
-  .search input {
-    border: none;
+  .search .map {
+    text-decoration: none;
+    font-family: "Roboto";
     width: 85%;
     font-size: 1.1rem;
-    font-weight: 1.2rem;
     font-weight: 700;
     background-color: #e4e3e3;
     color: black;
     margin: 0.5rem 0 0 1.5rem;
   }
 
-  .card_header {
+  .card_about {
     display: flex;
     flex-flow: column;
     max-width: 100%;
     height: 18rem;
     background-color: #eaecec;
+    padding-bottom: 3rem;
   }
-  .card_header .acceuil_text_content {
+  .card_about .about_text_content {
     display: flex;
     flex-flow: column wrap;
     text-align: center;
     font-family: "Roboto";
     margin: 1.7rem 0 0 0;
   }
-  .card_header .acceuil_text_content h1 {
+  .card_about .about_text_content h1 {
     font-size: 1.8rem;
-    font-weight: 1200;
+    font-weight: 900;
     margin: 0;
   }
-  .card_header .acceuil_text_content h4 {
+  .card_about .about_text_content h4 {
     color: #6b6b6b;
     font-size: 1.2rem;
     font-weight: 200;
     margin-top: 1rem;
   }
-  .card_header .explorer_btn {
-    background: linear-gradient(#fa79da 0%, #9356dc 100%);
+
+  .explorer_btn {
+    background: linear-gradient(to top, #9356dc 10%, #fa79da 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0.5rem auto;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
     height: 3.2rem;
   }
-  .card_header .explorer_btn .explorer_text_btn {
+
+  .explorer_text_btn {
     color: white;
     letter-spacing: 0.05rem;
     font-weight: 500;
-    font-size: 0.1 0.2rem;
+    font-size: 1rem;
     font-family: "Roboto";
   }
-  .card_header .explorer_btn a {
+
+  .explorer_btn a {
     text-decoration: none;
   }
 
@@ -217,8 +156,7 @@
     max-width: 100%;
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-between 10rem;
-    height: 20rem;
+    margin-bottom: 4rem;
   }
 
   .btn {
@@ -229,17 +167,16 @@
   }
 
   .menu_choisissez, .menu_composez, .menu_degustez {
-    max-width: 87%;
+    max-width: 90%;
     border-radius: 25px;
     display: flex;
     justify-content: start;
     font-family: "Roboto";
     cursor: pointer;
     font-size: 1.3rem;
-    height: 4.5rem;
     background-color: #F0F0F0;
     align-items: center !important;
-    margin: 0 0 1rem 1.7rem;
+    margin: 0 0 0rem 1rem;
     box-shadow: 0 0.7rem 0.7rem 0 #dddddd;
     color: black;
   }
@@ -255,307 +192,13 @@
   .btn i {
     width: 1.3rem;
     margin-left: 1rem;
-    font-size: 1, 1rem;
+    font-size: 1.1rem;
     color: grey;
   }
 
   .number {
-    border-radius: 50px;
-    width: 1.8rem;
-    height: 1.3rem;
-    background-color: #9356dc;
-    color: white;
-    font-size: 0.9rem;
-    margin-left: -0.4rem;
-    padding: 0.6rem 0 0 0;
-  }
-
-  .menu_text_content {
-    color: black;
-    width: 75%;
-    margin-left: 0.9rem;
-    text-align: left;
-    font-size: 73%;
-  }
-
-  /*------CARD SHOWING MENU-----*/
-  .card_restaurant {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    background-color: #eaecec;
-    padding-bottom: 2rem;
-  }
-
-  .card {
-    display: flex;
-    flex-flow: column;
-    max-width: 85%;
-    border-radius: 15px;
-    cursor: pointer;
-    height: auto;
-    margin: 2rem 0 1rem 2rem;
-    background-color: white;
-    padding-bottom: 1rem;
-  }
-
-  .nouveau {
-    width: 4rem;
-    color: green;
-    background-color: #99e2d0;
-    border-radius: 5px;
-    position: absolute;
-    top: 9px;
-    right: 16px;
-    font-family: "Roboto";
-    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
-  }
-
-  .card_image {
-    max-width: 100%;
-    border-radius: 15px 15px 0 0;
-    height: 190px;
-    position: relative;
-  }
-
-  .card_image img {
-    width: 100%;
-    border-radius: 15px 15px 0 0;
-    height: 190px;
-    object-fit: cover;
-  }
-
-  .titre_resto {
-    font-family: "Roboto";
-    margin: 3rem 0 1.5rem 1rem;
-  }
-
-  .card_text_content, em {
-    font-family: "Roboto";
-    font-style: normal;
-    margin-left: 1rem;
-    line-height: 0.8rem;
-  }
-  .card_text_content p, em p {
-    font-size: 20px;
-    font-weight: 800;
-  }
-  .card_text_content em, em em {
-    margin-left: 0.1rem;
-    font-size: 18px;
-  }
-  .card_text_content i, em i {
-    font-size: 2em;
-    float: right;
-    margin: 1rem 1rem 0 0;
-  }
-
-  .fa-heart {
-    color: grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 0.2em;
-  }
-
-  .fa-heart:hover::before {
-    color: #9356dc;
-    cursor: pointer;
-    font-weight: bold;
-    transition: color 4s ease-out;
-  }
-
-  /*----FOOTER----*/
-  footer {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    background-color: #3f3e3e;
-    color: white;
-    padding: 2rem 0 0 2rem;
-    font-family: "Roboto";
-  }
-
-  .bottom_logo {
-    display: block;
-    width: 8rem;
-    margin-bottom: 1rem;
-    filter: invert(100%);
-  }
-
-  .footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact {
-    display: flex;
-    flex-flow: wrap;
-    line-height: 0.05rem;
-  }
-  .footer_proposer > i, .footer_partenaire > i, .footer_mentions > i, .footer_contact > i {
-    margin: 1rem 0 0 0;
-    padding-right: 0.5rem;
-    line-height: 0.05rem;
-    color: white;
-  }
-  .footer_proposer a, .footer_partenaire a, .footer_mentions a, .footer_contact a {
-    text-decoration: none;
-    color: white;
-  }
-
-  footer i {
-    width: 1.3rem;
-    margin-left: 1rem;
-    font-size: 1, 1rem;
-    color: grey;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  body {
-    margin: auto;
-    max-width: 100%;
-  }
-
-  .header {
-    display: flex;
-    flex-flow: column wrap;
-    margin: 1rem 2rem 0 3rem;
-    max-width: 100%;
-  }
-
-  .top_logo {
-    display: block;
-    width: 30rem;
-    margin: auto;
-  }
-
-  .search {
-    border-top: solid 2px;
-    border-color: #d6d6d6;
     display: flex;
     justify-content: center;
-    max-width: 100%;
-    height: 5rem;
-    background-color: #e4e3e3;
-    padding-left: 4rem;
-    margin-top: 1rem;
-  }
-  .search .position {
-    border: none;
-    padding: 2rem 0 0 1.5rem;
-    font-size: 20px;
-  }
-  .search input {
-    border: none;
-    width: 90%;
-    height: 30px;
-    font-size: 1.1rem;
-    font-weight: 1.2rem;
-    font-weight: 500;
-    background-color: #e4e3e3;
-    color: black;
-    margin: 2rem 0 0 1.5rem;
-  }
-
-  .card_header {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    height: 18rem;
-    background-color: #eaecec;
-  }
-  .card_header .acceuil_text_content {
-    display: flex;
-    flex-flow: column wrap;
-    text-align: center;
-    font-family: "Roboto";
-    margin: 1.7rem 0 0 0;
-  }
-  .card_header .acceuil_text_content h1 {
-    font-size: 1.8rem;
-    font-weight: 1200;
-    margin: 0;
-  }
-  .card_header .acceuil_text_content h4 {
-    color: #6b6b6b;
-    font-size: 1.2rem;
-    font-weight: 200;
-    margin-top: 1rem;
-  }
-  .card_header .explorer_btn {
-    background: linear-gradient(#fa79da 0%, #9356dc 100%);
-    display: flex;
-    width: 14rem;
-    border-radius: 4rem;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0.5rem auto;
-    height: 3.2rem;
-  }
-  .card_header .explorer_btn .explorer_text_btn {
-    color: white;
-    letter-spacing: 0.05rem;
-    font-weight: 500;
-    font-size: 0.1 0.2rem;
-    font-family: "Roboto";
-  }
-  .card_header .explorer_btn a {
-    text-decoration: none;
-  }
-
-  /*-----MAIN CONTENT--------*/
-  .container {
-    max-width: 100%;
-  }
-
-  .titre_decouvrir {
-    font-family: "Roboto";
-    margin: 3rem 0 2rem 3rem;
-  }
-
-  .decouvrir {
-    max-width: 80%;
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-evenly;
-    margin-left: 6rem;
-  }
-
-  .btn {
-    border: none;
-    background-color: transparent;
-    margin-bottom: 0.4rem;
-    max-width: 100%;
-  }
-
-  .menu_choisissez, .menu_composez, .menu_degustez {
-    max-width: 87%;
-    border-radius: 25px;
-    display: flex;
-    justify-content: start;
-    font-family: "Roboto";
-    cursor: pointer;
-    font-size: 1.3rem;
-    height: 4.5rem;
-    background-color: #F0F0F0;
-    align-items: center !important;
-    margin: 0 0 1rem 1.7rem;
-    box-shadow: 0 0.7rem 0.7rem 0 #dddddd;
-    color: black;
-    width: 20rem;
-  }
-  .menu_choisissez:hover, .menu_composez:hover, .menu_degustez:hover {
-    border-radius: 25px;
-    background-color: #f9eafa;
-    box-shadow: 0 0.7rem 0.7rem 0 #c7c7c7;
-  }
-  .menu_choisissez:hover > i, .menu_composez:hover > i, .menu_degustez:hover > i {
-    color: #9356dc;
-  }
-
-  .btn i {
-    width: 1.3rem;
-    margin-left: 1rem;
-    font-size: 1, 1rem;
-    color: grey;
-  }
-
-  .number {
     border-radius: 50px;
     width: 1.8rem;
     height: 1.3rem;
@@ -575,340 +218,33 @@
   }
 
   /*------CARD SHOWING MENU-----*/
-  .card_restaurant {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    background-color: #eaecec;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-flow: column wrap;
-    margin: 0 2rem 0 3rem;
-  }
-
-  .card {
-    display: flex;
-    flex-flow: column;
-    max-width: 85%;
-    border-radius: 15px;
-    cursor: pointer;
-    height: auto;
-    margin: 2rem 0 1rem 2rem;
-    background-color: white;
-    padding-bottom: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-    width: 30rem;
-    margin: 3rem 0 0 6rem;
-  }
-
-  .nouveau {
-    width: 4rem;
-    color: green;
-    background-color: #99e2d0;
-    border-radius: 5px;
-    position: absolute;
-    top: 9px;
-    right: 16px;
-    font-family: "Roboto";
-    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
-  }
-
-  .card_image {
-    max-width: 100%;
-    border-radius: 15px 15px 0 0;
-    height: 190px;
-    position: relative;
-  }
-
-  .card_image img {
-    width: 100%;
-    border-radius: 15px 15px 0 0;
-    height: 190px;
-    object-fit: cover;
-  }
-
-  .titre_resto {
-    font-family: "Roboto";
-    margin: 3rem 0 0rem 1rem;
-  }
-
-  .card_text_content, em {
-    font-family: "Roboto";
-    font-style: normal;
-    margin-left: 1rem;
-    line-height: 0.8rem;
-  }
-  .card_text_content p, em p {
-    font-size: 20px;
-    font-weight: 800;
-  }
-  .card_text_content em, em em {
-    margin-left: 0.1rem;
-    font-size: 18px;
-  }
-  .card_text_content i, em i {
-    font-size: 2em;
-    float: right;
-    margin: 1rem 1rem 0 0;
-  }
-
-  .fa-heart {
-    color: grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 0.2em;
-  }
-
-  .fa-heart:hover::before {
-    color: #9356dc;
-    cursor: pointer;
-    font-weight: bold;
-    transition: color 4s ease-out;
-  }
-
-  /*----FOOTER----*/
-  footer {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    background-color: #3f3e3e;
-    color: white;
-    padding: 2rem 0 0 2rem;
-    font-family: "Roboto";
-    margin: 0 2rem 0 3rem;
-  }
-
-  .bottom_logo {
-    display: block;
-    width: 8rem;
-    margin-bottom: 1rem;
-    filter: invert(100%);
-    margin: auto;
-  }
-
-  .footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact {
-    display: flex;
-    flex-flow: wrap;
-    line-height: 0.05rem;
-    margin: auto;
-  }
-  .footer_proposer > i, .footer_partenaire > i, .footer_mentions > i, .footer_contact > i {
-    margin: 1rem 0 0 0;
-    padding-right: 0.5rem;
-    line-height: 0.05rem;
-    color: white;
-  }
-  .footer_proposer a, .footer_partenaire a, .footer_mentions a, .footer_contact a {
-    text-decoration: none;
-    color: white;
-  }
-
-  footer i {
-    width: 1.3rem;
-    margin-left: 1rem;
-    font-size: 1, 1rem;
-    color: grey;
-  }
-}
-/*-----DESKTOP----*/
-@media screen and (min-width: 1024px) {
-  /*-----HEADER-----*/
-  body {
-    margin: auto;
-    max-width: 100%;
-  }
-
-  .header {
-    display: flex;
-    flex-flow: column wrap;
-    margin: 1rem 2rem 0 3rem;
-    max-width: 100%;
-  }
-
-  .top_logo {
-    display: block;
-    width: 50rem;
-    margin: auto;
-  }
-
-  .search {
-    border-top: solid 2px;
-    border-color: #d6d6d6;
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    height: 5rem;
-    background-color: #e4e3e3;
-    padding-left: 4rem;
-    margin-top: 1rem;
-  }
-  .search .position {
-    border: none;
-    padding: 2rem 0 0 1.5rem;
-  }
-  .search input {
-    border: none;
-    width: 85%;
-    font-size: 1.1rem;
-    font-weight: 1.2rem;
-    font-weight: 500;
-    background-color: #e4e3e3;
-    color: black;
-    margin: 2rem 0 0 1.5rem;
-  }
-
-  .card_header {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    height: 18rem;
-    background-color: #eaecec;
-  }
-  .card_header .acceuil_text_content {
-    display: flex;
-    flex-flow: column wrap;
-    text-align: center;
-    font-family: "Roboto";
-    margin: 1.7rem 0 0 0;
-  }
-  .card_header .acceuil_text_content h1 {
-    font-size: 1.8rem;
-    font-weight: 1200;
-    margin: 0;
-  }
-  .card_header .acceuil_text_content h4 {
-    color: #6b6b6b;
-    font-size: 1.2rem;
-    font-weight: 200;
-    margin-top: 1rem;
-  }
-  .card_header .explorer_btn {
-    background: linear-gradient(#fa79da 0%, #9356dc 100%);
-    display: flex;
-    width: 14rem;
-    border-radius: 4rem;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0.5rem auto;
-    height: 3.2rem;
-  }
-  .card_header .explorer_btn .explorer_text_btn {
-    color: white;
-    letter-spacing: 0.05rem;
-    font-weight: 500;
-    font-size: 0.1 0.2rem;
-    font-family: "Roboto";
-  }
-  .card_header .explorer_btn a {
-    text-decoration: none;
-  }
-
-  /*-----MAIN CONTENT--------*/
-  .container {
-    max-width: 100%;
-  }
-
-  .titre_decouvrir {
-    font-family: "Roboto";
-    margin: 3rem 0 2rem 4rem;
-  }
-
-  .decouvrir {
-    max-width: 80%;
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-evenly;
-    margin-left: 10rem;
-  }
-
-  .btn {
-    border: none;
-    background-color: transparent;
-    margin-bottom: 0.4rem;
-    max-width: 100%;
-  }
-
-  .menu_choisissez, .menu_composez, .menu_degustez {
-    max-width: 87%;
-    border-radius: 25px;
-    display: flex;
-    justify-content: start;
-    font-family: "Roboto";
-    cursor: pointer;
-    font-size: 1.3rem;
-    height: 4.5rem;
-    background-color: #F0F0F0;
-    align-items: center !important;
-    margin: 0 0 1rem 1.7rem;
-    box-shadow: 0 0.7rem 0.7rem 0 #dddddd;
-    color: black;
-    width: 20rem;
-  }
-  .menu_choisissez:hover, .menu_composez:hover, .menu_degustez:hover {
-    border-radius: 25px;
-    background-color: #f9eafa;
-    box-shadow: 0 0.7rem 0.7rem 0 #c7c7c7;
-  }
-  .menu_choisissez:hover > i, .menu_composez:hover > i, .menu_degustez:hover > i {
-    color: #9356dc;
-  }
-
-  .btn i {
-    width: 1.3rem;
-    margin-left: 1rem;
-    font-size: 1, 1rem;
-    color: grey;
-  }
-
-  .number {
-    border-radius: 50px;
-    width: 1.8rem;
-    height: 1.3rem;
-    background-color: #9356dc;
-    color: white;
-    font-size: 0.9rem;
-    margin-left: -0.4rem;
-    padding: 0.6rem 0 0 0;
-  }
-
-  .menu_text_content {
-    color: black;
-    width: 75%;
-    margin-left: 0.9rem;
-    text-align: left;
-    font-size: 73%;
-  }
-
-  /*------CARD SHOWING MENU-----*/
-  .card_restaurant {
-    display: flex;
-    flex-flow: column;
-    max-width: 100%;
-    background-color: #eaecec;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-flow: column wrap;
-    margin: 0 2rem 0 3rem;
-  }
-
   .card_container {
     display: flex;
-    flex-flow: wrap;
-    justify-content: center;
+    flex-flow: column wrap;
+    max-width: 100%;
+    background-color: #eaecec;
+    padding: 0 0 5% 0;
+    margin-top: 1rem;
+  }
+
+  .card_restaurant {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 100%;
+    background-color: #eaecec;
+    padding: 0 0 5% 0;
+    margin-top: 1rem;
   }
 
   .card {
     display: flex;
     flex-flow: column;
-    max-width: 85%;
+    max-width: 90%;
     border-radius: 15px;
     cursor: pointer;
-    height: auto;
-    margin: 2rem 0 1rem 2rem;
     background-color: white;
     padding-bottom: 1rem;
-    width: 17rem;
+    margin: 0 0 5% 5%;
   }
 
   .nouveau {
@@ -939,8 +275,314 @@
 
   .titre_resto {
     font-family: "Roboto";
-    margin: 3rem 0 0rem 1rem;
-    width: 30rem;
+    margin: 2rem 0 0 1rem;
+  }
+
+  .card_text_content, em {
+    font-family: "Roboto";
+    font-style: normal;
+    margin-left: 1rem;
+    line-height: 0.8rem;
+  }
+  .card_text_content p, em p {
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .card_text_content em, em em {
+    margin-left: 0.1rem;
+    font-size: 18px;
+  }
+  .card_text_content i, em i {
+    font-size: 2em;
+    float: right;
+    margin: 1rem 1rem 0 0;
+  }
+
+  .fa-heart {
+    color: grey;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0.2em;
+  }
+
+  .fa-heart:hover {
+    color: #99e2d0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 4s ease-out;
+  }
+
+  /*----FOOTER----*/
+  footer {
+    display: flex;
+    flex-flow: column;
+    max-width: 100%;
+    background-color: #3f3e3e;
+    color: white;
+    padding: 2rem 0 0 2rem;
+    font-family: "Roboto";
+  }
+
+  .bottom_logo {
+    display: block;
+    width: 8rem;
+    margin-bottom: 1rem;
+    filter: invert(100%);
+  }
+
+  .footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact {
+    display: flex;
+    flex-flow: wrap;
+    line-height: 0.05rem;
+  }
+  .footer_proposer > i, .footer_partenaire > i, .footer_mentions > i, .footer_contact > i {
+    margin: 1rem 0 0 0;
+    padding-right: 0.5rem;
+    line-height: 0.05rem;
+    color: white;
+  }
+  .footer_proposer a, .footer_partenaire a, .footer_mentions a, .footer_contact a {
+    text-decoration: none;
+    color: white;
+  }
+
+  footer i {
+    width: 1.3rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    color: grey;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 100%;
+  }
+  .about .top_logo {
+    display: block;
+    width: 20rem;
+    margin: 1rem auto;
+  }
+
+  .search {
+    border-top: solid 2px;
+    border-color: #d6d6d6;
+    display: flex;
+    flex-flow: wrap;
+    max-width: 100%;
+    height: 3rem;
+    background-color: #e4e3e3;
+    margin-top: 0.5rem;
+  }
+  .search .position {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    margin: auto;
+  }
+  .search .map {
+    font-family: "Roboto";
+    border: none;
+    text-decoration: none;
+    width: 85%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: #e4e3e3;
+    color: black;
+    padding-left: 3rem;
+  }
+
+  .card_about {
+    display: flex;
+    flex-flow: column;
+    max-width: 100%;
+    height: 18rem;
+    background-color: #eaecec;
+  }
+  .card_about .about_text_content {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    font-family: "Roboto";
+    margin: 1.7rem 0 0 0;
+  }
+  .card_about .about_text_content h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 0;
+  }
+  .card_about .about_text_content h4 {
+    color: #6b6b6b;
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin-top: 1rem;
+  }
+
+  .explorer_btn {
+    background: linear-gradient(to top, #9356dc 10%, #fa79da 100%);
+    display: flex;
+    width: 14rem;
+    border-radius: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 3.2rem;
+  }
+  .explorer_btn .explorer_text_btn {
+    color: white;
+    letter-spacing: 0.05rem;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: "Roboto";
+  }
+
+  .explorer_btn a {
+    text-decoration: none;
+  }
+
+  /*-----MAIN CONTENT--------*/
+  .container {
+    display: flex;
+    flex-flow: column;
+    max-width: 100%;
+  }
+
+  .titre_decouvrir {
+    font-family: "Roboto";
+    margin: 1rem auto 1rem auto;
+  }
+
+  .decouvrir {
+    max-width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 4rem;
+  }
+
+  .btn {
+    border: none;
+    background-color: transparent;
+    margin-bottom: 0.4rem;
+    max-width: 100%;
+  }
+
+  .menu_choisissez, .menu_composez, .menu_degustez {
+    max-width: 90%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: start;
+    font-family: "Roboto";
+    cursor: pointer;
+    font-size: 1.3rem;
+    background-color: #F0F0F0;
+    align-items: center !important;
+    margin: 0 0 0rem 1rem;
+    box-shadow: 0 0.7rem 0.7rem 0 #dddddd;
+    color: black;
+    margin: auto;
+  }
+  .menu_choisissez:hover, .menu_composez:hover, .menu_degustez:hover {
+    border-radius: 25px;
+    background-color: #f9eafa;
+    box-shadow: 0 0.7rem 0.7rem 0 #c7c7c7;
+  }
+  .menu_choisissez:hover > i, .menu_composez:hover > i, .menu_degustez:hover > i {
+    color: #9356dc;
+  }
+
+  .btn i {
+    width: 1.3rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    color: grey;
+  }
+
+  .number {
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    width: 1.8rem;
+    height: 1.3rem;
+    background-color: #9356dc;
+    color: white;
+    font-size: 0.9rem;
+    margin-left: -0.4rem;
+    padding: 0.6rem 0 0 0;
+  }
+
+  .menu_text_content {
+    color: black;
+    width: 75%;
+    margin-left: 0.9rem;
+    text-align: left;
+    font-size: 73%;
+  }
+
+  /*------CARD SHOWING MENU-----*/
+  .card_container {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 100%;
+    background-color: #eaecec;
+    padding: 0 0 5% 0;
+    margin-top: 1rem;
+  }
+
+  .card_restaurant {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 100%;
+    background-color: #eaecec;
+    padding: 0 0 5% 0;
+    margin-top: 1rem;
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column;
+    max-width: 90%;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: white;
+    padding-bottom: 1rem;
+    margin: 0 0 5% 5%;
+  }
+
+  .nouveau {
+    width: 4rem;
+    color: green;
+    background-color: #99e2d0;
+    border-radius: 5px;
+    position: absolute;
+    top: 9px;
+    right: 16px;
+    font-family: "Roboto";
+    padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+  }
+
+  .card_image {
+    max-width: 100%;
+    border-radius: 15px 15px 0 0;
+    height: 190px;
+    position: relative;
+  }
+
+  .card_image img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .titre_resto {
+    font-family: "Roboto";
+    margin: 1rem auto;
   }
 
   .card_text_content, em {
@@ -986,7 +628,6 @@
     color: white;
     padding: 2rem 0 0 2rem;
     font-family: "Roboto";
-    margin: 0 2rem 0 3rem;
   }
 
   .bottom_logo {
@@ -1017,7 +658,7 @@
   footer i {
     width: 1.3rem;
     margin-left: 1rem;
-    font-size: 1, 1rem;
+    font-size: 1.1rem;
     color: grey;
   }
 }
