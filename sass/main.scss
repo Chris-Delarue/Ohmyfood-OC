@@ -154,7 +154,7 @@ body{
     max-width:100%;
     display:flex;
     flex-flow: column wrap;
-    margin-bottom:4rem;
+    margin-bottom:2rem;
 }
 .btn{
     border:none;
@@ -187,9 +187,9 @@ body{
 /*------CARD SHOWING MENU-----*/
 .card_container{
     @include card-container;
-}
-.card_restaurant{
-    @include card-container;
+    & h2{
+        padding-bottom:5%;
+    }
 }
 .card{
    @include card-restaurant;
@@ -220,7 +220,7 @@ body{
     padding:.2em;
 }
 .fa-heart:hover{
-    color:$color-tertiaire;
+    color:$color-pink;
     cursor: pointer;
     font-weight: bold;
     transition: color 4s ease-out;
@@ -326,7 +326,7 @@ body{
     max-width:100%;
     display:flex;
     flex-flow: column wrap;
-    margin-bottom:4rem;
+    margin:0 10rem 0 10rem;
 }
 .btn{
     border:none;
@@ -361,11 +361,11 @@ body{
 .card_container{
     @include card-container;
 }
-.card_restaurant{
-    @include card-container;
-}
+
 .card{
     @include card-restaurant;
+    width:75%;
+    margin: auto auto 2rem auto;
 }
 .nouveau{
     @include nouveau;
