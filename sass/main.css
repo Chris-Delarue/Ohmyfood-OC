@@ -156,7 +156,7 @@
     max-width: 100%;
     display: flex;
     flex-flow: column wrap;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .btn {
@@ -176,7 +176,7 @@
     font-size: 1.3rem;
     background-color: #F0F0F0;
     align-items: center !important;
-    margin: 0 0 0rem 1rem;
+    margin: 0 0 0 1rem;
     box-shadow: 0 0.7rem 0.7rem 0 #dddddd;
     color: black;
   }
@@ -221,19 +221,14 @@
   .card_container {
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
     max-width: 100%;
     background-color: #eaecec;
-    padding: 0 0 5% 0;
-    margin-top: 1rem;
+    padding: 0 0 2% 0;
+    margin: 0;
   }
-
-  .card_restaurant {
-    display: flex;
-    flex-flow: column wrap;
-    max-width: 100%;
-    background-color: #eaecec;
-    padding: 0 0 5% 0;
-    margin-top: 1rem;
+  .card_container h2 {
+    padding-bottom: 5%;
   }
 
   .card {
@@ -306,7 +301,7 @@
   }
 
   .fa-heart:hover {
-    color: #99e2d0;
+    color: linear-gradient(to top, #9356dc 10%, #fa79da 100%);
     cursor: pointer;
     font-weight: bold;
     transition: color 4s ease-out;
@@ -462,7 +457,7 @@
     max-width: 100%;
     display: flex;
     flex-flow: column wrap;
-    margin-bottom: 4rem;
+    margin: 0 10rem 0 10rem;
   }
 
   .btn {
@@ -482,7 +477,7 @@
     font-size: 1.3rem;
     background-color: #F0F0F0;
     align-items: center !important;
-    margin: 0 0 0rem 1rem;
+    margin: 0 0 0 1rem;
     box-shadow: 0 0.7rem 0.7rem 0 #dddddd;
     color: black;
     margin: auto;
@@ -528,19 +523,11 @@
   .card_container {
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
     max-width: 100%;
     background-color: #eaecec;
-    padding: 0 0 5% 0;
-    margin-top: 1rem;
-  }
-
-  .card_restaurant {
-    display: flex;
-    flex-flow: column wrap;
-    max-width: 100%;
-    background-color: #eaecec;
-    padding: 0 0 5% 0;
-    margin-top: 1rem;
+    padding: 0 0 2% 0;
+    margin: 0;
   }
 
   .card {
@@ -552,6 +539,8 @@
     background-color: white;
     padding-bottom: 1rem;
     margin: 0 0 5% 5%;
+    width: 75%;
+    margin: auto auto 2rem auto;
   }
 
   .nouveau {
