@@ -22,7 +22,7 @@ $color-secondary:#fa79da;
 $color-tertiaire: #99e2d0;
 $typo-titres:'Shrikhand';
 $typo-text:'Roboto';
-$color-pink:linear-gradient(to top, #9356dc 10%, #fa79da  100%);
+$color-pink:linear-gradient(170deg,  #fa79da 10%, #9356dc 100%);
 $bg-color:#f7e7e7;
 
 
@@ -211,19 +211,50 @@ body{
   
 }
 .card_text_content, em{
-    @include card-text-content;        
+    @include card-text-content; 
+    position: relative;     
 }
-.fa-heart{
-    color:grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding:.2em;
+.heart{
+    width:45px;
+    height:35px;
+    position:relative;
+    left:80%;
+    top:-2rem;
 }
-.fa-heart:hover{
-    color:$color-pink;
-    cursor: pointer;
-    font-weight: bold;
+.heart:before,
+.heart:after{
+    position:absolute;
+    content:"";
+    width:21px;
+    height:31px;
+    border-radius: 50px 50px 0 0 ;
+    background-color: white;
+    border: solid 2px grey;
     transition: color 4s ease-out;
+}
+.heart:before{
+    left:21px;
+    -webkit-transform: rotate(-45deg);    
+    transform:rotate(-45deg);
+    -webkit-transform-origin:0 100% ;
+    transform-origin: 0 100%;
+    background:white;
+    border-bottom: none;
+}
+.heart:after{
+    left:0px;
+    -webkit-transform: rotate(45deg);    
+    transform:rotate(45deg);
+    -webkit-transform-origin:100% 100% ;
+    transform-origin: 100% 100%;
+    background: white; 
+    border-left:none;
+}
+ .heart:hover::before, .heart:hover::after{
+    cursor: pointer;
+    transition: color 4s ease-out;
+    background: $color-pink;
+    border:none;
 }
 
 
@@ -357,11 +388,10 @@ body{
     @include text-content;
 }
     
-    /*------CARD SHOWING MENU-----*/
+    /*------CARD SHOWING RESTAURANT-----*/
 .card_container{
     @include card-container;
 }
-
 .card{
     @include card-restaurant;
     width:75%;
@@ -381,20 +411,52 @@ body{
     margin:1rem auto; 
 }
 .card_text_content, em{
-    @include card-text-content;        
+    @include card-text-content; 
+    position: relative;   
 }
-.fa-heart {
-    color:grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding:.2em;
+.heart{
+    width:45px;
+    height:35px;
+    position:relative;
+    left:85%;
+    top:-2rem;
 }
-.fa-heart:hover::before{
-    color:$color-primary;
-    cursor: pointer;
-    font-weight: bold;
+.heart:before,
+.heart:after{
+    position:absolute;
+    content:"";
+    width:21px;
+    height:31px;
+    border-radius: 50px 50px 0 0 ;
+    background-color: white;
+    border: solid 2px grey;
     transition: color 4s ease-out;
 }
+.heart:before{
+    left:21px;
+    -webkit-transform: rotate(-45deg);    
+    transform:rotate(-45deg);
+    -webkit-transform-origin:0 100% ;
+    transform-origin: 0 100%;
+    background:white;
+    border-bottom: none;
+}
+.heart:after{
+    left:0px;
+    -webkit-transform: rotate(45deg);    
+    transform:rotate(45deg);
+    -webkit-transform-origin:100% 100% ;
+    transform-origin: 100% 100%;
+    background: white; 
+    border-left:none;
+}
+ .heart:hover::before, .heart:hover::after{
+    cursor: pointer;
+    transition: color 4s ease-out;
+    background: $color-pink;
+    border:none;
+}
+
         /*----FOOTER----*/
     
 footer{

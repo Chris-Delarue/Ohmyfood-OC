@@ -118,7 +118,6 @@
     border-radius:15px;
     cursor: pointer;
     background-color: white;
-    padding-bottom:1rem;
     margin:0 0 5% 5%;
 }
 @mixin card-restaurant-image {
@@ -134,10 +133,10 @@
     object-fit: cover;
 }
 @mixin card-text-content {
-        font-family: $typo-text; font-style:normal; margin-left:1rem; line-height: .8rem;
-        p{font-size:20px; font-weight:800;}em{margin-left:.1rem;  font-size:18px;}i{font-size:2em;  float:right; margin:1rem 1rem 0 0;
+    display:flex;flex-flow: column;font-family: $typo-text; font-style:normal; padding-left:1rem; line-height: .8rem;max-width:100%;
+        p{font-size:20px; font-weight:800;}em{padding-left:.1rem;  font-size:18px;}
         } 
-}
+
 @mixin nouveau {
     width:4rem;
     color:green;

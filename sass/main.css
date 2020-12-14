@@ -120,7 +120,7 @@
   }
 
   .explorer_btn {
-    background: linear-gradient(to top, #9356dc 10%, #fa79da 100%);
+    background: linear-gradient(170deg, #fa79da 10%, #9356dc 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
@@ -238,7 +238,6 @@
     border-radius: 15px;
     cursor: pointer;
     background-color: white;
-    padding-bottom: 1rem;
     margin: 0 0 5% 5%;
   }
 
@@ -274,37 +273,69 @@
   }
 
   .card_text_content, em {
+    display: flex;
+    flex-flow: column;
     font-family: "Roboto";
     font-style: normal;
-    margin-left: 1rem;
+    padding-left: 1rem;
     line-height: 0.8rem;
+    max-width: 100%;
+    position: relative;
   }
   .card_text_content p, em p {
     font-size: 20px;
     font-weight: 800;
   }
   .card_text_content em, em em {
-    margin-left: 0.1rem;
+    padding-left: 0.1rem;
     font-size: 18px;
   }
-  .card_text_content i, em i {
-    font-size: 2em;
-    float: right;
-    margin: 1rem 1rem 0 0;
+
+  .heart {
+    width: 45px;
+    height: 35px;
+    position: relative;
+    left: 80%;
+    top: -2rem;
   }
 
-  .fa-heart {
-    color: grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 0.2em;
-  }
-
-  .fa-heart:hover {
-    color: linear-gradient(to top, #9356dc 10%, #fa79da 100%);
-    cursor: pointer;
-    font-weight: bold;
+  .heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    width: 21px;
+    height: 31px;
+    border-radius: 50px 50px 0 0;
+    background-color: white;
+    border: solid 2px grey;
     transition: color 4s ease-out;
+  }
+
+  .heart:before {
+    left: 21px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    background: white;
+    border-bottom: none;
+  }
+
+  .heart:after {
+    left: 0px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    background: white;
+    border-left: none;
+  }
+
+  .heart:hover::before, .heart:hover::after {
+    cursor: pointer;
+    transition: color 4s ease-out;
+    background: linear-gradient(170deg, #fa79da 10%, #9356dc 100%);
+    border: none;
   }
 
   /*----FOOTER----*/
@@ -420,7 +451,7 @@
   }
 
   .explorer_btn {
-    background: linear-gradient(to top, #9356dc 10%, #fa79da 100%);
+    background: linear-gradient(170deg, #fa79da 10%, #9356dc 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
@@ -519,7 +550,7 @@
     font-size: 73%;
   }
 
-  /*------CARD SHOWING MENU-----*/
+  /*------CARD SHOWING RESTAURANT-----*/
   .card_container {
     display: flex;
     flex-flow: column wrap;
@@ -537,7 +568,6 @@
     border-radius: 15px;
     cursor: pointer;
     background-color: white;
-    padding-bottom: 1rem;
     margin: 0 0 5% 5%;
     width: 75%;
     margin: auto auto 2rem auto;
@@ -575,37 +605,69 @@
   }
 
   .card_text_content, em {
+    display: flex;
+    flex-flow: column;
     font-family: "Roboto";
     font-style: normal;
-    margin-left: 1rem;
+    padding-left: 1rem;
     line-height: 0.8rem;
+    max-width: 100%;
+    position: relative;
   }
   .card_text_content p, em p {
     font-size: 20px;
     font-weight: 800;
   }
   .card_text_content em, em em {
-    margin-left: 0.1rem;
+    padding-left: 0.1rem;
     font-size: 18px;
   }
-  .card_text_content i, em i {
-    font-size: 2em;
-    float: right;
-    margin: 1rem 1rem 0 0;
+
+  .heart {
+    width: 45px;
+    height: 35px;
+    position: relative;
+    left: 85%;
+    top: -2rem;
   }
 
-  .fa-heart {
-    color: grey;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 0.2em;
-  }
-
-  .fa-heart:hover::before {
-    color: #9356dc;
-    cursor: pointer;
-    font-weight: bold;
+  .heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    width: 21px;
+    height: 31px;
+    border-radius: 50px 50px 0 0;
+    background-color: white;
+    border: solid 2px grey;
     transition: color 4s ease-out;
+  }
+
+  .heart:before {
+    left: 21px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    background: white;
+    border-bottom: none;
+  }
+
+  .heart:after {
+    left: 0px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    background: white;
+    border-left: none;
+  }
+
+  .heart:hover::before, .heart:hover::after {
+    cursor: pointer;
+    transition: color 4s ease-out;
+    background: linear-gradient(170deg, #fa79da 10%, #9356dc 100%);
+    border: none;
   }
 
   /*----FOOTER----*/

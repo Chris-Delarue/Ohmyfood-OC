@@ -344,10 +344,7 @@ header{
     height: 30rem;
     }
 }
-.fa-heart{
-    float:right;
-    margin-right:1%;
-}
+
 .container{
     max-width:100%;
     margin-top:-4rem;
@@ -383,10 +380,14 @@ header{
     width:20rem;
 }
 .restaurant_name{
-    width:100%;
+    width:75%;
+    margin: auto auto 2rem auto;
+    
 }
 .fa-heart{
     float:right;
+    padding:0;
+    margin-right:5%;
 }
 .restaurant_image {
     width:100%;
@@ -397,6 +398,10 @@ header{
     height: 30rem;
 }
 } 
+.starter, .maincourse, .sweet{
+    width: 75%;
+    margin:auto;
+}
 
             /*----MAIN CONTENT----*/
 .container{
