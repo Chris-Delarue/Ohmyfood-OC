@@ -139,8 +139,11 @@ body {
   font-weight: bold;
   font-family: "Roboto";
   margin-right: 15px;
+  -webkit-transform-origin: right;
   transform-origin: right;
+  -webkit-transform: scaleX(1);
   transform: scaleX(1);
+  -webkit-transition: transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear;
 }
 .elt__details {
@@ -171,8 +174,11 @@ body {
   margin-top: -5px;
   margin-bottom: -8px;
   opacity: 0;
+  -webkit-transform-origin: right;
   transform-origin: right;
+  -webkit-transform: scale(0);
   transform: scaleX(0);
+  -webkit-transition: opacity 100ms, transform 300ms 100ms linear;
   transition: opacity 100ms, transform 300ms 100ms linear;
 }
 .anim__circle {
@@ -183,7 +189,9 @@ body {
   border-radius: 50%;
   width: 32px;
   height: 32px;
+  -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
+  -webkit-transition: transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear;
 }
 .anim__icon {
@@ -195,6 +203,7 @@ body {
   width: 10px;
   height: 14px;
   border-radius: 1px;
+  -webkit-transform: rotate(220deg);
   transform: rotate(220deg);
 }
 
@@ -202,6 +211,7 @@ body {
   cursor: pointer;
 }
 .elt:hover .elt__price {
+  -webkit-transform: translateX(-70px);
   transform: translateX(-70px);
 }
 .elt:hover .elt__details {
@@ -209,9 +219,11 @@ body {
 }
 .elt:hover .anim__container {
   opacity: 1;
+  -webkit-transform: scale(1);
   transform: scaleX(1);
 }
 .elt:hover .anim__circle {
+  -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
 }
 

@@ -30,21 +30,27 @@ $bg-color:#f7e7e7;
 
 @keyframes spin{
     0%{
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg); 
         opacity: 1; 
     }
-    25%{transform:rotate(120deg) ;
+    25%{
+        -webkit-transform: rotate(120deg);
+        transform:rotate(120deg) ;
         opacity: 1;
     }
     50% {
+        -webkit-transform: rotate(160deg);
         transform: rotate(160deg);
         opacity:1;
     }
     75%{
+        -webkit-transform: rotate(200deg);
         transform: rotate(200deg);
         opacity: 1;
     }
     100% {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
         opacity: 0;
         visibility: hidden;
