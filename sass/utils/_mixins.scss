@@ -69,6 +69,7 @@
     color:black; 
 }
 @mixin hover-accueil {
+    cursor: pointer;
     border-radius:25px;
     background-color:#f9eafa;
     box-shadow: 0 .7rem .7rem 0 #c7c7c7;
@@ -133,9 +134,16 @@
     object-fit: cover;
 }
 @mixin card-text-content {
-    display:flex;flex-flow: column;font-family: $typo-text; font-style:normal; padding-left:1rem; line-height: .8rem;max-width:100%;
-        p{font-size:20px; font-weight:800;}em{padding-left:.1rem;  font-size:18px;}
-        } 
+    display:flex;
+    flex-flow: column;
+    position: relative;
+    font-family: $typo-text; 
+    font-style:normal; 
+    margin-bottom:.5rem;
+    padding-left:1rem; 
+    line-height: .8rem;
+    max-width:100%;
+} 
 
 @mixin nouveau {
     width:4rem;
@@ -151,10 +159,6 @@
 
             /*---CARD MENU---*/
 
-@mixin boxshadow($color: $color-bkg) 
-{
-box-shadow: 2px 4px 8px 3px darken($color, 10%);
-}
 
    
 

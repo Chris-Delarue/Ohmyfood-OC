@@ -23,8 +23,8 @@ $color-tertiaire: #99e2d0;
 $typo-titres:'Shrikhand';
 $typo-text:'Roboto';
 $color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
-$color-txt:#fff;
-$color-bkg: #eaeaea;
+$color-heart:linear-gradient($color-primary 96%, $color-secondary 100%);
+
 
 body{
     max-width:100%;
@@ -45,38 +45,72 @@ body{
     font-size:1.5rem;
     color: black
 }
-.fa-heart {
-    color:grey;
-    background-color:rgb(234,236,236);
-    font-size:3rem;
-    float:right;
-    padding-right:15%;
+.heart{
+    position: absolute;
+    box-sizing: border-box;
+    width:45px;
+    height:35px;
+    top:55px;
+    bottom:0;
+    left:75%;
+    right:0;
+    margin:0;
 }
-.fa-heart:hover::before{
-    color:$color-primary;
+.heart:before,
+.heart:after{
+    position:absolute;
+    content:"";
+    width:21px;
+    height:31px;
+    border-radius: 50px 50px 0 0 ;
+    background-color:rgb(234,236,236) ;
+    border: solid 2px grey;
+}
+.heart:before{
+    left:21px;
+    -webkit-transform: rotate(-45deg);    
+    transform:rotate(-45deg);
+    -webkit-transform-origin:0 100% ;
+    transform-origin: 0 100%;
+    background:rgb(234,236,236);
+    border-bottom: none;
+     transition: background 4s ease-out;
+}
+.heart:after{
+    left:0px;
+    -webkit-transform: rotate(45deg);    
+    transform:rotate(45deg);
+    -webkit-transform-origin:100% 100% ;
+    transform-origin: 100% 100%;
+    background:  rgb(234,236,236);
+    border-left:none;
+   
+
+}.heart:hover::before, .heart:hover::after{
     cursor: pointer;
-    font-weight: bold;
-    transition: color 4s ease-out;
+    background:$color-pink;
+    border:none;
+    
 }
+
 .restaurant_name{
     display:flex;
     flex-wrap: wrap;
-    height:5rem;
-    margin-bottom:2rem;
     max-width: 100%;
+    margin:0;
+    
     & h2{
         font-family: $typo-titres;
         font-weight:200;
         font-size:3rem;
-        margin:1rem 0 0 5rem;
-        width:100%;
-        
+        width:50%;
+        padding-left:15%;
+        overflow: hidden; 
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 }
-.restaurant_name i{
-        float:right;
-        margin-top:.5rem;
-}
+
 .restaurant_image{
     display:flex;
     flex-flow: wrap;
@@ -94,148 +128,134 @@ body{
     width:100%;
     display: flex;
     flex-flow: column wrap;
+    position:relative;
     background: rgb(234,236,236);
     border-radius: 30px 30px 0 0;
     padding-bottom:2rem;
     margin-top:35rem;
 } 
-.menuP{
+.main{
     max-width: 100%;
     margin:0;
     padding:0;
 }
 .starter, .maincourse, .sweet {
-    width: 90%;
+    width: 95%;
     font-family: $typo-text;
+    padding: 0 0 .5rem 2rem;
     box-sizing: border-box;
-    padding: 0 0 1rem 5rem;
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     justify-content: flex-start;
     align-items: flex-start;
-    opacity: 1;
+    
     &__heading {
-        text-transform: uppercase;
         font-size: 1rem;
-        font-weight: lighter;
+        font-weight: 700;
         font-family: $typo-text;
-        &::after { 
-            content: "";
+        width:60%;
+        &::after{
+            content:"";
             display: block;
-            width:60%;
-            border-bottom: 3px solid $color-tertiaire;
-            padding-top: 6px;
+            width:30px;
+            border-bottom: solid  4px $color-tertiaire;
+            padding-top:.3rem;
         }
     }
-    &__elt{
+    &__box{
         background:white;
-        width: 95%;
-        margin-bottom: 20px;
+        width: 90%;
+        margin-bottom: 1rem;
         border-radius: 20px;
-        padding: 5px 0 8px 15px;
-        line-height: 20px;
         display: flex;
-        justify-content: space-between; 
-        position: relative;  
+        justify-content: space-between ; 
+        position: relative; 
     } 
 }
-.elt {
+.box{
     &__price{
         position: absolute;
         right: 10px;
-        top: 48px;
+        top: 45px;
         font-weight: bold;
         font-family: $typo-text;
         margin-right: 15px;
         -webkit-transform-origin: right;
         transform-origin: right;
-        -webkit-transform: scaleX(1);
-        transform:  scaleX(1);
-        -webkit-transition: transform 300ms 100ms linear;;
-        transition: transform 300ms 100ms linear;//price moving
+        -webkit-transform: scale(1);
+        transform:  scale(1);
+        -webkit-transition: transform 600ms   linear;//price moving nicely
+        transition: transform 600ms  linear;
     }
-    &__details {
+    &__text {
         width:75%;
         h3, p {
-            overflow: hidden; //text...
+            line-height: 20px;
+            margin:.8rem 0rem .8rem .5rem;
+            overflow: hidden; 
             white-space: nowrap;
-            text-overflow: ellipsis; 
+            text-overflow: ellipsis; //hide the text mobile
         }
-        p {
-            margin-top: 0px;
-            margin-bottom: 6px;
-            font-size: 0.85em;
+        h3{
+            font-size:1.08rem;
         }
-        h3 {
-            margin-bottom: 6px;
-            margin-top: 15px;
-            font-size: 1rem;
+        p{
+            font-size:.9rem;
         }
+        
     }
-  }
+}
   
-.anim {
+.boxAnim {
     &__container {
         background: $color-tertiaire;
         position: relative;
         border-radius: 0 20px 20px 0;
-        height: 120%;
+        height: 101%;
         width: 80px;
-        margin-top: -5px;
-        margin-bottom: -8px;
-        opacity: 0;
         -webkit-transform-origin: right;
         transform-origin: right;
-        -webkit-transform: scale(0);
-        transform: scaleX(0);
-        -webkit-transition: opacity 100ms, transform 300ms 100ms linear;
-        transition: opacity 100ms, transform 300ms 100ms linear;
+        -webkit-transform:scale(0) ;
+        transform:  scale(0);//showing on click
+        transition: transform 800ms  linear;
     }
-    &__circle {
-        background: $color-txt;
-        position: absolute;
-        top: calc(50% - 18px);
-        left: calc(50% - 18px);
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        -webkit-transform: rotate(0deg);
-        transform:rotate(0deg);
-        -webkit-transition: transform 300ms 100ms linear;
-        transition: transform 300ms 100ms linear;
+    &__circle{
+        position:absolute;
+        width: 40px;
+        height:40px;
+        background:white;
+        border-radius:50px;
+        left:calc(50% - 20px);
+        top:calc(50% - 20px);
     }
-    &__icon {
-        border-top: 5px solid $color-tertiaire;
-        border-left: 5px solid $color-tertiaire;
-        position: absolute;
-        top: 4px;
-        left: 8px;
-        width: 10px;
-        height: 14px;
-        border-radius: 1px;
-        -webkit-transform: rotate(220deg);
-        transform: rotate(220deg);    
-    }
+        &__icon{
+            position:absolute;
+            border-left: 5px solid $color-tertiaire;
+            border-top: 5px solid $color-tertiaire;
+            top:10px;
+            left:12px;
+            width:10px;
+            height:12px;
+            border-radius:1px;
+            transform:rotate(220deg);
+           
+        }
 }
-  
-.elt:hover {
+
+.box:hover {
     cursor: pointer;
-    .elt__price {
-        -webkit-transform:translateX(-70px);
-        transform: translateX(-70px)//price moving to the side
+    .box__price {
+        -webkit-transform:translate(-70px);//price moving to the side
+        transform: translate(-70px);
     }
-    .elt__details {
-        width: 50%;
-        }
-    .anim {
-        &__container {
-            opacity: 1;
-            -webkit-transform:scale(1);
-            transform: scaleX(1);
-        }
-        &__circle {
-            -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+.box__text {
+    width: 50%; 
+}
+.boxAnim {
+    &__container {
+    opacity:1;
+    -webkit-transform:scale(1);
+    transform: scale(1);
         }
     }
   }
@@ -296,9 +316,13 @@ header{
 .restaurant_name{
     margin:0;
     & h2{
-        font-size:1.5rem;
-        margin-left:.8rem;
+        font-size:1.3rem;
+        width:70%;
+        padding-left: 2rem;
     }
+}
+.heart{
+    top:20px;
 }
 .restaurant_image{
     height:20rem;
@@ -306,25 +330,11 @@ header{
         max-width: 100%;  
     }
 }
-.fa-heart{
-    font-size:1.5rem;
-    padding-right:8%;
-}
+
 .container{
     margin-top:-7rem ;
 }
-.starter, .maincourse, .sweet{
-    width:100%;
-    padding:0;
-   
-    &__elt{
-        width:90%;
-        margin-left:.8rem;
-    }
-    &__heading{
-        margin:0 0 .5rem 1rem;
-    }       
-}
+
 .commander_btn{
     @include gradient-pink;
     margin:3rem auto 3rem auto;
@@ -344,9 +354,7 @@ header{
 .top_logo_menu{
     width:15rem;
 }
-.restaurant_name{
-    max-width:100%;
-}
+
 .restaurant_image{
     width:100%;
     height:30rem;
@@ -356,7 +364,20 @@ header{
     height: 30rem;
     }
 }
-
+.restaurant_name{
+    margin:0;
+    & h2{
+    padding-left:6rem;
+    width:60%;
+}
+.heart{
+    left:80%;
+    top:60px;
+}
+}
+.main{
+margin-left:4rem;
+}
 .container{
     max-width:100%;
     margin-top:-4rem;
@@ -392,15 +413,10 @@ header{
     width:20rem;
 }
 .restaurant_name{
-    width:75%;
-    margin: auto auto 2rem auto;
-    
-}
-.fa-heart{
-    float:right;
+    width:100%; 
     padding:0;
-    margin-right:5%;
 }
+
 .restaurant_image {
     width:100%;
     height:30rem;
