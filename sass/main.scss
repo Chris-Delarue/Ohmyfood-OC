@@ -23,7 +23,7 @@ $color-tertiaire: #99e2d0;
 $typo-titres:'Shrikhand';
 $typo-text:'Roboto';
 $color-pink:linear-gradient(170deg,  #fa79da 10%, #9356dc 100%);
-$bg-color:#f7e7e7;
+
 
 
  
@@ -70,7 +70,7 @@ $bg-color:#f7e7e7;
     -webkit-animation: spin 3s  cubic-bezier(.56,.57,.62,.64)  reverse ;
     -moz-animation: spin 3s  cubic-bezier(.56,.57,.62,.64)  reverse ;
     left: calc(50% - 140px);
-    top: calc(50% - 140px);
+    top: calc(30% - 70px);
     z-index:3;
     opacity:0;  
     position:absolute;
@@ -216,27 +216,34 @@ body{
     margin:2rem 0 0 1rem;
   
 }
-.card_text_content, em{
+.card_text_content{
     @include card-text-content; 
-    position: relative;     
+    & p{
+        font-size:20px; font-weight:800;
+    }
+    & em{
+        padding-left:.1rem;  font-size:18px;font-style: normal;
+    }   
 }
 .heart{
+    position: absolute;
     width:45px;
     height:35px;
-    position:relative;
-    left:80%;
-    top:-2rem;
+    box-sizing: border-box;
+    top:20px;
+    bottom:0;
+    right:20px;
 }
 .heart:before,
 .heart:after{
     position:absolute;
     content:"";
+    box-sizing: border-box;
     width:21px;
     height:31px;
     border-radius: 50px 50px 0 0 ;
     background-color: white;
     border: solid 2px grey;
-    transition: color 4s ease-out;
 }
 .heart:before{
     left:21px;
@@ -416,27 +423,34 @@ body{
     font-family: $typo-text;
     margin:1rem auto; 
 }
-.card_text_content, em{
-    @include card-text-content; 
-    position: relative;   
+.card_text_content{
+    @include card-text-content;   
+    & p{
+        font-size:20px; font-weight:800;
+    }
+    & em{
+        padding-left:.1rem;  font-size:18px;font-style: normal;
+    }
 }
 .heart{
+    position: absolute;
     width:45px;
     height:35px;
-    position:relative;
-    left:85%;
-    top:-2rem;
+    box-sizing: border-box;
+    top:20px;
+    bottom:0;
+    right:20px;
 }
 .heart:before,
 .heart:after{
-    position:absolute;
     content:"";
+    box-sizing: border-box;
+    position: absolute;
     width:21px;
     height:31px;
     border-radius: 50px 50px 0 0 ;
     background-color: white;
     border: solid 2px grey;
-    transition: color 4s ease-out;
 }
 .heart:before{
     left:21px;
@@ -446,6 +460,7 @@ body{
     transform-origin: 0 100%;
     background:white;
     border-bottom: none;
+    color:$color-pink
 }
 .heart:after{
     left:0px;
@@ -455,11 +470,14 @@ body{
     transform-origin: 100% 100%;
     background: white; 
     border-left:none;
+    color: $color-pink;
+   
 }
  .heart:hover::before, .heart:hover::after{
     cursor: pointer;
+    -webkit-transition: color 4s ease-out ;
     transition: color 4s ease-out;
-    background: $color-pink;
+    background:$color-pink;
     border:none;
 }
 
