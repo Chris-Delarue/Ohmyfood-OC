@@ -154,7 +154,7 @@ body {
 }
 .starter__box, .maincourse__box, .sweet__box {
   background: white;
-  width: 90%;
+  width: 95%;
   margin-bottom: 1rem;
   border-radius: 20px;
   display: flex;
@@ -168,7 +168,7 @@ body {
   top: 45px;
   font-weight: bold;
   font-family: "Roboto";
-  margin-right: 15px;
+  margin-right: 10px;
   -webkit-transform-origin: right;
   transform-origin: right;
   -webkit-transform: scale(1);
@@ -177,7 +177,7 @@ body {
   transition: transform 600ms linear;
 }
 .box__text {
-  width: 75%;
+  width: 85%;
 }
 .box__text h3, .box__text p {
   line-height: 20px;
@@ -187,10 +187,10 @@ body {
   text-overflow: ellipsis;
 }
 .box__text h3 {
-  font-size: 1.08rem;
+  font-size: 1.06rem;
 }
 .box__text p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .boxAnim__container {
@@ -198,7 +198,8 @@ body {
   position: relative;
   border-radius: 0 20px 20px 0;
   height: 101%;
-  width: 80px;
+  width: 60px;
+  opacity: 0;
   -webkit-transform-origin: right;
   transform-origin: right;
   -webkit-transform: scale(0);
@@ -500,6 +501,15 @@ footer i {
   .starter, .maincourse, .sweet {
     width: 75%;
     margin: auto;
+  }
+  .starter h3, .starter p, .maincourse h3, .maincourse p, .sweet h3, .sweet p {
+    line-height: 27px;
+  }
+  .starter h3, .maincourse h3, .sweet h3 {
+    font-size: 1.5rem;
+  }
+  .starter p, .maincourse p, .sweet p {
+    font-size: 1.2rem;
   }
 
   /*----MAIN CONTENT----*/

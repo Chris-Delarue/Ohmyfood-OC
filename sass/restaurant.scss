@@ -164,7 +164,7 @@ body{
     }
     &__box{
         background:white;
-        width: 90%;
+        width: 95%;
         margin-bottom: 1rem;
         border-radius: 20px;
         display: flex;
@@ -179,7 +179,7 @@ body{
         top: 45px;
         font-weight: bold;
         font-family: $typo-text;
-        margin-right: 15px;
+        margin-right: 10px;
         -webkit-transform-origin: right;
         transform-origin: right;
         -webkit-transform: scale(1);
@@ -188,19 +188,19 @@ body{
         transition: transform 600ms  linear;
     }
     &__text {
-        width:75%;
-        h3, p {
+        width:85%;
+         & h3, p {
             line-height: 20px;
             margin:.8rem 0rem .8rem .5rem;
             overflow: hidden; 
             white-space: nowrap;
             text-overflow: ellipsis; //hide the text mobile
         }
-        h3{
-            font-size:1.08rem;
+        & h3{
+            font-size:1.06rem;
         }
-        p{
-            font-size:.9rem;
+        & p{
+            font-size:.8rem;
         }
         
     }
@@ -212,7 +212,8 @@ body{
         position: relative;
         border-radius: 0 20px 20px 0;
         height: 101%;
-        width: 80px;
+        width: 60px;
+        opacity:0;
         -webkit-transform-origin: right;
         transform-origin: right;
         -webkit-transform:scale(0) ;
@@ -429,6 +430,15 @@ header{
 .starter, .maincourse, .sweet{
     width: 75%;
     margin:auto;
+    & h3, p{
+        line-height: 27px;
+    }
+    & h3{
+        font-size: 1.5rem;
+    }
+    & p{
+        font-size:1.2rem;
+    }
 }
 
             /*----MAIN CONTENT----*/
