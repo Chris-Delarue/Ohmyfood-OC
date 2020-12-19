@@ -2,18 +2,7 @@
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/extensions";
-@import "./base/base";
-@import "./base/typography";
-@import "./Composants/buttons";
-@import "./layout/header";
-@import "./layout/nav";
-@import "./layout/form";
-@import "./layout/footer";
-@import "./layout/containers";
-@import "./layout/header";
-@import "./pages/works";
-@import "./pages/about";
-@import "./pages/project";
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -22,8 +11,8 @@ $color-secondary:#fa79da;
 $color-tertiaire: #99e2d0;
 $typo-titres:'Shrikhand';
 $typo-text:'Roboto';
-$color-pink:linear-gradient($color-secondary 0%, $color-primary 100%);
-$color-heart:linear-gradient($color-primary 96%, $color-secondary 100%);
+$color-pink:linear-gradient( #fa79da 10%, #9356dc 100%);
+$color-heart:linear-gradient( $color-primary, $color-secondary);
 
 
 body{
@@ -45,82 +34,53 @@ body{
     font-size:1.5rem;
     color: black
 }
-.heart{
-    position: absolute;
-    box-sizing: border-box;
-    width:45px;
-    height:35px;
-    top:55px;
-    bottom:0;
-    left:75%;
-    right:0;
-    margin:0;
-}
-.heart:before,
-.heart:after{
+.heart{ 
     position:absolute;
-    content:"";
-    width:21px;
-    height:31px;
-    border-radius: 50px 50px 0 0 ;
-    background-color:rgb(234,236,236) ;
-    border: solid 2px grey;
-}
-.heart:before{
-    left:21px;
-    -webkit-transform: rotate(-45deg);    
-    transform:rotate(-45deg);
-    -webkit-transform-origin:0 100% ;
-    transform-origin: 0 100%;
-    background:rgb(234,236,236);
-    border-bottom: none;
-     transition: background 4s ease-out;
-}
-.heart:after{
-    left:0px;
-    -webkit-transform: rotate(45deg);    
-    transform:rotate(45deg);
-    -webkit-transform-origin:100% 100% ;
-    transform-origin: 100% 100%;
-    background:  rgb(234,236,236);
-    border-left:none;
-   
+    box-sizing: border-box;
+    width:55px;
+    height:55px;
+    right:10%;
+    top:35%;
+    bottom:0;
 
-}.heart:hover::before, .heart:hover::after{
-    cursor: pointer;
-    background:$color-pink;
-    border:none;
-    
+    & .fa-heart{
+        position: absolute;
+        background:rgb(234,236,236);
+        font-size:3rem;  
+        color: grey;
+    }
+        & .fa-gradient:hover{
+        cursor:pointer;
+        background:$color-heart;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight:bold;
 }
-
+}
 .restaurant_name{
     display:flex;
-    flex-wrap: wrap;
     max-width: 100%;
-    margin:0;
-    
+    position: relative;
     & h2{
         font-family: $typo-titres;
         font-weight:200;
         font-size:3rem;
         width:50%;
-        padding-left:15%;
         overflow: hidden; 
         white-space: nowrap;
         text-overflow: ellipsis;
     }
 }
-
 .restaurant_image{
     display:flex;
     flex-flow: wrap;
     max-width: 100%;
-    height:20rem;
+    height:30rem;
         & img{
         width:100%;
-        height:260px;
+        height:400px;
         object-fit: cover;
-        position:relative;
         z-index:-1;
 }
 }
@@ -128,11 +88,10 @@ body{
     width:100%;
     display: flex;
     flex-flow: column wrap;
-    position:relative;
     background: rgb(234,236,236);
     border-radius: 30px 30px 0 0;
-    padding-bottom:2rem;
-    margin-top:35rem;
+    padding: 2rem 0 2rem 0;
+    margin-top:-7rem;
 } 
 .main{
     max-width: 100%;
@@ -184,7 +143,7 @@ body{
         transform-origin: right;
         -webkit-transform: scale(1);
         transform:  scale(1);
-        -webkit-transition: transform 600ms   linear;//price moving nicely
+        -webkit-transition: transform 600ms  linear;//price moving nicely
         transition: transform 600ms  linear;
     }
     &__text {
@@ -218,7 +177,7 @@ body{
         transform-origin: right;
         -webkit-transform:scale(0) ;
         transform:  scale(0);//showing on click
-        transition: transform 800ms  linear;
+        transition: transform 1000ms  linear;
     }
     &__circle{
         position:absolute;
@@ -227,7 +186,8 @@ body{
         background:white;
         border-radius:50px;
         left:calc(50% - 20px);
-        top:calc(50% - 20px);
+        top:calc(50% - 20px); 
+        
     }
         &__icon{
             position:absolute;
@@ -239,8 +199,16 @@ body{
             height:12px;
             border-radius:1px;
             transform:rotate(220deg);
-           
         }
+}
+@keyframes rotate{
+    from{ transform: rotate(180deg);
+        -webkit-transform: rotate(180deg)
+    }
+    
+    100%{ transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
 }
 
 .box:hover {
@@ -254,12 +222,19 @@ body{
 }
 .boxAnim {
     &__container {
-    opacity:1;
-    -webkit-transform:scale(1);
-    transform: scale(1);
+        opacity:1;
+        -webkit-transform:scale(1);
+        transform: scale(1);
+        }
+        &__circle{
+            -webkit-animation: rotate 1s  ease-out;
+            animation: rotate 1s ease-out  ;
+            -webkit-transition: transform 1s ease-out;
+            transition: transform 1s ease-out;
         }
     }
   }
+
 @keyframes card-menu {
     0% {
         -webkit-transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
@@ -287,10 +262,10 @@ body{
 .commander_btn{
     @include gradient-pink;
     margin:3rem auto 3rem auto;
+        & .commander_btn a{   
+        @include text-gradient;
+        text-decoration: none;
 }
-.commander_btn a{   
-    @include text-gradient;
-    text-decoration: none;
 }
 footer{
     @include footer;
@@ -298,6 +273,7 @@ footer{
         color:white;
     }
 }
+
 .bottom_logo{
      @include footer-logo; 
 }
@@ -306,7 +282,9 @@ footer{
 }
 footer i{
      @include icone;
-    }
+}
+
+    /*--MOBILE--*/
 
 @media (max-width: 599px){
 
@@ -314,8 +292,8 @@ footer i{
 header{
     margin-top: 1rem;
 }
+
 .restaurant_name{
-    margin:0;
     & h2{
         font-size:1.3rem;
         width:70%;
@@ -323,17 +301,19 @@ header{
     }
 }
 .heart{
-    top:20px;
+    width:30px;
+    height:30px;
+    & .fa-heart{
+        font-size: 1.5rem;
+}
 }
 .restaurant_image{
     height:20rem;
     & img{
         max-width: 100%;  
+        height:15rem;
+        object-fit: cover;
     }
-}
-
-.container{
-    margin-top:-7rem ;
 }
 
 .commander_btn{
@@ -348,7 +328,9 @@ header{
 
 @media screen and(min-width:768px)
             and (max-width:1023px){
+
     /*--- HEADER---*/
+    
 .logo{
     margin-left:2rem;
 }
@@ -358,33 +340,35 @@ header{
 
 .restaurant_image{
     width:100%;
-    height:30rem;
+    height:25rem;
     & img{
     object-fit:cover;
     width: 100%;
-    height: 30rem;
+    height: 20rem;
     }
 }
 .restaurant_name{
-    margin:0;
     & h2{
-    padding-left:6rem;
-    width:60%;
+        padding-left:6rem;
+        width:100%;
+}
 }
 .heart{
-    left:80%;
-    top:60px;
+    width:60px;
+    height:50px;
 }
+.fa-heart{
+    font-size:3rem;
 }
+
 .main{
 margin-left:4rem;
 }
-.container{
-    max-width:100%;
-    margin-top:-4rem;
-}
+
     
         /*---FOOTER---*/
+
+
 footer{
      @include footer;
 }
@@ -402,8 +386,11 @@ footer i{
 }
 
 @media screen and (min-width:1024px){
+
     
     /*--- HEADER---*/
+
+
 header{
     margin-top:1rem;
 }
@@ -415,7 +402,11 @@ header{
 }
 .restaurant_name{
     width:100%; 
+    margin:0;
     padding:0;
+    & h2{
+        padding-left:8%;
+    }
 }
 
 .restaurant_image {
@@ -424,11 +415,11 @@ header{
     & img{
     object-fit:cover;
     width:100%;
-    height: 30rem;
 }
+
 } 
 .starter, .maincourse, .sweet{
-    width: 75%;
+    width: 90%;
     margin:auto;
     & h3, p{
         line-height: 27px;
@@ -442,9 +433,6 @@ header{
 }
 
             /*----MAIN CONTENT----*/
-.container{
-    margin-top:-5rem;
-}
 
     
                     /*---FOOTER---*/

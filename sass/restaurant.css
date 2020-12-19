@@ -4,7 +4,6 @@
 /*----CARD SHOWING RESTAURANT----*/
 /*---CARD MENU---*/
 /*-----FOOTER----*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
@@ -34,65 +33,37 @@ body {
 .heart {
   position: absolute;
   box-sizing: border-box;
-  width: 45px;
-  height: 35px;
-  top: 55px;
+  width: 55px;
+  height: 55px;
+  right: 10%;
+  top: 35%;
   bottom: 0;
-  left: 75%;
-  right: 0;
-  margin: 0;
 }
-
-.heart:before,
-.heart:after {
+.heart .fa-heart {
   position: absolute;
-  content: "";
-  width: 21px;
-  height: 31px;
-  border-radius: 50px 50px 0 0;
-  background-color: #eaecec;
-  border: solid 2px grey;
-}
-
-.heart:before {
-  left: 21px;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
   background: #eaecec;
-  border-bottom: none;
-  transition: background 4s ease-out;
+  font-size: 3rem;
+  color: grey;
 }
-
-.heart:after {
-  left: 0px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
-  background: #eaecec;
-  border-left: none;
-}
-
-.heart:hover::before, .heart:hover::after {
+.heart .fa-gradient:hover {
   cursor: pointer;
-  background: linear-gradient(#fa79da 0%, #9356dc 100%);
-  border: none;
+  background: linear-gradient(#9356dc, #fa79da);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 
 .restaurant_name {
   display: flex;
-  flex-wrap: wrap;
   max-width: 100%;
-  margin: 0;
+  position: relative;
 }
 .restaurant_name h2 {
   font-family: "Shrikhand";
   font-weight: 200;
   font-size: 3rem;
   width: 50%;
-  padding-left: 15%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -102,13 +73,12 @@ body {
   display: flex;
   flex-flow: wrap;
   max-width: 100%;
-  height: 20rem;
+  height: 30rem;
 }
 .restaurant_image img {
   width: 100%;
-  height: 260px;
+  height: 400px;
   object-fit: cover;
-  position: relative;
   z-index: -1;
 }
 
@@ -116,11 +86,10 @@ body {
   width: 100%;
   display: flex;
   flex-flow: column wrap;
-  position: relative;
   background: #eaecec;
   border-radius: 30px 30px 0 0;
-  padding-bottom: 2rem;
-  margin-top: 35rem;
+  padding: 2rem 0 2rem 0;
+  margin-top: -7rem;
 }
 
 .main {
@@ -204,7 +173,7 @@ body {
   transform-origin: right;
   -webkit-transform: scale(0);
   transform: scale(0);
-  transition: transform 800ms linear;
+  transition: transform 1000ms linear;
 }
 .boxAnim__circle {
   position: absolute;
@@ -227,6 +196,16 @@ body {
   transform: rotate(220deg);
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
 .box:hover {
   cursor: pointer;
 }
@@ -241,6 +220,12 @@ body {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+.box:hover .boxAnim__circle {
+  -webkit-animation: rotate 1s ease-out;
+  animation: rotate 1s ease-out;
+  -webkit-transition: transform 1s ease-out;
+  transition: transform 1s ease-out;
 }
 
 @keyframes card-menu {
@@ -271,7 +256,7 @@ body {
 }
 
 .commander_btn {
-  background: linear-gradient(#fa79da 0%, #9356dc 100%);
+  background: linear-gradient(#fa79da 10%, #9356dc 100%);
   display: flex;
   width: 14rem;
   border-radius: 4rem;
@@ -281,8 +266,7 @@ body {
   height: 3.2rem;
   margin: 3rem auto 3rem auto;
 }
-
-.commander_btn a {
+.commander_btn .commander_btn a {
   color: white;
   letter-spacing: 0.05rem;
   font-weight: 500;
@@ -334,15 +318,13 @@ footer i {
   color: grey;
 }
 
+/*--MOBILE--*/
 @media (max-width: 599px) {
   /*--- HEADER---*/
   header {
     margin-top: 1rem;
   }
 
-  .restaurant_name {
-    margin: 0;
-  }
   .restaurant_name h2 {
     font-size: 1.3rem;
     width: 70%;
@@ -350,7 +332,11 @@ footer i {
   }
 
   .heart {
-    top: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .heart .fa-heart {
+    font-size: 1.5rem;
   }
 
   .restaurant_image {
@@ -358,14 +344,12 @@ footer i {
   }
   .restaurant_image img {
     max-width: 100%;
-  }
-
-  .container {
-    margin-top: -7rem;
+    height: 15rem;
+    object-fit: cover;
   }
 
   .commander_btn {
-    background: linear-gradient(#fa79da 0%, #9356dc 100%);
+    background: linear-gradient(#fa79da 10%, #9356dc 100%);
     display: flex;
     width: 14rem;
     border-radius: 4rem;
@@ -397,33 +381,30 @@ footer i {
 
   .restaurant_image {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
   }
   .restaurant_image img {
     object-fit: cover;
     width: 100%;
-    height: 30rem;
+    height: 20rem;
   }
 
-  .restaurant_name {
-    margin: 0;
-  }
   .restaurant_name h2 {
     padding-left: 6rem;
-    width: 60%;
+    width: 100%;
   }
-  .restaurant_name .heart {
-    left: 80%;
-    top: 60px;
+
+  .heart {
+    width: 60px;
+    height: 50px;
+  }
+
+  .fa-heart {
+    font-size: 3rem;
   }
 
   .main {
     margin-left: 4rem;
-  }
-
-  .container {
-    max-width: 100%;
-    margin-top: -4rem;
   }
 
   /*---FOOTER---*/
@@ -485,7 +466,11 @@ footer i {
 
   .restaurant_name {
     width: 100%;
+    margin: 0;
     padding: 0;
+  }
+  .restaurant_name h2 {
+    padding-left: 8%;
   }
 
   .restaurant_image {
@@ -495,11 +480,10 @@ footer i {
   .restaurant_image img {
     object-fit: cover;
     width: 100%;
-    height: 30rem;
   }
 
   .starter, .maincourse, .sweet {
-    width: 75%;
+    width: 90%;
     margin: auto;
   }
   .starter h3, .starter p, .maincourse h3, .maincourse p, .sweet h3, .sweet p {
@@ -513,10 +497,6 @@ footer i {
   }
 
   /*----MAIN CONTENT----*/
-  .container {
-    margin-top: -5rem;
-  }
-
   /*---FOOTER---*/
   footer {
     display: flex;

@@ -1,19 +1,8 @@
 @import "./utils/variables";
-@import "./utils/functions";
 @import "./utils/mixins";
+@import "./utils/variables";
 @import "./utils/extensions";
-@import "./base/base";
-@import "./base/typography";
-@import "./Composants/buttons";
-@import "./layout/header";
-@import "./layout/nav";
-@import "./layout/form";
-@import "./layout/footer";
-@import "./layout/containers";
-@import "./layout/header";
-@import "./pages/works";
-@import "./pages/about";
-@import "./pages/project";
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -22,8 +11,8 @@ $color-secondary:#fa79da;
 $color-tertiaire: #99e2d0;
 $typo-titres:'Shrikhand';
 $typo-text:'Roboto';
-$color-pink:linear-gradient(170deg, #fa79da 10%, #9356dc 100%);
-
+$color-pink:linear-gradient( #fa79da 10%, #9356dc 100%);
+$color-heart:linear-gradient(  $color-primary, $color-secondary);
 
 
  
@@ -76,8 +65,33 @@ $color-pink:linear-gradient(170deg, #fa79da 10%, #9356dc 100%);
     position:absolute;
 }
 
+.heart{ 
+    position:absolute;
+    box-sizing: border-box;
+    width: 30px;
+    height:30px;
+    top:20px;
+    right:30px;
+    & .fa-heart{
+        position:absolute;
+        background:white;
+        font-size:1.5rem;  
+        color: grey;
+    }
+        & .fa-gradient:hover{
+        cursor:pointer;
+        background:$color-heart;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight:bold;
+    }
+}
 
-@media (max-width:767px){
+
+     /*--MOBILE TABLET--*/
+
+
   
 /*-------------header----------------*/
 
@@ -91,7 +105,6 @@ body{
     @include about;
         & .top_logo{
             display:block;
-            width:11rem; 
             margin:1rem auto;
         }
 }
@@ -105,7 +118,7 @@ body{
                 text-decoration: none;
                 font-family: $typo-text;
                 width:85%;
-                font-size:1.1rem;
+                font-size:3rem;
                 font-weight:700;
                 background-color: rgb(228, 227, 227);
                 color: black;
@@ -121,12 +134,12 @@ body{
             text-align:center;
             font-family: $typo-text;
             margin:1.7rem 0 0 0;
-            h1{
+            & h1{
                 font-size:1.8rem;
                 font-weight:900;
                 margin:0;
             }
-            h4{
+            & h4{
                 color: rgb(107, 107 ,107);
                 font-size:1.2rem;
                 font-weight:200;
@@ -223,51 +236,7 @@ body{
     }
     & em{
         padding-left:.1rem;  font-size:18px;font-style: normal;
-    }   
-}
-.heart{
-    position: absolute;
-    width:45px;
-    height:35px;
-    box-sizing: border-box;
-    top:20px;
-    bottom:0;
-    right:20px;
-}
-.heart:before,
-.heart:after{
-    position:absolute;
-    content:"";
-    box-sizing: border-box;
-    width:21px;
-    height:31px;
-    border-radius: 50px 50px 0 0 ;
-    background-color: white;
-    border: solid 2px grey;
-}
-.heart:before{
-    left:21px;
-    -webkit-transform: rotate(-45deg);    
-    transform:rotate(-45deg);
-    -webkit-transform-origin:0 100% ;
-    transform-origin: 0 100%;
-    background:white;
-    border-bottom: none;
-}
-.heart:after{
-    left:0px;
-    -webkit-transform: rotate(45deg);    
-    transform:rotate(45deg);
-    -webkit-transform-origin:100% 100% ;
-    transform-origin: 100% 100%;
-    background: white; 
-    border-left:none;
-}
- .heart:hover::before, .heart:hover::after{
-    cursor: pointer;
-    transition: color 4s ease-out;
-    background: $color-pink;
-    border:none;
+    }
 }
 
 
@@ -285,12 +254,21 @@ footer{
 footer i{
     @include icone;
 }
+@media screen and (min-width:320px)
+            and (max-width:699px){
+.top_logo{
+    width:11rem;
+} 
+.search{
+    & .map{
+    font-size: 1.1rem;
+}
+}
 }
 
-
-@media screen and (min-width:768px){
+@media screen and (min-width:768px)
+                and (max-width:1023px){
    
-
 body{
     max-width:100%;
     margin:0;
@@ -370,7 +348,8 @@ body{
     max-width:100%;
     display:flex;
     flex-flow: column wrap;
-    margin:0 10rem 0 10rem;
+    justify-content: space-between;
+    margin:0 1rem 0 1rem;
 }
 .btn{
     border:none;
@@ -432,57 +411,69 @@ body{
         padding-left:.1rem;  font-size:18px;font-style: normal;
     }
 }
-.heart{
-    position: absolute;
-    width:45px;
-    height:35px;
-    box-sizing: border-box;
-    top:20px;
-    bottom:0;
-    right:20px;
-}
-.heart:before,
-.heart:after{
-    content:"";
-    box-sizing: border-box;
-    position: absolute;
-    width:21px;
-    height:31px;
-    border-radius: 50px 50px 0 0 ;
-    background-color: white;
-    border: solid 2px grey;
-}
-.heart:before{
-    left:21px;
-    -webkit-transform: rotate(-45deg);    
-    transform:rotate(-45deg);
-    -webkit-transform-origin:0 100% ;
-    transform-origin: 0 100%;
-    background:white;
-    border-bottom: none;
-    color:$color-pink
-}
-.heart:after{
-    left:0px;
-    -webkit-transform: rotate(45deg);    
-    transform:rotate(45deg);
-    -webkit-transform-origin:100% 100% ;
-    transform-origin: 100% 100%;
-    background: white; 
-    border-left:none;
-    color: $color-pink;
-   
-}
- .heart:hover::before, .heart:hover::after{
-    cursor: pointer;
-    -webkit-transition: color 4s ease-out ;
-    transition: color 4s ease-out;
-    background:$color-pink;
-    border:none;
-}
+
 
         /*----FOOTER----*/
     
+footer{
+    @include footer;
+}
+.bottom_logo{
+     @include footer-logo; 
+     margin:auto;
+}
+.footer_proposer, .footer_partenaire, .footer_mentions, .footer_contact{
+    @include proposer-partenaire-mentions-contact;
+    margin:auto;
+}
+footer i{
+     @include icone;
+    }
+}
+
+
+@media screen and (min-width:1024px){
+
+.top_logo{
+    width:30rem;
+}
+.search{
+    @include search;
+    height:7rem;
+    & .fa-map-marker-alt{
+        font-size:3rem;
+        padding:0;
+    }
+
+}
+.titre_decouvrir{
+    text-align: center;
+}
+.decouvrir{
+    max-width:100%;
+    display:flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    margin:0 0  2% 0%;
+        & .menu_choisissez, .menu_composez, .menu_degustez{
+        width:100%;
+        }   
+}
+.titre_resto{
+    width: 100%;
+    text-align: center;
+    height:1rem;
+}
+.card_container{
+    display:flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    padding-bottom:5%;
+        & .card{
+        width:40%;
+        margin:2% 0 2% 1%;
+    }
+}
 footer{
     @include footer;
 }
