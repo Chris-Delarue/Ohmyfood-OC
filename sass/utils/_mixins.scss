@@ -21,6 +21,7 @@
     font-family:$typo-text;
 }
 
+
 @mixin search {
     border-top:solid 2px;
     border-color:rgb(214, 214, 214);
@@ -55,16 +56,16 @@
 
 
 @mixin menu-accueil {
-    max-width:90%;
+    width:90%;
     border-radius:25px;
     display:flex;
-    justify-content:start;
+    justify-content: flex-start;
     font-family: $typo-text;
     cursor: pointer;
     font-size:1.3rem;
     background-color:#F0F0F0;
-    align-items: center !important;
     margin: 0 0 0 1rem;
+    align-items: center;
     box-shadow:0 .7rem .7rem 0 	#dddddd;
     color:black; 
 }
@@ -136,13 +137,15 @@
 @mixin card-text-content {
     display:flex;
     flex-flow: column;
-    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-family: $typo-text; 
     font-style:normal; 
     margin-bottom:.5rem;
     padding-left:1rem; 
     line-height: .8rem;
     max-width:100%;
+    position:relative;
 } 
 
 @mixin nouveau {
@@ -186,7 +189,6 @@
     a{ text-decoration: none; color:white;
     }
 }
-
 
 
 
