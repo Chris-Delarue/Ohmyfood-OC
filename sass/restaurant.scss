@@ -261,12 +261,13 @@ body{
 }
 .commander_btn{
     @include gradient-pink;
-    margin:3rem auto 3rem auto;
-        & .commander_btn a{   
+    margin:3rem auto 3rem auto;}
+
+.commander_btn a{   
         @include text-gradient;
         text-decoration: none;
 }
-}
+
 footer{
     @include footer;
     & >  i{
@@ -431,7 +432,20 @@ header{
         font-size:1.2rem;
     }
 }
+.starter, .maincourse, .sweet{
+    &__heading{
+    font-size: 1.5rem;
+        &::after{
+            content:"";
+            display: block;
+            width:40px;
+            border-bottom: solid  4px $color-tertiaire;
+            padding-top:.3rem;
+            
 
+        }
+}
+}
             /*----MAIN CONTENT----*/
 
     
