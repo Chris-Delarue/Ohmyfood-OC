@@ -487,16 +487,6 @@ footer i {
     width: 90%;
     margin: auto;
   }
-  .starter h3, .starter p, .maincourse h3, .maincourse p, .sweet h3, .sweet p {
-    line-height: 27px;
-  }
-  .starter h3, .maincourse h3, .sweet h3 {
-    font-size: 1.5rem;
-  }
-  .starter p, .maincourse p, .sweet p {
-    font-size: 1.2rem;
-  }
-
   .starter__heading, .maincourse__heading, .sweet__heading {
     font-size: 1.5rem;
   }
@@ -506,6 +496,15 @@ footer i {
     width: 40px;
     border-bottom: solid 4px #99e2d0;
     padding-top: 0.3rem;
+  }
+  .starter__heading h3, .starter__heading p, .maincourse__heading h3, .maincourse__heading p, .sweet__heading h3, .sweet__heading p {
+    line-height: 27px;
+  }
+  .starter__heading h3, .maincourse__heading h3, .sweet__heading h3 {
+    font-size: 1.5rem;
+  }
+  .starter__heading p, .maincourse__heading p, .sweet__heading p {
+    font-size: 1.2rem;
   }
 
   /*----MAIN CONTENT----*/

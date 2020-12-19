@@ -421,20 +421,9 @@ header{
 } 
 .starter, .maincourse, .sweet{
     width: 90%;
-    margin:auto;
-    & h3, p{
-        line-height: 27px;
-    }
-    & h3{
-        font-size: 1.5rem;
-    }
-    & p{
-        font-size:1.2rem;
-    }
-}
-.starter, .maincourse, .sweet{
+    margin:auto; 
     &__heading{
-    font-size: 1.5rem;
+        font-size: 1.5rem;
         &::after{
             content:"";
             display: block;
@@ -442,7 +431,18 @@ header{
             border-bottom: solid  4px $color-tertiaire;
             padding-top:.3rem;
         }
-}
+        & h3, p{
+            line-height: 27px;
+        }
+        & h3{
+            font-size: 1.5rem;
+        }
+        & p{
+            font-size:1.2rem;
+        }
+    }
+
+
 }
             /*----MAIN CONTENT----*/
 
