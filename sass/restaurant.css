@@ -30,6 +30,20 @@ body {
   color: black;
 }
 
+@keyframes progheart {
+  from {
+    color: linear-gradient(#9356dc, #fa79da);
+  }
+  25% {
+    color: linear-gradient(#9356dc, #fa79da);
+  }
+  50% {
+    color: linear-gradient(#9356dc, #fa79da);
+  }
+  to {
+    color: linear-gradient(#9356dc, #fa79da);
+  }
+}
 .heart {
   position: absolute;
   box-sizing: border-box;
@@ -47,11 +61,15 @@ body {
 }
 .heart .fa-gradient:hover {
   cursor: pointer;
+  font-weight: bold;
   background: linear-gradient(#9356dc, #fa79da);
   -webkit-background-clip: text;
+  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  -moz-text-fill-color: transparent;
+  transform: scale(1);
+  animation: progheart 3s ease-out;
 }
 
 .restaurant_name {
@@ -139,10 +157,13 @@ body {
   font-family: "Roboto";
   margin-right: 10px;
   -webkit-transform-origin: right;
+  -moz-transform-origin: right;
   transform-origin: right;
   -webkit-transform: scale(1);
+  -moz-transform: scale(1);
   transform: scale(1);
   -webkit-transition: transform 600ms linear;
+  -moz-transition: transform 600ms linear;
   transition: transform 600ms linear;
 }
 .box__text {
@@ -170,8 +191,10 @@ body {
   width: 60px;
   opacity: 0;
   -webkit-transform-origin: right;
+  -moz-transfrom-origin: right;
   transform-origin: right;
   -webkit-transform: scale(0);
+  -moz-transform: scale(0);
   transform: scale(0);
   transition: transform 1000ms linear;
 }
@@ -196,13 +219,15 @@ body {
   transform: rotate(220deg);
 }
 
-@keyframes rotate {
+@keyframes rotcircle {
   from {
     transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
   }
   100% {
     transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
   }
 }
@@ -211,6 +236,7 @@ body {
 }
 .box:hover .box__price {
   -webkit-transform: translate(-70px);
+  -moz-transform: translate(-70px);
   transform: translate(-70px);
 }
 .box:hover .box__text {
@@ -219,39 +245,46 @@ body {
 .box:hover .boxAnim__container {
   opacity: 1;
   -webkit-transform: scale(1);
+  -moz-transfrom: scale(1);
   transform: scale(1);
 }
 .box:hover .boxAnim__circle {
-  -webkit-animation: rotate 1s ease-out;
-  animation: rotate 1s ease-out;
+  -webkit-animation: rotcircle 1s ease-out;
+  animation: rotcircle 1s ease-out;
   -webkit-transition: transform 1s ease-out;
+  -moz-transition: transform 1s ease-out;
   transition: transform 1s ease-out;
 }
 
 @keyframes card-menu {
   0% {
     -webkit-transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
+    -moz-transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
     transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
     opacity: 0;
   }
   100% {
     -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+    -moz-transfrom: rotateY(0deg) translateY(0) skewY(0deg);
     transform: rotateY(0deg) translateY(0) skewY(0deg);
     opacity: 1;
   }
 }
 .starter {
   -webkit-animation: card-menu 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -moz-animation: card-menu 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: card-menu 0.6s cubic-bezier(0.1, 0.46, 0.45, 0.94) both;
 }
 
 .maincourse {
   -webkit-animation: card-menu 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -moz-animation: card-menu 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: card-menu 0.8s cubic-bezier(0.1, 0.46, 0.45, 0.94) both;
 }
 
 .sweet {
   -webkit-animation: card-menu 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -moz-animation: card-menu 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: card-menu 1s cubic-bezier(0.1, 0.46, 0.45, 0.94) both;
 }
 

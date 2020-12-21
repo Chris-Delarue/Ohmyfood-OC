@@ -34,6 +34,20 @@ body{
     font-size:1.5rem;
     color: black
 }
+@keyframes progheart{
+        from{
+            color:$color-heart;
+        }
+        25%{
+            color:$color-heart;
+        }
+        50%{
+            color:$color-heart;
+        }
+        to{
+            color:$color-heart ;
+        }
+}
 .heart{ 
     position:absolute;
     box-sizing: border-box;
@@ -49,14 +63,18 @@ body{
         font-size:3rem;  
         color: grey;
     }
-        & .fa-gradient:hover{
-        cursor:pointer;
+    & .fa-gradient:hover{
+        cursor:pointer; 
+        font-weight:bold;
         background:$color-heart;
         -webkit-background-clip: text;
+        -moz-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight:bold;
-}
+        -moz-text-fill-color:transparent;
+        transform: scale(1);
+        animation: progheart 3s ease-out;
+    }
 }
 .restaurant_name{
     display:flex;
@@ -140,10 +158,13 @@ body{
         font-family: $typo-text;
         margin-right: 10px;
         -webkit-transform-origin: right;
+        -moz-transform-origin: right;
         transform-origin: right;
         -webkit-transform: scale(1);
+        -moz-transform:scale(1);
         transform:  scale(1);
-        -webkit-transition: transform 600ms  linear;//price moving nicely
+        -webkit-transition: transform 600ms  linear;
+        -moz-transition: transform 600ms linear;//price moving nicely
         transition: transform 600ms  linear;
     }
     &__text {
@@ -174,8 +195,10 @@ body{
         width: 60px;
         opacity:0;
         -webkit-transform-origin: right;
+        -moz-transfrom-origin:right;
         transform-origin: right;
-        -webkit-transform:scale(0) ;
+        -webkit-transform:scale(0);
+        -moz-transform:scale(0);
         transform:  scale(0);//showing on click
         transition: transform 1000ms  linear;
     }
@@ -201,20 +224,25 @@ body{
             transform:rotate(220deg);
         }
 }
-@keyframes rotate{
-    from{ transform: rotate(180deg);
-        -webkit-transform: rotate(180deg)
+@keyframes rotcircle{//animated circle
+    from{ 
+        transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
     }
     
-    100%{ transform: rotate(360deg);
-        -webkit-transform: rotate(360deg)
+    100%{ 
+        transform: rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -webkit-transform: rotate(360deg);
     }
 }
 
 .box:hover {
     cursor: pointer;
     .box__price {
-        -webkit-transform:translate(-70px);//price moving to the side
+        -webkit-transform:translate(-70px);
+        -moz-transform:translate(-70px);//price moving to the side
         transform: translate(-70px);
     }
 .box__text {
@@ -224,39 +252,47 @@ body{
     &__container {
         opacity:1;
         -webkit-transform:scale(1);
+        -moz-transfrom:scale(1);
         transform: scale(1);
         }
+   
         &__circle{
-            -webkit-animation: rotate 1s  ease-out;
-            animation: rotate 1s ease-out  ;
+            -webkit-animation: rotcircle 1s  ease-out;
+            animation: rotcircle 1s ease-out  ;
             -webkit-transition: transform 1s ease-out;
+            -moz-transition: transform 1s ease-out;
             transition: transform 1s ease-out;
         }
     }
   }
 
-@keyframes card-menu {
+@keyframes card-menu { // animation menu
     0% {
         -webkit-transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
+        -moz-transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
         transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
         opacity: 0;
     }
     100% {
         -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+        -moz-transfrom: rotateY(0deg) translateY(0) skewY(0deg);
         transform: rotateY(0deg) translateY(0) skewY(0deg);
         opacity: 1;
     }
   }
 .starter{
     -webkit-animation: card-menu 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: card-menu 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: card-menu 0.6s cubic-bezier(0.100, 0.460, 0.450, 0.940) both;
 }
 .maincourse{
     -webkit-animation: card-menu 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: card-menu 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: card-menu 0.8s cubic-bezier(0.100, 0.460, 0.450, 0.940) both;
 }
 .sweet{
     -webkit-animation: card-menu 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: card-menu 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: card-menu 1s cubic-bezier(0.100, 0.460, 0.450, 0.940) both;
 }
 .commander_btn{
