@@ -20,27 +20,32 @@ $color-heart:linear-gradient(  $color-primary, $color-secondary);
 @keyframes spin{
     0%{
         -webkit-transform: rotate(0deg);
+        -moz-transform:rotate(0deg);
         transform: rotate(0deg); 
         opacity: 1; 
     }
     25%{
         -webkit-transform: rotate(120deg);
+        -moz-transform:rotate(120deg);
         transform:rotate(120deg) ;
         opacity: 1;
     }
     50% {
         -webkit-transform: rotate(160deg);
+        -moz-transfrom: rotate(160deg);
         transform: rotate(160deg);
         opacity:1;
     }
     75%{
         -webkit-transform: rotate(200deg);
+        -moz-transform:rotate(200deg);
         transform: rotate(200deg);
         opacity: 1;
     }
     100% {
         -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+        -moz-transform:rotate(360deg)
+;        transform: rotate(360deg);
         opacity: 0;
         visibility: hidden;
     } 
@@ -64,7 +69,20 @@ $color-heart:linear-gradient(  $color-primary, $color-secondary);
     opacity:0;  
     position:absolute;
 }
-
+@keyframes progheart{
+    from{
+        color:$color-heart;
+    }
+    25%{
+        color:$color-heart;
+    }
+    50%{
+        color:$color-heart;
+    }
+    to{
+        color:$color-heart ;
+    }
+}
 .heart{ 
     position:absolute;
     box-sizing: border-box;
@@ -72,22 +90,26 @@ $color-heart:linear-gradient(  $color-primary, $color-secondary);
     height:30px;
     top:20px;
     right:30px;
-    & .fa-heart{
-        position:absolute;
-        background:white;
-        font-size:1.5rem;  
-        color: grey;
-    }
-        & .fa-gradient:hover{
-        cursor:pointer;
-        background:$color-heart;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight:bold;
-    }
-}
 
+        & .fa-heart{
+            position:absolute;
+            background:white;
+            font-size:1.5rem;  
+            color: grey;
+   
+}
+        & .fa-gradient:hover{
+            cursor:pointer;
+            background:$color-heart;
+             -webkit-background-clip: text;
+             -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color:transparent;
+            font-weight:bold;
+           
+        }
+}
 
      /*--MOBILE TABLET--*/
 
