@@ -57,18 +57,18 @@
   position: absolute;
 }
 
-@keyframes progheart {
-  from {
-    color: linear-gradient(#9356dc, #fa79da);
-  }
-  25% {
-    color: linear-gradient(#9356dc, #fa79da);
+@keyframes backgroundtwo {
+  0% {
+    opacity: 0;
+    transform: scale(0);
   }
   50% {
-    color: linear-gradient(#9356dc, #fa79da);
+    opacity: 0.7;
+    transform: scale(0.5);
   }
-  to {
-    color: linear-gradient(#9356dc, #fa79da);
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 .heart {
@@ -85,15 +85,18 @@
   font-size: 1.5rem;
   color: grey;
 }
-.heart .fa-gradient:hover {
+.heart .fa-gradient {
+  color: grey;
+  background-color: white;
+}
+.heart .fa-gradient:hover::before {
   cursor: pointer;
+  font-weight: bold;
+  animation: backgroundtwo 4s ease-in-out;
   background: linear-gradient(#9356dc, #fa79da);
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  font-weight: bold;
 }
 
 /*--MOBILE TABLET--*/

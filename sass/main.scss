@@ -69,19 +69,20 @@ $color-heart:linear-gradient(  $color-primary, $color-secondary);
     opacity:0;  
     position:absolute;
 }
-@keyframes progheart{
-    from{
-        color:$color-heart;
-    }
-    25%{
-        color:$color-heart;
-    }
-    50%{
-        color:$color-heart;
-    }
-    to{
-        color:$color-heart ;
-    }
+
+@keyframes backgroundtwo{
+  0%{
+    opacity:0;
+    transform:scale(0);
+  }
+  50%{
+    opacity:0.7;
+      transform:scale(0.5);
+  }
+  100%{
+    opacity:1;
+      transform:scale(1);
+  }
 }
 .heart{ 
     position:absolute;
@@ -98,17 +99,19 @@ $color-heart:linear-gradient(  $color-primary, $color-secondary);
             color: grey;
    
 }
-        & .fa-gradient:hover{
-            cursor:pointer;
-            background:$color-heart;
-             -webkit-background-clip: text;
-             -moz-background-clip: text;
+        & .fa-gradient{
+            color:grey;
+            background-color:white;
+}
+        & .fa-gradient:hover::before{
+            cursor:pointer; 
+            font-weight:bold;
+            animation: backgroundtwo 4s ease-in-out;
+    	    background:$color-heart;
+            -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            -moz-text-fill-color:transparent;
-            font-weight:bold;
-           
-        }
+    }
 }
 
      /*--MOBILE TABLET--*/
