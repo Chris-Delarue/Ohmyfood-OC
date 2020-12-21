@@ -34,48 +34,55 @@ body{
     font-size:1.5rem;
     color: black
 }
-@keyframes progheart{
-        from{
-            color:$color-heart;
-        }
-        25%{
-            color:$color-heart;
-        }
-        50%{
-            color:$color-heart;
-        }
-        to{
-            color:$color-heart ;
-        }
-}
+@keyframes backgroundtwo{
+    0%{
+      opacity:0;
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      transform:scale(0);
+    }
+    50%{
+      opacity:0.7;
+      -webkit-transform: scale(.5);
+      -moz-transform: scale(0.5);
+    transform:scale(0.5);
+    }
+    100%{
+      opacity:1;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+    transform:scale(1);
+    }
+  }
 .heart{ 
     position:absolute;
     box-sizing: border-box;
-    width:55px;
+    width: 55px;
     height:55px;
-    right:10%;
     top:35%;
-    bottom:0;
-
-    & .fa-heart{
-        position: absolute;
-        background:rgb(234,236,236);
-        font-size:3rem;  
-        color: grey;
-    }
-    & .fa-gradient:hover{
-        cursor:pointer; 
-        font-weight:bold;
-        background:$color-heart;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color:transparent;
-        transform: scale(1);
-        animation: progheart 3s ease-out;
-    }
-}
+    right:10%;
+        & .fa-heart{
+            position:absolute;
+            background:white;
+            font-size:3rem;  
+            color: grey; 
+        }
+        & .fa-gradient{
+            color:grey;
+            background-color:rgb(234,236,236);
+        }
+        & .fa-gradient:hover::before{
+            cursor:pointer; 
+            font-weight:bold;
+            -moz-animation:backgroundtwo 4s ease-in-out ;
+            -webkit-animation:backgroundtwo 4s ease-in-out ;
+            animation: backgroundtwo 4s ease-in-out;
+            background:$color-heart;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+  }
 .restaurant_name{
     display:flex;
     max-width: 100%;
@@ -199,8 +206,10 @@ body{
         transform-origin: right;
         -webkit-transform:scale(0);
         -moz-transform:scale(0);
-        transform:  scale(0);//showing on click
-        transition: transform 1000ms  linear;
+        transform:  scale(0);//allow small to fit div showing on click
+        transition: transform 600ms  linear;//speed
+        -webkit-transition: transform 600ms linear;
+        -moz-transition: transfrom 600ms linear;
     }
     &__circle{
         position:absolute;
@@ -249,14 +258,14 @@ body{
     width: 50%; 
 }
 .boxAnim {
-    &__container {
+    &__container {//keep the container to size
         opacity:1;
         -webkit-transform:scale(1);
         -moz-transfrom:scale(1);
         transform: scale(1);
         }
    
-        &__circle{
+        &__circle{//circle rotation
             -webkit-animation: rotcircle 1s  ease-out;
             animation: rotcircle 1s ease-out  ;
             -webkit-transition: transform 1s ease-out;
@@ -268,15 +277,15 @@ body{
 
 @keyframes card-menu { // animation menu
     0% {
-        -webkit-transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
+        -webkit-transform: rotateY(300deg) translateY(-300px)skewY(-30deg) ;
         -moz-transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
         transform: rotateY(300deg) translateY(-300px) skewY(-30deg);
-        opacity: 0;
+        opacity: 1;
     }
     100% {
-        -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+        -webkit-transform: rotateY(0deg) translateY(0)skewY(0deg) ;
         -moz-transfrom: rotateY(0deg) translateY(0) skewY(0deg);
-        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        transform: rotateY(0deg) translateY(0)skewY(0deg) ;
         opacity: 1;
     }
   }
@@ -461,7 +470,7 @@ header{
     &__heading{
         font-size: 1.5rem;
         &::after{
-            content:"";
+            content:"";//underline
             display: block;
             width:40px;
             border-bottom: solid  4px $color-tertiaire;
