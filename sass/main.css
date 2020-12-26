@@ -71,10 +71,10 @@
 .heart {
   position: absolute;
   box-sizing: border-box;
-  width: 30px;
-  height: 30px;
-  top: 20px;
-  right: 30px;
+  width: 55px;
+  height: 55px;
+  top: 30%;
+  right: 2%;
 }
 .heart .fa-heart {
   position: absolute;
@@ -83,13 +83,14 @@
   color: grey;
 }
 .heart .fa-gradient {
-  color: grey;
   background-color: white;
 }
-.heart .fa-gradient:hover::before {
+.heart .fa-gradient:hover {
   cursor: pointer;
   font-weight: bold;
-  animation: backgroundtwo 4s ease-in-out;
+  -moz-animation: backgroundtwo 4s;
+  -webkit-animation: backgroundtwo 4s;
+  animation: backgroundtwo 4s;
   background: linear-gradient(#9356dc, #fa79da);
   -webkit-background-clip: text;
   background-clip: text;

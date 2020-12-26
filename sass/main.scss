@@ -87,32 +87,34 @@ $color-heart:linear-gradient(  $color-primary, $color-secondary);
 .heart{ 
     position:absolute;
     box-sizing: border-box;
-    width: 30px;
-    height:30px;
-    top:20px;
-    right:30px;
-
-        & .fa-heart{
-            position:absolute;
-            background:white;
-            font-size:1.5rem;  
-            color: grey;
+    width: 55px;
+    height:55px;
+    top:30%;
+    right:2%;
    
-}
-        & .fa-gradient{
-            color:grey;
-            background-color:white;
-}
-        & .fa-gradient:hover::before{
+   & .fa-heart{
+        position:absolute;
+        background:white;
+        font-size:1.5rem;  
+        color: grey;
+        
+        }
+  & .fa-gradient{
+    background-color:white; 
+    
+  }
+  & .fa-gradient:hover{
             cursor:pointer; 
             font-weight:bold;
-            animation: backgroundtwo 4s ease-in-out;
-    	    background:$color-heart;
+            -moz-animation:backgroundtwo 4s ;
+            -webkit-animation:backgroundtwo  4s ;
+            animation: backgroundtwo 4s ;
+            background:$color-heart;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-    }
-}
+        }
+  }   
 
      /*--MOBILE TABLET--*/
 
