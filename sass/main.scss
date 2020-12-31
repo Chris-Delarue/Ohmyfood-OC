@@ -97,13 +97,11 @@ $color-heart:linear-gradient(  $color-primary, $color-secondary);
         background:white;
         font-size:1.5rem;  
         color: grey;
-        
-        }
-  & .fa-gradient{
-    background-color:white; 
-    
-  }
-  & .fa-gradient:hover{
+    }
+    & .fa-gradient{
+        background-color:white; 
+    }
+        & .fa-gradient:hover{
             cursor:pointer; 
             font-weight:bold;
             -moz-animation:backgroundtwo 4s ;
